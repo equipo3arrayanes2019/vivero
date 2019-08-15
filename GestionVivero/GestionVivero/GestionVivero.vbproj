@@ -142,6 +142,12 @@
     <Compile Include="New\frmNewDistributor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="New\frmNewPlantpot.Designer.vb">
+      <DependentUpon>frmNewPlantpot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New\frmNewPlantpot.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="New\frmNewTool.Designer.vb">
       <DependentUpon>frmNewTool.vb</DependentUpon>
     </Compile>
