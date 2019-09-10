@@ -1,0 +1,17 @@
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\bin\Debug\Persistencia.xml
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\bin\Debug\Entidades.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\bin\Debug\MySql.Data.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\bin\Debug\Google.Protobuf.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\bin\Debug\Renci.SshNet.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\bin\Debug\Entidades.pdb
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\bin\Debug\Entidades.xml
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\bin\Debug\MySql.Data.xml
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\obj\Debug\Persistence.vbprojResolveAssemblyReference.cache
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\obj\Debug\Persistencia.Resources.resources
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\obj\Debug\Persistence.vbproj.GenerateResource.Cache
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\obj\Debug\Persistencia.xml
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Persistencia\obj\Debug\Persistencia.pdb
