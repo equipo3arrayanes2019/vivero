@@ -25,9 +25,15 @@ Partial Class frmLogin
         Me.txtUser = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+<<<<<<< HEAD
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.chkShowPass = New System.Windows.Forms.CheckBox()
+=======
+        Me.btnLogin = New System.Windows.Forms.Button()
+        Me.chkShowPass = New System.Windows.Forms.CheckBox()
+        Me.txtPass = New System.Windows.Forms.TextBox()
+>>>>>>> gui-rafael
         Me.SuspendLayout()
         '
         'txtUser
@@ -63,6 +69,7 @@ Partial Class frmLogin
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Contraseña:"
         '
+<<<<<<< HEAD
         'txtPass
         '
         Me.txtPass.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(52, Byte), Integer))
@@ -75,6 +82,8 @@ Partial Class frmLogin
         Me.txtPass.Size = New System.Drawing.Size(323, 38)
         Me.txtPass.TabIndex = 4
         '
+=======
+>>>>>>> gui-rafael
         'btnLogin
         '
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -97,6 +106,21 @@ Partial Class frmLogin
         Me.chkShowPass.Text = "Mostrar"
         Me.chkShowPass.UseVisualStyleBackColor = True
         '
+<<<<<<< HEAD
+=======
+        'txtPass
+        '
+        Me.txtPass.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPass.ForeColor = System.Drawing.SystemColors.Info
+        Me.txtPass.Location = New System.Drawing.Point(300, 139)
+        Me.txtPass.Name = "txtPass"
+        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPass.Size = New System.Drawing.Size(323, 38)
+        Me.txtPass.TabIndex = 4
+        '
+>>>>>>> gui-rafael
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -120,7 +144,13 @@ Partial Class frmLogin
     Friend WithEvents txtUser As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+<<<<<<< HEAD
     Friend WithEvents txtPass As TextBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents chkShowPass As CheckBox
+=======
+    Friend WithEvents btnLogin As Button
+    Friend WithEvents chkShowPass As CheckBox
+    Friend WithEvents txtPass As TextBox
+>>>>>>> gui-rafael
 End Class

@@ -54,6 +54,10 @@ Partial Class frmMain
         Me.msMain = New System.Windows.Forms.MenuStrip()
         Me.tsmiPersons = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiRegister = New System.Windows.Forms.ToolStripMenuItem()
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
+=======
+        Me.ListarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.msMain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -93,13 +97,21 @@ Partial Class frmMain
         'tsmiSpeciesBookBrowse
         '
         Me.tsmiSpeciesBookBrowse.Name = "tsmiSpeciesBookBrowse"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiSpeciesBookBrowse.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiSpeciesBookBrowse.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiSpeciesBookBrowse.Text = "Buscar"
         '
         'tsmiSpeciesBookAdd
         '
         Me.tsmiSpeciesBookAdd.Name = "tsmiSpeciesBookAdd"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiSpeciesBookAdd.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiSpeciesBookAdd.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiSpeciesBookAdd.Text = "Agregar"
         '
         'tsmiPlant
@@ -131,13 +143,21 @@ Partial Class frmMain
         'tsmiZoneHothouseList
         '
         Me.tsmiZoneHothouseList.Name = "tsmiZoneHothouseList"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiZoneHothouseList.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiZoneHothouseList.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiZoneHothouseList.Text = "Listar"
         '
         'tsmiZoneHothouseAdd
         '
         Me.tsmiZoneHothouseAdd.Name = "tsmiZoneHothouseAdd"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiZoneHothouseAdd.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiZoneHothouseAdd.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiZoneHothouseAdd.Text = "Agregar"
         '
         'tsmiZoneOutdoors
@@ -150,13 +170,21 @@ Partial Class frmMain
         'tsmiZoneOutdoorsList
         '
         Me.tsmiZoneOutdoorsList.Name = "tsmiZoneOutdoorsList"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiZoneOutdoorsList.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiZoneOutdoorsList.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiZoneOutdoorsList.Text = "Listar"
         '
         'tsmiZoneOutdoorsAdd
         '
         Me.tsmiZoneOutdoorsAdd.Name = "tsmiZoneOutdoorsAdd"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiZoneOutdoorsAdd.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiZoneOutdoorsAdd.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiZoneOutdoorsAdd.Text = "Agregar"
         '
         'tsmiZoneShadow
@@ -169,13 +197,21 @@ Partial Class frmMain
         'tsmiZoneShadowList
         '
         Me.tsmiZoneShadowList.Name = "tsmiZoneShadowList"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiZoneShadowList.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiZoneShadowList.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiZoneShadowList.Text = "Listar"
         '
         'tsmiZoneShadowAdd
         '
         Me.tsmiZoneShadowAdd.Name = "tsmiZoneShadowAdd"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiZoneShadowAdd.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiZoneShadowAdd.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiZoneShadowAdd.Text = "Agregar"
         '
         'tsmiStock
@@ -189,44 +225,72 @@ Partial Class frmMain
         '
         Me.tsmiStockTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiStockToolsList, Me.tsmiStockToolsAdd})
         Me.tsmiStockTools.Name = "tsmiStockTools"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiStockTools.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiStockTools.Size = New System.Drawing.Size(145, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiStockTools.Text = "Herramientas"
         '
         'tsmiStockToolsList
         '
         Me.tsmiStockToolsList.Name = "tsmiStockToolsList"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiStockToolsList.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiStockToolsList.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiStockToolsList.Text = "Listar"
         '
         'tsmiStockToolsAdd
         '
         Me.tsmiStockToolsAdd.Name = "tsmiStockToolsAdd"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiStockToolsAdd.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiStockToolsAdd.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiStockToolsAdd.Text = "Agregar"
         '
         'tsmiStockMaterials
         '
         Me.tsmiStockMaterials.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiStockMaterialsList, Me.tsmiStockMaterialsAdd})
         Me.tsmiStockMaterials.Name = "tsmiStockMaterials"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiStockMaterials.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiStockMaterials.Size = New System.Drawing.Size(145, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiStockMaterials.Text = "Insumos"
         '
         'tsmiStockMaterialsList
         '
         Me.tsmiStockMaterialsList.Name = "tsmiStockMaterialsList"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiStockMaterialsList.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiStockMaterialsList.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiStockMaterialsList.Text = "Listar"
         '
         'tsmiStockMaterialsAdd
         '
         Me.tsmiStockMaterialsAdd.Name = "tsmiStockMaterialsAdd"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiStockMaterialsAdd.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiStockMaterialsAdd.Size = New System.Drawing.Size(116, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiStockMaterialsAdd.Text = "Agregar"
         '
         'tsmiStockSeeds
         '
         Me.tsmiStockSeeds.Name = "tsmiStockSeeds"
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiStockSeeds.Size = New System.Drawing.Size(152, 22)
+=======
+        Me.tsmiStockSeeds.Size = New System.Drawing.Size(145, 22)
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiStockSeeds.Text = "Semillas"
         '
         'AyudaToolStripMenuItem
@@ -253,7 +317,11 @@ Partial Class frmMain
         '
         'tsmiPersons
         '
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
         Me.tsmiPersons.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiRegister})
+=======
+        Me.tsmiPersons.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiRegister, Me.ListarToolStripMenuItem})
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         Me.tsmiPersons.Name = "tsmiPersons"
         Me.tsmiPersons.Size = New System.Drawing.Size(66, 20)
         Me.tsmiPersons.Text = "Personas"
@@ -264,6 +332,15 @@ Partial Class frmMain
         Me.tsmiRegister.Size = New System.Drawing.Size(152, 22)
         Me.tsmiRegister.Text = "Regisrar"
         '
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
+=======
+        'ListarToolStripMenuItem
+        '
+        Me.ListarToolStripMenuItem.Name = "ListarToolStripMenuItem"
+        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListarToolStripMenuItem.Text = "Listar"
+        '
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -316,4 +393,8 @@ Partial Class frmMain
     Friend WithEvents msMain As MenuStrip
     Friend WithEvents tsmiPersons As ToolStripMenuItem
     Friend WithEvents tsmiRegister As ToolStripMenuItem
+<<<<<<< HEAD:GestionVivero/GestionVivero/frmMain.Designer.vb
+=======
+    Friend WithEvents ListarToolStripMenuItem As ToolStripMenuItem
+>>>>>>> gui-rafael:GestionVivero/GestionVivero/Main/frmMain.Designer.vb
 End Class

@@ -14,7 +14,7 @@ Option Explicit On
 
 Namespace My
     
-    'NOTA: Este archivo se genera automáticamente; no lo modifique directamente.  Para hacer cambios,
+    'NOTA: este archivo se genera de forma automática; no lo modifique directamente. Para realizar cambios,
     ' o si detecta errores de compilación en este archivo, vaya al Diseñador de proyectos
     ' (vaya a Propiedades del proyecto o haga doble clic en el nodo My Project en el
     ' Explorador de soluciones) y realice cambios en la pestaña Aplicación.
@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.GestionVivero.frmLogin
+            Me.MainForm = Global.GestionVivero.listPerson
         End Sub
     End Class
 End Namespace

@@ -12,14 +12,14 @@ Public Class frmLogin
             MessageBox.Show("Usuario o contraseña incorrectos")
         End If
 
-        'Dim mainForm = New frmMain
-        'Me.Hide()
-        'mainForm.ShowDialog()
-        'If frmLogin.CloseProgram Then
-        ' Me.Close()
-        'Else
-        ' Me.Show()
-        '  End If
+        Dim mainForm = New frmMain
+        Me.Hide()
+        mainForm.ShowDialog()
+        If mainForm.CloseProgram Then
+            Me.Close()
+        Else
+            Me.Show()
+        End If
     End Sub
 
     Private Sub BtnExit_Click(sender As Object, e As EventArgs)

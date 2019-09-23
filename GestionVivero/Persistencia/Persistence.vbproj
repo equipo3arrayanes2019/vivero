@@ -64,8 +64,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Persistencia.vb" />
-    <Compile Include="PUser.vb" />
+    <Compile Include="clsPersistencia.vb" />
+    <Compile Include="clsPEmploye.vb" />
+    <Compile Include="clsPPerson.vb" />
+    <Compile Include="clsPUser.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
