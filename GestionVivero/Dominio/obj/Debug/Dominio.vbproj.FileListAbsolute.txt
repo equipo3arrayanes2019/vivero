@@ -1,0 +1,60 @@
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\Dominio.dll
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\Dominio.xml
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\Entidades.dll
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\Persistencia.dll
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\MySql.Data.dll
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\Google.Protobuf.dll
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\Renci.SshNet.dll
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\Entidades.pdb
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\Entidades.xml
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\Persistencia.pdb
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\Persistencia.xml
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\bin\Debug\MySql.Data.xml
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\obj\Debug\Dominio.vbprojResolveAssemblyReference.cache
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\obj\Debug\Dominio.Resources.resources
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\obj\Debug\Dominio.vbproj.GenerateResource.Cache
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\obj\Debug\Dominio.dll
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\obj\Debug\Dominio.xml
+C:\Users\Salon 7\Documents\GestionVivero\Dominio\obj\Debug\Dominio.pdb
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Dominio.dll
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Dominio.pdb
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Dominio.xml
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Entidades.dll
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Persistencia.dll
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\MySql.Data.dll
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Google.Protobuf.dll
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Renci.SshNet.dll
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Entidades.pdb
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Entidades.xml
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Persistencia.pdb
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Persistencia.xml
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\MySql.Data.xml
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.vbprojResolveAssemblyReference.cache
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.Resources.resources
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.vbproj.GenerateResource.Cache
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.dll
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.xml
+C:\Users\David\Documents\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.pdb
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Dominio.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Dominio.pdb
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Dominio.xml
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Entidades.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Persistencia.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\MySql.Data.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Google.Protobuf.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Renci.SshNet.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Entidades.pdb
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Entidades.xml
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Persistencia.pdb
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\Persistencia.xml
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\bin\Debug\MySql.Data.xml
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.vbprojResolveAssemblyReference.cache
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.Resources.resources
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.vbproj.GenerateResource.Cache
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.xml
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Dominio\obj\Debug\Dominio.pdb
