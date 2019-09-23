@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
-Public Class clsPersistencia
+Public Class Persistencia
     Private con As MySqlConnection
     Private Function conectar() As MySqlConnection
         If Not con Is Nothing Then con.Close()
@@ -46,5 +46,5 @@ Public Class clsPersistencia
         desconectar()
     End Function
 
-  
+
 End Class

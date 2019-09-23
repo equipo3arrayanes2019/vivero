@@ -1,4 +1,4 @@
-﻿Public Class user
+﻿Public Class EUser
     Private id As String
     Private clave As String
     Sub New()

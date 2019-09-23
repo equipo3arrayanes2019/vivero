@@ -3,8 +3,8 @@ Imports Dominio
 
 Public Class frmLogin
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim user As user = New user(txtUser.Text, txtPass.Text)
-        Dim clsDUsuario As New clsDUser
+        Dim user As EUser = New EUser(txtUser.Text, txtPass.Text)
+        Dim clsDUsuario As New DUser
         Dim log As Boolean = clsDUsuario.loginUsuario(user)
         If (log = True) Then
             MessageBox.Show("Logueo exitoso")
