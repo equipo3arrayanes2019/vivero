@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "PostSender.h"
 #include "NetworkCommunication.h"
-
+/*
 void PostSender::send(){
   String middle("&");
   String out;
@@ -31,4 +31,4 @@ void PostSender::add(String *in){
   if(location >= MAX_DATA){
     location = -1;
   }
-}
+}*/

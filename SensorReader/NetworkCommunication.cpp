@@ -25,5 +25,5 @@ bool NetworkCommunication::GetWiFiStatus(){
 
 
 void NetworkCommunication::send(IPAddress* ip, String* message){
-  WiFiClient c
+  //WiFiClient c
 }
