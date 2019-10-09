@@ -1,22 +1,25 @@
-#pragma once
-
 #include <Arduino.h>
 #include <DHT.h>
+#include "HTGeneric.h"
 
-class DHTReader {
+
+#pragma once
+
+class DHTReader : public HTGeneric {
   public:
     
-    DHTReader(word DHTPIN, int DHTTYPE):
-      dht(DHTPIN, DHTTYPE)
+    DHTReader(word DHTPIN, int DHTTYPE, String tId, String hId):
+      dht(DHTPIN, DHTTYPE), HTGeneric(tId, hId)
     {
       dht.begin();
+      
     }
     ~DHTReader(){
       
     }
 
-    float temperature();
     float humidity();
+    float temperature();
     
     private:
       DHT dht;

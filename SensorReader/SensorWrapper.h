@@ -5,14 +5,13 @@
 #include "HumiditySoilReader.h"
 #include "TemperatureSoilReader.h"
 #include "HTTPSender.h"
+#include "Zone.h"
 
 
 class SensorWrapper {
   public:
-    SensorWrapper(const int SensorCount, String** humidityIds, String** temperatureIds, DHTReader** dhts, word* waterPins, word pumpPin,
-                  String** humiditySoilIds, String** temperatureSoilIds, HumiditySoilReader** hr, TemperatureSoilReader** tr, char* server, String folder):
-      SensorCount(SensorCount), humidityIds(humidityIds), temperatureIds(temperatureIds), dhts(dhts), waterPins(waterPins),
-                  humiditySoilIds(humiditySoilIds), temperatureSoilIds(temperatureSoilIds), hr(hr), tr(tr), server(server), folder(folder)
+    SensorWrapper(const int zoneCount, Zone** zones, word pumpPin, char* server, String folder):
+      zoneCount(zoneCount), zones(zones), pumpPin(pumpPin), server(server), folder(folder)
     {
       
     }
@@ -20,15 +19,9 @@ class SensorWrapper {
     void summitData();
     
   private:
-    int SensorCount;
-    String** humidityIds;
-    String** temperatureIds;
-    DHTReader** dhts;
-    word* waterPins;
-    String** humiditySoilIds;
-    String** temperatureSoilIds;
-    HumiditySoilReader** hr;
-    TemperatureSoilReader** tr;
+    int zoneCount;
+    Zone** zones;
+    word pumpPin;
     char* server;
     String folder;
 };

@@ -14,17 +14,17 @@
  */
 
 void SensorWrapper::summitData(){
-  for(int i = 0; i < SensorCount; i++){
-    Serial.println("-------------------------------Sending sensor data--------------------------------");
-    String Data = String("http://") + String(server) + String("/") + folder + String("/") + String("summit.php?sensor=") + *humidityIds[i] + String("&value=") + String(dhts[i]->humidity());
+  Serial.println("-------------------------------Sending sensor data--------------------------------");
+  for(int i = 0; i < zoneCount; i++){
+    String Data = String("http://") + String(server) + String("/") + folder + String("/") + String("summit.php?sensor=") + zones[i]->air->hId + String("&value=") + String(zones[i]->air->humidity());
     HTTPSender::send(Data, server);
-    Data = String("http://") + String(server) + String("/") + folder + String("/") + String("summit.php?sensor=") + *temperatureIds[i] + String("&value=") + String(dhts[i]->temperature());
+    Data = String("http://") + String(server) + String("/") + folder + String("/") + String("summit.php?sensor=") + zones[i]->air->tId + String("&value=") + String(zones[i]->air->temperature());
     HTTPSender::send(Data, server);
-    Data = String("http://") + String(server) + String("/") + folder + String("/") + String("summit.php?sensor=") + *humiditySoilIds[i] + String("&value=") + String(hr[i]->read());
+    Data = String("http://") + String(server) + String("/") + folder + String("/") + String("summit.php?sensor=") + zones[i]->soil->hId + String("&value=") + String(zones[i]->soil->humidity());
     HTTPSender::send(Data, server);
-    Data = String("http://") + String(server) + String("/") + folder + String("/") + String("summit.php?sensor=") + *temperatureSoilIds[i] + String("&value=") + String(tr[i]->read());
+    Data = String("http://") + String(server) + String("/") + folder + String("/") + String("summit.php?sensor=") + zones[i]->soil->tId + String("&value=") + String(zones[i]->soil->temperature());
     HTTPSender::send(Data, server);
-    Serial.println("-------------------------------         end       --------------------------------");
-    Serial.println("");
   }
+  Serial.println("-------------------------------         end       --------------------------------");
+  Serial.println("");
 }

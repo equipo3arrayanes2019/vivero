@@ -1,13 +1,16 @@
-#include "LedManager.h"
-#include "SimpleLedRoutine.h"
-#include "NetworkCommunication.h"
+#include "SerialAsker.h"
 #include "Logger.h"
 
+#include "SimpleLedRoutine.h"
+#include "LedManager.h"
+
+#include <WiFi.h>
+
+#include "SensorWrapper.h"
+#include "CHT.h"
 #include "DHTReader.h"
 #include "HumiditySoilReader.h"
 #include "TemperatureSoilReader.h"
-#include "SensorWrapper.h"
-#include "SerialAsker.h"
 
 static const byte MAX_CONNECTION_ATTEMPTS = 50;
 static const word CONNECTION_ATTEMPT_ESTIMATED_INTERVAL = 700;
@@ -20,13 +23,12 @@ byte PIN_LED = 2;
 unsigned long MESSAGE_TIMEOUT = 5000;
 
 SimpleLedRoutine* wifiOn;
-HTTPSender* sender;
 
 //dhts ------------
 #define DHT01PIN              0
   #define DHT01TYPE           DHT11
 #define DHT02PIN              15
-#define DHT02TYPE             DHT11      
+  #define DHT02TYPE           DHT11      
 
 #define HUMIDITYSOIL01PIN     6
 #define HUMIDITYSOIL02PIN     7
@@ -34,21 +36,15 @@ HTTPSender* sender;
 #define TEMPERATURESOIL01PIN  7
 #define TEMPERATURESOIL02PIN  8
 
-word WATER_PINS[] = { 9, 10 };
+#define ZONE01_WATER          20
+#define ZONE02_WATER          2
+
 word PUMP_PIN = 11;
 
 const int SENSOR_COUNT = 2;
 
 SensorWrapper* sr;
-DHTReader* dhts[SENSOR_COUNT];
-String* DHTTemperatureIds[SENSOR_COUNT];
-String* DHTHumidityIds[SENSOR_COUNT];
-
-HumiditySoilReader* hsr[SENSOR_COUNT];
-String* hsrIds[SENSOR_COUNT];
-
-TemperatureSoilReader* tsr[SENSOR_COUNT];
-String* tsrIds[SENSOR_COUNT];
+Zone*      zones[SENSOR_COUNT];
 
 void setup() {
       Serial.begin(115200);
@@ -96,29 +92,16 @@ void setup() {
 
    //sensors setup
   int i = 0;
-  
-  dhts[i] = new DHTReader(DHT01PIN, DHT01TYPE);
-    DHTHumidityIds[i] = new String("ARD01 HUMIDITYAIR01");
-    DHTTemperatureIds[i] = new String("ARD01 TEMPERATUREAIR01");
-    
-  tsr[i] = new TemperatureSoilReader(TEMPERATURESOIL01PIN);
-    tsrIds[i] =  new String("ARD01 TEMPERATURESOIL01");
-  
-  hsr[i] = new HumiditySoilReader(HUMIDITYSOIL01PIN);
-    hsrIds[i] = new String("ARD01 HUMIDITYSOIL01");
+  CHT* cht = new CHT(new TemperatureSoilReader(TEMPERATURESOIL01PIN), String("ARD01 TEMPERATURESOIL01"), new HumiditySoilReader(HUMIDITYSOIL01PIN), String("ARD01 HUMIDITYSOIL01"));
+  DHTReader* dht = new DHTReader(DHT01PIN, DHT01TYPE, String("ARD01 TEMPERATUREAIR01"), String("ARD01 HUMIDITYAIR01"));
+  zones[i] = new Zone(cht, dht, ZONE01_WATER);
 
   i++;
-  dhts[i] = new DHTReader(DHT02PIN, DHT02TYPE);
-    DHTHumidityIds[i] = new String("ARD01 HUMIDITYAIR02");
-    DHTTemperatureIds[i] = new String("ARD01 TEMPERATUREAIR02");
-
-  tsr[i] = new TemperatureSoilReader(TEMPERATURESOIL02PIN);
-    tsrIds[i] = new String("ARD01 TEMPERATURESOIL02");
-
-  hsr[i] = new HumiditySoilReader(HUMIDITYSOIL02PIN);
-    hsrIds[i] = new String("ARD01 HUMIDITYSOIL02");
+  cht = new CHT(new TemperatureSoilReader(TEMPERATURESOIL01PIN), String("ARD01 TEMPERATURESOIL02"), new HumiditySoilReader(HUMIDITYSOIL01PIN), String("ARD01 HUMIDITYSOIL02"));
+  dht = new DHTReader(DHT02PIN, DHT02TYPE, String("ARD01 TEMPERATUREAIR02"), String("ARD01 HUMIDITYAIR02"));
+  zones[i] = new Zone(cht, dht, ZONE02_WATER);
       
-  sr =  new SensorWrapper(SENSOR_COUNT, DHTHumidityIds, DHTTemperatureIds, dhts, WATER_PINS, PUMP_PIN, hsrIds, tsrIds, hsr, tsr, "192.168.30.230", "sensores");
+  sr =  new SensorWrapper(SENSOR_COUNT, zones, PUMP_PIN, "192.168.30.230", "sensores");
 
   //wifi setup
   wifiOn = new SimpleLedRoutine(new LedManager(&PIN_LED), (word)50, (word)50, (word)40);
