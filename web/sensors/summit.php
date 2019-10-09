@@ -2,7 +2,7 @@
 
 //summit.php?sensor=ARD02 HUMIDITYAIR01&value=25.3
 
-include "MySQL.php";
+include_once "MySQL.php";
 
 if(isset($_GET["sensor"])){
     $conn = new MySQL();

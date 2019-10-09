@@ -4,7 +4,7 @@
 
 class HumiditySoilReader{
   public:
-    HumiditySoilReader(){
+    HumiditySoilReader(word pin){
       
     }
   float read();

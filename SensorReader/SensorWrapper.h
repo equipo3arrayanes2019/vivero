@@ -2,24 +2,25 @@
 
 #include <Arduino.h>
 #include "DHTReader.h"
-#include "HumiditySoilReader"
-#include "TemperatureSoilReader"
+#include "HumiditySoilReader.h"
+#include "TemperatureSoilReader.h"
+#include "HTTPSender.h"
 
 
 class SensorWrapper {
   public:
-    SensorWrapper(word SensorCount, String** humidityIds, String** temperatureIds, dhts**, word* waterPins, word pumpPin,
-                  String** humiditySoilIds, String** temperatureSoilIds, HumiditySoilReader** hr, TemperatureSoilReader** tr):
-      DHTCount(DHTCount), himidityIds(humidityIds), temperatureIds(temperatureIds), dhts(dhts), waterPins(waterPins),
-                  humiditySoilIds(humiditySoilIds), temperatureSoilIds(temperatureSoilIds), hr(hr), tr(tr)
+    SensorWrapper(const int SensorCount, String** humidityIds, String** temperatureIds, DHTReader** dhts, word* waterPins, word pumpPin,
+                  String** humiditySoilIds, String** temperatureSoilIds, HumiditySoilReader** hr, TemperatureSoilReader** tr, char* server, String folder):
+      SensorCount(SensorCount), humidityIds(humidityIds), temperatureIds(temperatureIds), dhts(dhts), waterPins(waterPins),
+                  humiditySoilIds(humiditySoilIds), temperatureSoilIds(temperatureSoilIds), hr(hr), tr(tr), server(server), folder(folder)
     {
       
     }
     
-    void SummitData();
+    void summitData();
     
   private:
-    word SensorCount;
+    int SensorCount;
     String** humidityIds;
     String** temperatureIds;
     DHTReader** dhts;
@@ -28,4 +29,6 @@ class SensorWrapper {
     String** temperatureSoilIds;
     HumiditySoilReader** hr;
     TemperatureSoilReader** tr;
+    char* server;
+    String folder;
 };

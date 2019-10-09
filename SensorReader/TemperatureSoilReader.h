@@ -4,9 +4,9 @@
 
 class TemperatureSoilReader{
   public:
-    TemperatureSoilReader(){
+    TemperatureSoilReader(word pin){
       
     }
 
   float read();
-}
+};

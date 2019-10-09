@@ -17,25 +17,26 @@ INSERT INTO `Sensor`(`id`, `tipo`, `Zona_nombre`) VALUES
 					("ARD01 HUMIDITYAIR01", "HUMIDITYAIR", "Invernáculo 01"),
                     ("ARD01 HUMIDITYSOIL01", "HUMIDITYSOIL", "Invernáculo 01"),
                     ("ARD01 TEMPERATUREAIR01", "TEMPERATUREAIR", "Invernáculo 01"),
-                    ("ARD01 TEMPERATURE01", "TEMPERATURESOIL", "Invernáculo 01"),
+                    ("ARD01 TEMPERATURESOIL01", "TEMPERATURESOIL", "Invernáculo 01"),
                     -- ----------- zone 2, 4 sensors
-                    ("ARD02 HUMIDITYAIR01", "HUMIDITYAIR", "Invernáculo 02"),
-                    ("ARD02 HUMIDITYSOIL01", "HUMIDITYSOIL", "Invernáculo 02"),
-                    ("ARD02 TEMPERATUREAIR01", "TEMPERATUREAIR", "Invernáculo 02"),
-                    ("ARD02 TEMPERATURE01", "TEMPERATURESOIL", "Invernáculo 02"),
+                    ("ARD01 HUMIDITYAIR02", "HUMIDITYAIR", "Invernáculo 02"),
+                    ("ARD01 HUMIDITYSOIL02", "HUMIDITYSOIL", "Invernáculo 02"),
+                    ("ARD01 TEMPERATUREAIR02", "TEMPERATUREAIR", "Invernáculo 02"),
+                    ("ARD01 TEMPERATURESOIL02", "TEMPERATURESOIL", "Invernáculo 02"),
                     -- ----------- zone 3, 4 sensors
-                    ("ARD03 HUMIDITYAIR01", "HUMIDITYAIR", "Sombráculo 02"),
-                    ("ARD03 HUMIDITYSOIL01", "HUMIDITYSOIL", "Sombráculo 02"),
-                    ("ARD03 TEMPERATUREAIR01", "TEMPERATUREAIR", "Sombráculo 02"),
-                    ("ARD03 TEMPERATURE01", "TEMPERATURESOIL", "Sombráculo 02"),
+                    ("ARD03 HUMIDITYAIR03", "HUMIDITYAIR", "Sombráculo 02"),
+                    ("ARD03 HUMIDITYSOIL03", "HUMIDITYSOIL", "Sombráculo 02"),
+                    ("ARD03 TEMPERATUREAIR03", "TEMPERATUREAIR", "Sombráculo 02"),
+                    ("ARD03 TEMPERATURESOIL03", "TEMPERATURESOIL", "Sombráculo 02"),
                     -- ----------- zone 4, 4 sensors
-                    ("ARD04 HUMIDITYAIR01", "HUMIDITYAIR", "Aire libre 07"),
-                    ("ARD04 HUMIDITYSOIL01", "HUMIDITYSOIL", "Aire libre 07"),
-                    ("ARD04 TEMPERATUREAIR01", "TEMPERATUREAIR", "Aire libre 07"),
-                    ("ARD04 TEMPERATURE01", "TEMPERATURESOIL", "Aire libre 07");
+                    ("ARD04 HUMIDITYAIR04", "HUMIDITYAIR", "Aire libre 07"),
+                    ("ARD04 HUMIDITYSOIL04", "HUMIDITYSOIL", "Aire libre 07"),
+                    ("ARD04 TEMPERATUREAIR04", "TEMPERATUREAIR", "Aire libre 07"),
+                    ("ARD04 TEMPERATURESOIL04", "TEMPERATURESOIL", "Aire libre 07");
 
 --  MEASUREMENT DATA -----------------------------------------------------------------
-DELETE FROM `Medicion` WHERE TRUE;
+
+DELETE FROM `Medicion` WHERE TRUE;/*
 INSERT INTO `Medicion`(`fecha`, `valor`, `Zona_Nombre`, `Sensor_id`) VALUES
 					-- Greenhouse 01 HIMIDITY AIR
 					("2019-10-09 10:20-00", "40", "Invernáculo 01", "ARD01 HUMIDITYAIR01"),

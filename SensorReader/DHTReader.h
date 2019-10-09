@@ -5,6 +5,7 @@
 
 class DHTReader {
   public:
+    
     DHTReader(word DHTPIN, int DHTTYPE):
       dht(DHTPIN, DHTTYPE)
     {
