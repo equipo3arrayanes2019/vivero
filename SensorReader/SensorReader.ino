@@ -6,6 +6,8 @@
 
 #include <WiFi.h>
 
+#include <esp_adc_cal.h>
+
 #include "SensorWrapper.h"
 #include "CHT.h"
 #include "DHTReader.h"
@@ -25,16 +27,17 @@ unsigned long MESSAGE_TIMEOUT = 5000;
 SimpleLedRoutine* wifiOn;
 
 //dhts ------------
-#define DHT01PIN              0
+#define DHT01PIN              4 
   #define DHT01TYPE           DHT11
 #define DHT02PIN              15
   #define DHT02TYPE           DHT11      
 
-#define HUMIDITYSOIL01PIN     6
-#define HUMIDITYSOIL02PIN     7
+#define HUMIDITYSOIL01PIN     35
 
-#define TEMPERATURESOIL01PIN  7
-#define TEMPERATURESOIL02PIN  8
+#define HUMIDITYSOIL02PIN     34
+
+#define TEMPERATURESOIL01PIN  18
+#define TEMPERATURESOIL02PIN  19
 
 #define ZONE01_WATER          20
 #define ZONE02_WATER          2
@@ -89,7 +92,6 @@ void setup() {
    * -------------------------------------------------------------------------------------------------------------------------------------------------
    */
 
-
    //sensors setup
   int i = 0;
   CHT* cht = new CHT(new TemperatureSoilReader(TEMPERATURESOIL01PIN), String("ARD01 TEMPERATURESOIL01"), new HumiditySoilReader(HUMIDITYSOIL01PIN), String("ARD01 HUMIDITYSOIL01"));
@@ -97,7 +99,7 @@ void setup() {
   zones[i] = new Zone(cht, dht, ZONE01_WATER);
 
   i++;
-  cht = new CHT(new TemperatureSoilReader(TEMPERATURESOIL01PIN), String("ARD01 TEMPERATURESOIL02"), new HumiditySoilReader(HUMIDITYSOIL01PIN), String("ARD01 HUMIDITYSOIL02"));
+  cht = new CHT(new TemperatureSoilReader(TEMPERATURESOIL01PIN), String("ARD01 TEMPERATURESOIL02"), new HumiditySoilReader(HUMIDITYSOIL02PIN), String("ARD01 HUMIDITYSOIL02"));
   dht = new DHTReader(DHT02PIN, DHT02TYPE, String("ARD01 TEMPERATUREAIR02"), String("ARD01 HUMIDITYAIR02"));
   zones[i] = new Zone(cht, dht, ZONE02_WATER);
       
@@ -110,5 +112,5 @@ void setup() {
 
 void loop() {
   sr->summitData();
-  delay(10000);
+  delay(9000);
 }

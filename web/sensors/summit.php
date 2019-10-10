@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 //summit.php?sensor=ARD02 HUMIDITYAIR01&value=25.3
 
 include_once "MySQL.php";
