@@ -42,5 +42,5 @@ if(isset($_GET["start"]) && isset($_GET["sensor"])){
     exit(0);    
 }
 if(isset($_GET["HOWMUCH"])){
-    echo "180";
+    echo "HOWMUCH=180";
 }

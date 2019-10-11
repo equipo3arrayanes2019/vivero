@@ -14,6 +14,6 @@ class HTTPSender{
       
     }
 
-    static void send(String url, char* host);
+    static String send(String url, char* host);
   
 };

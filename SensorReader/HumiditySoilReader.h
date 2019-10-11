@@ -22,7 +22,6 @@ class HumiditySoilReader{
     
   private:
     int min_, max_;
-    int LOWER_LIMIT;
     int USABLE;
     word pin;
 };

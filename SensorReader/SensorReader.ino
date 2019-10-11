@@ -115,5 +115,7 @@ void setup() {
 
 void loop() {
   sr->summitData();
+  sr->handleTimers();
+  sr->askIfPump();
   delay(9000);
 }

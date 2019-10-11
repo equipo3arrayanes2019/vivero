@@ -60,6 +60,7 @@ INSERT INTO `Medicion`(`fecha`, `valor`, `Zona_Nombre`, `Sensor_id`) VALUES
                     ("2019-10-09 11:30-00", "25", "Invernáculo 01", "ARD01 HUMIDITYSOIL01"),
                     ("2019-10-09 11:40-00", "23", "Invernáculo 01", "ARD01 HUMIDITYSOIL01"),
                     ("2019-10-09 11:50-00", "15", "Invernáculo 01", "ARD01 HUMIDITYSOIL01");
+*/
 -- some species
 DELETE FROM `Especie`;
 INSERT INTO `Especie`(`nombre`, `tipo`, `familia`, `tipoZona`, `tiempoCultivo`, `tipoLuna`, `humedad`) VALUES
@@ -68,7 +69,9 @@ INSERT INTO `Especie`(`nombre`, `tipo`, `familia`, `tipoZona`, `tiempoCultivo`, 
 -- some plants
 DELETE FROM `Planta`;
 INSERT INTO `Planta`(`precio`, `Zona_nombre`, `Especie_nombre`) VALUES
-					(220.5, "Invernáculo 01", "(Cilantro) Coriandrum Sativum");
+					(220.5, "Sombráculo 02", "(Cilantro) Coriandrum Sativum"),
+                    (220.5, "Invernáculo 02", "(Cilantro) Coriandrum Sativum")
+                    ;
 
 -- some seeds
 DELETE FROM `Semilla`;
