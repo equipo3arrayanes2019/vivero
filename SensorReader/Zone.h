@@ -8,7 +8,7 @@ class Zone{
     Zone(HTGeneric* soil, HTGeneric* air, word waterPin):
       soil(soil), air(air), waterPin(waterPin)
     {
-      
+      pinMode(waterPin, OUTPUT);
     }
 
     void waterOn();

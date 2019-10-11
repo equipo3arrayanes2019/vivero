@@ -27,7 +27,7 @@ unsigned long MESSAGE_TIMEOUT = 5000;
 SimpleLedRoutine* wifiOn;
 
 //dhts ------------
-#define DHT01PIN              4 
+#define DHT01PIN              4
   #define DHT01TYPE           DHT11
 #define DHT02PIN              15
   #define DHT02TYPE           DHT11      

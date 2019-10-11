@@ -17,6 +17,7 @@ class SensorWrapper {
     }
     
     void summitData();
+    void askIfPump();
     
   private:
     int zoneCount;

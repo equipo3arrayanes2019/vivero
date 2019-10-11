@@ -22,7 +22,7 @@ String NetworkCommunication::send(char* ip, word port, String message){
       Logger::logwwarning(String("TIMEOUT"));
       break;
     }
-    if(millis() % 1000 < 200){
+    if(millis() % 1000 < 0){
       Serial.print(".");
     }
   }
