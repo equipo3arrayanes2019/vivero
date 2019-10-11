@@ -1,5 +1,5 @@
 #include <Arduino.h>
-
+#include "Logger.h"
 
 #pragma once
 
@@ -11,15 +11,17 @@ class HumiditySoilReader{
   public:
     
     HumiditySoilReader(word pin):
-      min(2340), max(2740), USABLE(400), pin(pin)
+      min_(2340), max_(2740), USABLE(400), pin(pin)
     {
       pinMode(pin, INPUT);
+      Logger::logsinfo(String("Soil moisture sensor on pin: ") + String(pin));
     }
   
     float read();
     void adjust(int);
+    
   private:
-    int min, max;
+    int min_, max_;
     int LOWER_LIMIT;
     int USABLE;
     word pin;

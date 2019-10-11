@@ -3,9 +3,9 @@
 
 
 void Zone::waterOn(){
-  digitalWrite(waterPin, 1);
+  digitalWrite(waterPin, HIGH);
 }
 
 void Zone::waterOff(){
-  digitalWrite(waterPin, 0);
+  digitalWrite(waterPin, LOW);
 }

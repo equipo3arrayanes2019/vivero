@@ -1,7 +1,7 @@
 #pragma once
 #include <Arduino.h>
 #include "HTGeneric.h"
-
+#include "Logger.h"
 
 class Zone{
    public:
@@ -9,6 +9,8 @@ class Zone{
       soil(soil), air(air), waterPin(waterPin)
     {
       pinMode(waterPin, OUTPUT);
+      waterOff();
+      Logger::logginfo(String("Zone Loaded; water pin: ") + String(waterPin));
     }
 
     void waterOn();

@@ -1,6 +1,7 @@
 #include "HTGeneric.h"
 #include "TemperatureSoilReader.h"
 #include "HumiditySoilReader.h"
+#include "Logger.h"
 #include <Arduino.h>
 
 #pragma once
@@ -11,7 +12,7 @@ class CHT : public HTGeneric {
     CHT(TemperatureSoilReader* ts, String tsId, HumiditySoilReader* hs, String hsId):
       ts(ts), hs(hs), HTGeneric(tsId, hsId)
     {
-      
+      Logger::logsinfo(String("CHT: T Id: ") + tsId + String(" H Id: ") + hsId);
     }
 
     TemperatureSoilReader* ts;

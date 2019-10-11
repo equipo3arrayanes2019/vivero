@@ -2,7 +2,7 @@
 
 <head>
 <script>
-setTimeout(function() { location.reload(); }, 13000);
+setTimeout(function() { location.reload(); }, 5000);
 </script>
 <title>
     Sensores del vivero

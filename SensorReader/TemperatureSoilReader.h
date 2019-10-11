@@ -11,6 +11,7 @@ class TemperatureSoilReader{
       pin(pin), onewire(pin), sensor(&onewire)
     {
       sensor.begin();
+      Logger::logsinfo(String("DallasTemperature on pin: ") + String(pin));
     }
 
     float read();

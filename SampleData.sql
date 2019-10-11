@@ -24,15 +24,15 @@ INSERT INTO `Sensor`(`id`, `tipo`, `Zona_nombre`) VALUES
                     ("ARD01 TEMPERATUREAIR02", "TEMPERATUREAIR", "Invernáculo 02"),
                     ("ARD01 TEMPERATURESOIL02", "TEMPERATURESOIL", "Invernáculo 02"),
                     -- ----------- zone 3, 4 sensors
-                    ("ARD03 HUMIDITYAIR03", "HUMIDITYAIR", "Sombráculo 02"),
-                    ("ARD03 HUMIDITYSOIL03", "HUMIDITYSOIL", "Sombráculo 02"),
-                    ("ARD03 TEMPERATUREAIR03", "TEMPERATUREAIR", "Sombráculo 02"),
-                    ("ARD03 TEMPERATURESOIL03", "TEMPERATURESOIL", "Sombráculo 02"),
+                    ("ARD01 HUMIDITYAIR03", "HUMIDITYAIR", "Sombráculo 02"),
+                    ("ARD01 HUMIDITYSOIL03", "HUMIDITYSOIL", "Sombráculo 02"),
+                    ("ARD01 TEMPERATUREAIR03", "TEMPERATUREAIR", "Sombráculo 02"),
+                    ("ARD01 TEMPERATURESOIL03", "TEMPERATURESOIL", "Sombráculo 02"),
                     -- ----------- zone 4, 4 sensors
-                    ("ARD04 HUMIDITYAIR04", "HUMIDITYAIR", "Aire libre 07"),
-                    ("ARD04 HUMIDITYSOIL04", "HUMIDITYSOIL", "Aire libre 07"),
-                    ("ARD04 TEMPERATUREAIR04", "TEMPERATUREAIR", "Aire libre 07"),
-                    ("ARD04 TEMPERATURESOIL04", "TEMPERATURESOIL", "Aire libre 07");
+                    ("ARD02 HUMIDITYAIR04", "HUMIDITYAIR", "Aire libre 07"),
+                    ("ARD02 HUMIDITYSOIL04", "HUMIDITYSOIL", "Aire libre 07"),
+                    ("ARD02 TEMPERATUREAIR04", "TEMPERATUREAIR", "Aire libre 07"),
+                    ("ARD02 TEMPERATURESOIL04", "TEMPERATURESOIL", "Aire libre 07");
 
 --  MEASUREMENT DATA -----------------------------------------------------------------
 
