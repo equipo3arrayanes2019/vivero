@@ -1,7 +1,34 @@
 #include "HTTPSender.h"
 
+void HTTPSender::flush(){
+  if(sendCount > -1){
+    Serial.println("--------------------------------  FLUSHING HTTP CACHE ----------------------------------");
+    retainingFrom = millis();
+    for(sendCount; sendCount >= 0; sendCount--){
+      send(queue[sendCount]);
+      if(millis() - retainingFrom > MAX_RETAIN_ON_FLUSH){
+        Logger::logginfo(String("Maximum time reached"));
+        break;
+      }
+    }
+    sendCount = -1;
+    Serial.println("--------------------------------        END           ----------------------------------");
+  }else{
+    Logger::logginfo(String("No cache to flush"));
+  }
+}
 
-String HTTPSender::send(String url, char* host){
+void HTTPSender::addQueue(String url){
+  if(sendCount < HTTPSENDER_H_BUFFERSIEZE){
+    sendCount++;
+    queue[sendCount] = url;
+  }else{
+    Logger::loggwarning(String("SENDER CACHE OVERFLOW SCRAPPING NEW QUEUES UNTIL FLUSH"));
+  }
+}
+
+String HTTPSender::send(String url) {
+  url = String("http://") + String(host) + String("/") + folder + String("/") + url;
   url.replace(" ", "%20");
   String message = String("GET ") + url + String(" HTTP/1.1\r\nHost: ") + String(host) + String("\r\n") + String("Connection: close\r\n\r\n");
   return NetworkCommunication::send(host, HTTPSender::PORT, message);

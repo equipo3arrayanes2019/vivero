@@ -50,9 +50,10 @@ const int SENSOR_COUNT = 3;
 
 SensorWrapper* sr;
 Zone*      zones[SENSOR_COUNT];
+HTTPSender* http;
 
 void setup() {
-      Serial.begin(115200);
+      Serial.begin(230400);
   /*
    * -------------------------------------------------------------------------------------------------------------------------------------------------
    */
@@ -93,29 +94,35 @@ void setup() {
   /*
    * -------------------------------------------------------------------------------------------------------------------------------------------------
    */
-
+  http = new HTTPSender(SERVER, FOLDER);
    //sensors setup
   int i = 0;
   CHT* cht = new CHT(new TemperatureSoilReader(TEMPERATURESOIL01PIN), String("ARD01 TEMPERATURESOIL01"), new HumiditySoilReader(HUMIDITYSOIL01PIN), String("ARD01 HUMIDITYSOIL01"));
   DHTReader* dht = new DHTReader(DHT01PIN, DHT01TYPE, String("ARD01 TEMPERATUREAIR01"), String("ARD01 HUMIDITYAIR01"));
-  zones[i] = new Zone(cht, dht, ZONE01_WATER);
+  zones[i] = new Zone(cht, dht, ZONE01_WATER, http);
 
   i++;
   cht = new CHT(new TemperatureSoilReader(TEMPERATURESOIL02PIN), String("ARD01 TEMPERATURESOIL02"), new HumiditySoilReader(HUMIDITYSOIL02PIN), String("ARD01 HUMIDITYSOIL02"));
   dht = new DHTReader(DHT02PIN, DHT02TYPE, String("ARD01 TEMPERATUREAIR02"), String("ARD01 HUMIDITYAIR02"));
-  zones[i] = new Zone(cht, dht, ZONE02_WATER);
+  zones[i] = new Zone(cht, dht, ZONE02_WATER, http);
 
   i++;
   cht = new CHT(new TemperatureSoilReader(TEMPERATURESOIL03PIN), String("ARD01 TEMPERATURESOIL03"), new HumiditySoilReader(HUMIDITYSOIL03PIN), String("ARD01 HUMIDITYSOIL03"));
   dht = new DHTReader(DHT02PIN, DHT02TYPE, String("ARD01 TEMPERATUREAIR03"), String("ARD01 HUMIDITYAIR03"));
-  zones[i] = new Zone(cht, dht, ZONE03_WATER);
+  zones[i] = new Zone(cht, dht, ZONE03_WATER, http);
   
-  sr =  new SensorWrapper(SENSOR_COUNT, zones, PUMP_PIN, SERVER, FOLDER);
+  sr =  new SensorWrapper(SENSOR_COUNT, zones, PUMP_PIN, http);
 }
 
+unsigned long lu_takemeasurment;
+const unsigned long t_takemeasurment = 30000;
+
 void loop() {
-  sr->summitData();
+  if(millis() - lu_takemeasurment > t_takemeasurment){
+    lu_takemeasurment = millis();
+    sr->summitData();
+  }
   sr->handleTimers();
   sr->askIfPump();
-  delay(9000);
+  http->flush();
 }

@@ -10,9 +10,11 @@
 
 class SensorWrapper {
   public:
-    SensorWrapper(const int zoneCount, Zone** zones, word pumpPin, char* server, String folder):
-      zoneCount(zoneCount), zones(zones), pumpPin(pumpPin), server(server), folder(folder)
+    SensorWrapper(const int zoneCount, Zone** zones, word pumpPin, HTTPSender* sender):
+      zoneCount(zoneCount), zones(zones), pumpPin(pumpPin), sender(sender)
     {
+      Logger::logginfo(String("Pump on pin: ") + String(pumpPin));
+      pinMode(pumpPin, OUTPUT);
       pumpOff();
     }
     
@@ -22,12 +24,10 @@ class SensorWrapper {
     void pumpOn();
     void pumpOff();
     void handleTimers();
-    String buildString();
     
   private:
     int zoneCount;
     Zone** zones;
     word pumpPin;
-    char* server;
-    String folder;
+    HTTPSender* sender;
 };
