@@ -14,10 +14,15 @@ float HumiditySoilReader::read(){
 }
 
 void HumiditySoilReader::adjust(int reading){
-  if(reading > max_)
+  bool adjust_;
+  if(reading > max_){
     max_ = reading;
-  if(reading < min_)
-    min_ = reading;
+    adjust_ = 1;
+  }
+  if(reading < min_){
+    min_ = reading; 
+    adjust_ = 1;
+  }
   USABLE =max_-min_;
-  Logger::logsinfo(String("Humidity soil sensor calibration happened Lower limit ->") + String(min_) + String("    :::::     usable = ") + String(USABLE));
+  if(adjust_) Logger::logsinfo(String("Humidity soil sensor calibration happened Lower limit ->") + String(min_) + String("    :::::     usable = ") + String(USABLE));
 }

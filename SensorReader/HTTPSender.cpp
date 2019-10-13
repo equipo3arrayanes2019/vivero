@@ -5,10 +5,12 @@ void HTTPSender::flush(){
     Serial.println("--------------------------------  FLUSHING HTTP CACHE ----------------------------------");
     retainingFrom = millis();
     for(sendCount; sendCount >= 0; sendCount--){
+      Logger::logginfo(String("CACHE +++++++++++++++++++++++++++++++     ") + String(sendCount) + String("     ++++++++++++++++++++++++++++++++"));
       send(queue[sendCount]);
       if(millis() - retainingFrom > MAX_RETAIN_ON_FLUSH){
         Logger::logginfo(String("Maximum time reached"));
-        break;
+        Serial.println("--------------------------------        END           ----------------------------------");
+        return;
       }
     }
     sendCount = -1;
@@ -19,10 +21,13 @@ void HTTPSender::flush(){
 }
 
 void HTTPSender::addQueue(String url){
+  sendCount++;
   if(sendCount < HTTPSENDER_H_BUFFERSIEZE){
-    sendCount++;
     queue[sendCount] = url;
+    Logger::logginfo(String("Cached") + String(sendCount) + String(": ")  + queue[sendCount]);
+    //Serial.printf("\n############################# Free: %d Bytes\n\n",ESP.getFreeHeap());
   }else{
+    sendCount--;
     Logger::loggwarning(String("SENDER CACHE OVERFLOW SCRAPPING NEW QUEUES UNTIL FLUSH"));
   }
 }

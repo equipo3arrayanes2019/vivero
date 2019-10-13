@@ -29,7 +29,7 @@ unsigned long MESSAGE_TIMEOUT = 5000;
   #define DHT01TYPE           DHT11
 #define DHT02PIN              15
   #define DHT02TYPE           DHT11
-#define DHT03PIN              21
+#define DHT03PIN              27
   #define DHT03TYPE           DHT11
 
 #define HUMIDITYSOIL01PIN     35
@@ -115,7 +115,7 @@ void setup() {
 }
 
 unsigned long lu_takemeasurment;
-const unsigned long t_takemeasurment = 30000;
+const unsigned long t_takemeasurment = 50000;
 
 void loop() {
   if(millis() - lu_takemeasurment > t_takemeasurment){
@@ -125,4 +125,5 @@ void loop() {
   sr->handleTimers();
   sr->askIfPump();
   http->flush();
+  //Serial.printf("\n############################# Free: %d Bytes\n\n",ESP.getFreeHeap());
 }
