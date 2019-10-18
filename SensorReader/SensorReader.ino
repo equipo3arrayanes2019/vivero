@@ -21,7 +21,14 @@ char SSID[ssid_size] =  "cosopere"; // { '\0' };
 char PASS[pass_size] =  "megustaelpan"; //{ '\0' };
 unsigned long MESSAGE_TIMEOUT = 5000;
 
-#define SERVER "192.168.30.240"
+IPAddress local_IP(192, 168, 50, 40);
+// Set your Gateway IP address
+IPAddress gateway(192, 168, 50, 20);
+
+IPAddress subnet(255, 255, 0, 0);
+IPAddress primaryDNS(192, 168, 50, 1);   //optional
+
+#define SERVER "192.168.50.1"
 #define FOLDER "sensors"
 
 //dhts ------------
@@ -71,6 +78,7 @@ void setup() {
       Logger::logwinfo((String("[PASSWORD]: '") + String(PASS)  + String("'")));
       
       //WiFi.mode(WIFI_STA);
+      WiFi.config(local_IP, gateway, subnet, primaryDNS);
       WiFi.begin(SSID, PASS);
       unsigned long LastConnectionAttempt = 0;
       while(WiFi.status() != WL_CONNECTED && ConnectionAttemptCount < MAX_CONNECTION_ATTEMPTS){
