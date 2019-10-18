@@ -1,114 +1,130 @@
 #include <Arduino.h>
 #include "DisplayDriver.h"
 
-void DisplayDriver::ClearDisplay()
+void DisplayDriver::clearDisplay()
 {
   for(byte b = 0; b < 64; b++)
   {
-    SendChar(' ');
+    sendChar(' ');
   }
-  CursorToHome();
+  cursorToHome();
 }
 
-void DisplayDriver::SendPixel(byte vertical, byte horizontal)
+void DisplayDriver::sendPixel(byte vertical, byte horizontal)
 {
   horizontal += 128;
   vertical += 128;
   if(extendedMode && vertical < 192 && horizontal < 144)
   {
-    SendData(false, horizontal);
-    SendData(false, vertical);
+    sendData(false, horizontal);
+    sendData(false, vertical);
   }
 }
 
-void DisplayDriver::GoToExtendedInstructionSet()
+void DisplayDriver::goToExtendedInstructionSet()
 {
-  SendData(false, extendedInstructionSet8Bit);
+  sendData(false, extendedInstructionSet8Bit);
   extendedMode = true;
 }
 
-void DisplayDriver::GoToReducedInstructionSet()
+void DisplayDriver::goToReducedInstructionSet()
 {
-  SendData(false, reducedInstructionSet8Bit);
+  sendData(false, reducedInstructionSet8Bit);
   extendedMode = false;
 }
 
-void DisplayDriver::CursorToHome()
+void DisplayDriver::cursorToHome()
 {
-  SendData(false, cursorToHomeByte);
+  sendData(false, cursorToHomeByte);
 }
 
-void DisplayDriver::SkipLine()
+void DisplayDriver::skipLine()
 {
   for(byte b = 0; b < 8; b++)
   {
-    ShiftCursorToRight();
+    shiftCursorToRight();
   }
 }
 
-void DisplayDriver::SendString(String s)
+void DisplayDriver::sendString(String s)
 {
   for(int i = 0; i < s.length(); i++)
   {
-    SendChar(s.charAt(i));
+    Serial.println(s);
+    if(s.charAt(i) == '\n') continue;
+    sendChar(s.charAt(i));
   }
 }
 
-void DisplayDriver::SendChar(char c)
+void DisplayDriver::sendChar(char* c){
+  for(int i = 0; i < sizeof(c); i++){
+    sendChar(c[i]);
+    Serial.print(c);
+  }
+  Serial.println("");
+}
+
+void DisplayDriver::lineJump(){
+  while(charQuantity % 16 != 0){
+    sendChar(' ');
+  }
+}
+
+void DisplayDriver::sendChar(char c)
 {
-  SendData(true, c);
+  sendData(true, c);
   charQuantity++;
   if(charQuantity == 16)
   {
-    SkipLine();
+    skipLine();
   }
   if(charQuantity == 32)
   {
-    CursorToHome();
-    SkipLine();
+    cursorToHome();
+    skipLine();
   }
   if(charQuantity == 48)
   {
-    SkipLine();
+    skipLine();
   }
   if(charQuantity == 64)
   {
     charQuantity = 0;
-    CursorToHome();
+    cursorToHome();
   }
 }
 
-void DisplayDriver::ShiftCursorToRight()
+void DisplayDriver::shiftCursorToRight()
 {
-  SendData(false, shiftCursorByte);
+  sendData(false, shiftCursorByte);
 }
 
-void DisplayDriver::Initialize(bool mode)
+void DisplayDriver::init(bool mode)
 {
   for(byte i = 0; i < 8; i++)
   {
     pinMode(dataPins[i], OUTPUT);
   }
   pinMode(EN, OUTPUT);
-  pinMode(RS, OUTPUT);
+  pinMode(RS, OUTPUT); 
   digitalWrite(EN, LOW);
   extendedMode = mode;
   if(mode)
   {
-    GoToExtendedInstructionSet();
-    SendData(false, initializeByte);  
+    goToExtendedInstructionSet(); 
+    sendData(false, initializeByte);  
   }
   else
   {
-    GoToReducedInstructionSet();
-    SendData(false, initializeByte);
-    SendData(false, secondInitializeByte);
-    CursorToHome();
+    goToReducedInstructionSet();
+    sendData(false, initializeByte);
+    sendData(false, secondInitializeByte);
+    cursorToHome();
   }
   
 }
 
-void DisplayDriver::SendData(bool isData, byte data)
+void DisplayDriver::sendData(bool isData, byte data)
 {
   digitalWrite(RS, isData);
   for(byte i = 0; i < 8; i++)
@@ -117,7 +133,28 @@ void DisplayDriver::SendData(bool isData, byte data)
     digitalWrite(dataPins[i], toSend);
   }
   digitalWrite(EN, HIGH);
+  delayMicroseconds(100);
   digitalWrite(EN, LOW);
   digitalWrite(RS, LOW);
 }
 
+void DisplayDriver::enBlink(){
+  bitSet(initializeByte, 0);
+  sendData(false, initializeByte);
+}
+
+void DisplayDriver::disBlink(){
+  bitClear(initializeByte, 0);
+  sendData(false, initializeByte);
+}
+
+
+void DisplayDriver::disCursor(){
+  bitClear(initializeByte, 1);
+  sendData(false, initializeByte);
+}
+
+void DisplayDriver::enCursor(){
+  bitSet(initializeByte, 1);
+  sendData(false, initializeByte);
+}

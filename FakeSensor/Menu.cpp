@@ -2,13 +2,17 @@
 
 
 void Menu::refresh(){
+  p->clearDisplay();
   for(int i = 0; i < itemCount; i++){
-    if(i == cursor && editing)  Serial.print("*>");
-    if(i == cursor && !editing)  Serial.print("_>");
-    Serial.print(itemNames[i]);
-    Serial.print(" ");
-    Serial.println(items[i]);
-    Serial.println("");
+    if(i == cursor && editing){
+      
+    }else
+    if(i == cursor && !editing)  p->sendChar("_>"){
+      p->sendString(itemNames[i]);
+      p->sendChar(" ");
+      p->sendString(String(items[i]));
+      p->sendChar(" ");
+    }
   }
 }
 

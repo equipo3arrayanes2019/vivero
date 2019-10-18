@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "ButtonMatrix.h"
+#include "DisplayDriver.h"
 
 #pragma once
 
@@ -15,8 +16,8 @@ class Menu{
   #define BUTTON_INTERVAL 200
   
   public:
-    Menu(int itemCount, char** itemNames, ButtonMatrix bt, float step):
-      cursor(0), itemCount(itemCount), itemNames(itemNames), step(step), bt(bt), editing(false)
+    Menu(int itemCount, char** itemNames, ButtonMatrix bt, float step, DisplayDriver* p):
+      cursor(0), itemCount(itemCount), itemNames(itemNames), step(step), bt(bt), editing(false), p(p)
     {
       items = (float*)calloc(itemCount,sizeof(float)); //new float[itemCount];
     }
@@ -32,6 +33,7 @@ class Menu{
     char** itemNames;
     float *items;
     ButtonMatrix bt;
+    DisplayDriver* p;
     bool editing;
     unsigned long last_press;
 };
