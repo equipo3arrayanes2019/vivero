@@ -1,0 +1,554 @@
+#!/bin/bash
+
+#                           LICENSE
+#This is free and unencumbered software released into the public domain.
+#
+#Anyone is free to copy, modify, publish, use, compile, sell, or
+#distribute this software, either in source code form or as a compiled
+#binary, for any purpose, commercial or non-commercial, and by any
+#means.
+#
+#In jurisdictions that recognize copyright laws, the author or authors
+#of this software dedicate any and all copyright interest in the
+#software to the public domain. We make this dedication for the benefit
+#of the public at large and to the detriment of our heirs and
+#successors. We intend this dedication to be an overt act of
+#relinquishment in perpetuity of all present and future rights to this
+#software under copyright law.
+#
+#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+#EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+#MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+#IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+#OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+#ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+#OTHER DEALINGS IN THE SOFTWARE.
+#
+#For more information, please refer to <http://unlicense.org>
+#
+
+VERSION="0.0.1"
+PROGNAME="$(basename $0)"
+MYSELF="$(realpath $0)"
+
+function Dmes {
+    dialog --backtitle "Debug" --title "Message; " --msgbox "$1" 0 0
+}
+
+function CheckRoot {
+    if [ "$(whoami)" != "root" ] && [ -z "$SUDO_COMMAND" ]; then
+        dialog --backtitle "Super vaca se ha escapado" --title "No tengo root" --msgbox "Superpoderes requeridos" 5 30
+        NOROOT=1
+    fi
+}
+
+function ShowShadow {
+    CheckRoot
+    if [ -z "$NOROOT" ]; then
+        r=$(cat /etc/shadow)
+        dialog --msgbox "$r" 1000 1000
+    fi
+}
+
+function ShowPasswd {
+    r=$(cat /etc/passwd)
+    dialog --msgbox "$r" 1000 1000
+}
+
+function ShowGroup {
+    r=$(cat /etc/group)
+    dialog --msgbox "$r" 1000 1000
+}
+
+function SelectUser {
+    readarray -t file < /etc/passwd
+    i=0
+    tags=""
+    for item in ${file[@]}; do
+        user=$(echo "$item" | cut -d':' -f 1)
+        if [ "$(id $user 2>&1 > /dev/null)" != "" ]; then
+            continue
+        fi
+        tags="$tags $i $user"
+        users[$i]="$user"
+        i=$(($i+1))
+    done
+    exec 3>&1
+    result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+    --clear  \
+    --menu "Seleccione un usuario" 0 0 0 \
+            $tags \
+            2>&1 1>&3)
+    return_value=$?
+    exec 3>&-
+    unset SELECTED
+    if [ "$return_value" != "1" ] && [ "$return_value" != "255" ]; then
+        SELECTED=${users[$result]}
+    fi
+    
+}
+
+function SelectGroup {
+    readarray -t file < /etc/group
+    i=0
+    tags=""
+    for item in ${file[@]}; do
+        group=$(echo "$item" | cut -d':' -f 1)
+        if [ "$(getent group $group)" == "" ]; then
+            continue
+        fi
+        tags="$tags $i $group"
+        groups[$i]="$group"
+        i=$(($i+1))
+    done
+    exec 3>&1
+    result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+    --clear  \
+    --menu "Seleccione un grupo" 0 0 0 \
+            $tags \
+            2>&1 1>&3)
+    return_value=$?
+    exec 3>&-
+    unset SELECTED
+    if [ "$return_value" != "1" ] && [ "$return_value" != "255" ]; then
+        SELECTED=${groups[$result]}
+    fi
+}
+
+function UaGRelevantFiles {
+    unset BACK
+    while [ -z "$BACK" ] && [ -z "$EXIT" ]; do
+        unset BACK
+        exec 3>&1
+        result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear  \
+        --menu "Seleccione una opción" 0 0 0 \
+                "1" "Contraseñas: /etc/shadow" \
+                "2" "Información de usuarios: /etc/passwd" \
+                "3" "Grupos de usuarios: /etc/group" \
+                "b" "Atrás" \
+                "0" "Salir" \
+                2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+
+        
+
+        if [ "$return_value" == "1" ] || [ "$result" == "b" ]; then
+            BACK=1
+        elif [ "$return_value" == "255" ] || [ "$result" == "0" ]; then
+            EXIT=1
+        else
+            case $result in
+            
+                1)
+                    ShowShadow
+                ;;
+
+                2)
+                    ShowPasswd
+                ;;
+
+                3)
+                    ShowGroup
+                ;;
+
+            esac
+        fi
+
+    done
+    unset BACK
+    clear
+}
+
+function UaGChangeFileOwner {
+    CheckRoot
+    while [ -z "$BACK" ] && [ -z "$EXIT" ] && [ -z "$NOROOT" ]; do
+        exec 3>&1
+        result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear --cancel-label "Atrás"  \
+        --inputbox "Ingrese la ruta" 7 60 \
+        2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+
+        path=$result
+
+        if [ "$return_value" == "1" ] || [ "$return_value" == "255" ]; then
+            BACK=1
+            continue
+        fi
+
+        if [ ! -e "$path" ]; then
+            dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+                   --title "Error" --msgbox "Ruta: $path\nno existe el fichero/directorio" 0 0
+            unset path
+            continue
+        fi
+
+        SelectUser
+        if [ -z "$SELECTED" ]; then
+            dialog  --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+                    --clear  \
+                    --msgbox "Usuario no seleccionado" 7 45
+            continue
+        fi
+        user=$SELECTED
+        SelectGroup
+        if [ -z "$SELECTED" ]; then
+            dialog  --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+                    --clear  \
+                    --msgbox "Grupo no seleccionado" 7 45
+            continue
+        fi
+        group=$SELECTED
+
+        if [ -d $path ]; then
+            exec 3>&1
+            result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+            --clear --cancel-label "Atrás"  \
+            --yesno "$path es un directorio,\n¿ejecutar recursivamente?" 7 60 \
+            2>&1 1>&3)
+            return_value=$?
+            exec 3>&-
+            if [ "$return_value" == "1" ] || [ "$return_value" == "255" ]; then
+                BACK=1
+                continue
+            fi
+            recursive="-R"
+        fi
+        chown $user:$group $recursive $path
+    done
+    unset BACK
+    clear
+}
+
+function UaGLockUnlockUser {
+    CheckRoot
+    while [ -z "$BACK" ] && [ -z "$EXIT" ] && [ -z "$NOROOT" ]; do
+        unset BACK
+        exec 3>&1
+        result1=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear --cancel-label "Atrás"  \
+        --menu "Seleccione una opción" 0 0 0 \
+                "1" "Bloquear un usuario" \
+                "2" "Desbloquear un usuario" \
+                "b" "Atrás" \
+                "0" "Salir" \
+                2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+
+        if [ "$return_value" == "1" ] || [ "$result1" == "b" ]; then
+            BACK=1
+        elif [ "$return_value" == "255" ] || [ "$result1" == "0" ]; then
+            EXIT=1
+        else
+            SelectUser
+            if [ -z "$SELECTED" ]; then
+                dialog  --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+                        --clear  \
+                        --msgbox "Usuario no seleccionado" 7 45
+                continue
+            fi
+            case $result1 in
+            
+                1)
+                    usermod -L $SELECTED
+                ;;
+
+                2)
+                    usermod -U $SELECTED
+                ;;
+
+            esac
+        fi
+
+    done
+    unset BACK
+    clear
+}
+
+function CreateUser {
+    CheckRoot
+    while [ -z "$BACK" ] && [ -z "$EXIT" ] && [ -z "$NOROOT" ]; do
+        exec 3>&1
+        result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear --cancel-label "Atrás"  \
+        --inputbox "Ingrese el nomblre de usuario" 7 60 \
+        2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+        username=$result
+        
+        if [ "$return_value" == "1" ] || [ "$result1" == "b" ]; then
+            BACK=1
+        elif [ "$return_value" == "255" ] || [ "$result1" == "0" ]; then
+            EXIT=1
+        else
+            useradd -m --shell /bin/bash $username
+        fi
+    done
+    clear
+    unset BACK
+}
+
+function CreateGroup {
+    CheckRoot
+    while [ -z "$BACK" ] && [ -z "$EXIT" ] && [ -z "$NOROOT" ]; do
+        exec 3>&1
+        result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear --cancel-label "Atrás"  \
+        --inputbox "Ingrese el nomblre del grupo" 7 60 \
+        2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+        username=$result
+        
+        if [ "$return_value" == "1" ] || [ "$result1" == "b" ]; then
+            BACK=1
+        elif [ "$return_value" == "255" ] || [ "$result1" == "0" ]; then
+            EXIT=1
+        else
+            groupadd $username
+        fi
+    done
+    clear
+    unset BACK
+}
+
+function DeleteUser {
+    CheckRoot
+    SelectUser
+    if [ -z "$SELECTED" ]; then
+        dialog  --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+                --clear  \
+                --msgbox "Usuario no seleccionado" 7 45
+    else
+        userdel $SELECTED
+    fi
+    clear
+}
+
+function DeleteGroup {
+    CheckRoot
+    SelectGroup
+    if [ -z "$SELECTED" ]; then
+        dialog  --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+                --clear  \
+                --msgbox "Grupo no seleccionado" 7 45
+    else
+        groupdel $SELECTED
+    fi
+    clear
+}
+
+function UaGDCUsersAndGroups {
+    CheckRoot
+    while [ -z "$BACK" ] && [ -z "$EXIT" ] && [ -z "$NOROOT" ]; do
+        unset BACK
+        exec 3>&1
+        result1=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear --cancel-label "Atrás"  \
+        --menu "Seleccione una opción" 0 0 0 \
+                "1" "Crear un usuario" \
+                "2" "Crear un grupo" \
+                "3" "Eliminar un usuario" \
+                "4" "Eliminar un grupo" \
+                "b" "Atrás" \
+                "0" "Salir" \
+                2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+
+        if [ "$return_value" == "1" ] || [ "$result1" == "b" ]; then
+            BACK=1
+        elif [ "$return_value" == "255" ] || [ "$result1" == "0" ]; then
+            EXIT=1
+        else
+            case $result1 in
+            
+                1)
+                    CreateUser
+                ;;
+
+                2)
+                    CreateGroup
+                ;;
+
+                3)
+                    DeleteUser
+                ;;
+
+                4)
+                    DeleteGroup
+                ;;
+
+            esac
+        fi
+
+    done
+    unset BACK
+    clear
+}
+
+function UaGAddUserToGroup {
+    CheckRoot
+    SelectUser
+    if [ -z "$SELECTED" ]; then
+        dialog  --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+                --clear  \
+                --msgbox "Usuario no seleccionado" 7 45
+    else
+        user=$SELECTED
+        SelectGroup
+        if [ -z "$SELECTED" ]; then
+            dialog  --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+                --clear  \
+                --msgbox "Grupo no seleccionado" 7 45
+        else
+            group=$SELECTED
+            usermod -aG $group $user
+        fi
+    fi
+    clear
+}
+
+function RunUsersAndGroupsMenu {
+    while [ -z "$BACK" ] && [ -z "$EXIT" ]; do
+        exec 3>&1
+        result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear  \
+        --menu "Seleccione una opción" 0 0 0 \
+                "1" "Ver ficheros relevantes" \
+                "2" "Cambiar el dueño de un fichero" \
+                "3" "Bloquear/Desbloquear un usuario" \
+                "4" "Limitar una cuenta de usuario" \
+                "5" "Crear y eliminar usuarios y grupos" \
+                "6" "Agregar usuario a un grupo" \
+                "7" "cambiar contraseña de un usuario" \
+                "8" "Averiguar una clave" \
+                $SHOW_BACK_OPTION \
+                "0" "Salir" \
+                2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+
+        
+
+        if [ "$return_value" == "1" ] || [ "$result" == "b" ]; then
+            BACK=1
+        elif [ "$return_value" == "255" ] || [ "$result" == "0" ]; then
+            EXIT=1
+        else
+            case $result in
+            
+                1)
+                    UaGRelevantFiles
+                ;;
+
+                2)
+                    UaGChangeFileOwner
+                ;;
+
+                3)
+                    UaGLockUnlockUser
+                ;;
+
+                5)
+                    UaGDCUsersAndGroups
+                ;;
+
+                6)
+                    UaGAddUserToGroup
+                ;;
+
+            esac
+        fi
+
+    done
+    unset BACK
+    clear
+}
+
+function RunGUI {
+
+    while [ -z "$EXIT" ]; do
+        SHOW_BACK_OPTION="b Atrás"
+        exec 3>&1
+        result=$(dialog --backtitle "sm (Server Manager)" \
+        --clear  \
+        --menu "Seleccione una categoría" 0 0 0 \
+                "1" "Gestión de usuarios y grupos" \
+                "2" "Gestión de la red" \
+                "3" "Gestión de los servicios" \
+                "4" "Gestión del sistema de archivos" \
+                "5" "Gestión de la seguridad" \
+                "6" "Gestión sistema" \
+                "0" "Salir" \
+                2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+
+        if [ "$return_value" == "255" ] || [ "$return_value" == "1" ] || [ "$result" == "0" ]; then
+            EXIT=1
+        else
+            case $result in
+            
+            1)
+                RunUsersAndGroupsMenu
+            ;;
+            
+            *)
+                echo "WTF! o.O"
+            ;;
+
+            esac
+        fi
+
+        
+
+    done
+    clear
+}
+
+
+if [ $# -eq 0 ]; then
+    RunGUI
+    exit 0
+fi
+
+while [ "$1" != "" ]; do
+    
+    case $1 in
+
+        -uyg|--users)
+            RunUsersAndGroupsMenu
+            exit 0
+        ;;
+
+        --gui)
+            RunGUI
+            exit 0
+        ;;
+
+        h|-h|--help|H|-H|--HELP)
+            echo "para más información use man $PROGNAME"
+            exit 0
+        ;;
+
+        v|version|-v|--version) 
+            echo "$PROGNAME command, version $VERSION"
+            echo "Copyright (c) 2019"
+            echo "License Unlicence http://unlicense.org"
+            echo "Source on: https://github.com/equipo3arrayanes2019/vivero"
+        ;;
+
+        *)
+            echo "Opcion $1 no reconocida"
+            exit 0
+        ;;
+
+    esac
+    shift
+done
