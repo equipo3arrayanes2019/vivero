@@ -6,26 +6,25 @@
     5 -> Crear y eliminar usuarios y grupos
     6 -> Agregar al grupo sudo
     7 -> cambiar contraseña de un usuario
-    8 -> Averiguar una clave
     0 -> Salir
 2 -> Gestión de la red
-    1  -> Respaldar los ficheros de servicios.
-    2  -> Ver la tabla de configuración del firewall
+    1  -> Ver la tabla de configuración del firewall
     2  -> Editar scripts de configuralción de red
-    3 -> Editar script de preferencia DNS
-    4 -> Verificar conectividad con un HOST
-    5 -> Verificar gestiíon de red local
-    6 -> Comprobar resolución DNS y server
-    7 -> Ver y modificar el ruteo
-    8 -> Ver la tabla ARP y agregar entrada estática
-    9 -> Verificar la instalación de los adaptadores de red
+    3  -> Editar script de preferencia DNS
+    4  -> Verificar conectividad con un HOST
+    5  -> Verificar gestiíon de red local
+    6  -> Comprobar resolución DNS y server
+    7  -> Ver y modificar el ruteo
+    8  -> Ver la tabla ARP y agregar entrada estática
+    9  -> Verificar la instalación de los adaptadores de red
     10 -> Ver los host por usuarios conectados en la red
-    11 -> ver los protocolos que maneja nuestra conezión
+    11 -> ver los protocolos que maneja nuestra conexión
     12 -> Ver el trazado de una ruta dinámico o estatico
     13 -> Liberar el adaptador de red y renovar los parámetros
     0 -> Salir
 3 -> Gestión de los servicios
     1  -> Instalar o desinstalar servicios
+    2  -> Respaldar los ficheros de servicios.
     0  -> Salir
 4 -> Gestión del sistema de archivos
     1  -> ver las unidades y el particionado

@@ -84,6 +84,8 @@ function SelectUser {
     unset SELECTED
     if [ "$return_value" != "1" ] && [ "$return_value" != "255" ]; then
         SELECTED=${users[$result]}
+    else
+        BACK=1
     fi
     
 }
@@ -414,6 +416,96 @@ function UaGAddUserToGroup {
     clear
 }
 
+function UaGExpirePassword {
+    CheckRoot
+    while [ -z "$BACK" ] && [ -z "$EXIT" ] && [ -z "$NOROOT" ]; do
+        ###################### take user
+        SelectUser
+        if [ -z "$SELECTED" ]; then
+            dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" --msgbox "No se se leccionó usuario"
+            continue
+        fi
+        user=$SELECTED
+
+        ###################### take day
+        exec 3>&1
+        result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear --cancel-label "Atrás"  \
+        --inputbox "Ingrese el día (DD)" 7 60 \
+        2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+        day=$result
+
+        if [ "$return_value" == "1" ] || [ "$result" == "b" ]; then
+            BACK=1
+            continue
+        elif [ "$return_value" == "255" ]; then
+            EXIT=1
+            continue
+        fi
+
+        ###################### take month
+
+        exec 3>&1
+        result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear --cancel-label "Atrás"  \
+        --inputbox "Ingrese el més (MM)" 7 60 \
+        2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+        month=$result
+
+        if [ "$return_value" == "1" ] || [ "$result" == "b" ]; then
+            BACK=1
+            continue
+        elif [ "$return_value" == "255" ]; then
+            EXIT=1
+            continue
+        fi
+
+        ###################### take year
+
+        exec 3>&1
+        result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear --cancel-label "Atrás"  \
+        --inputbox "Ingrese el año (YYYY)" 7 60 \
+        2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+        year=$result
+
+        if [ "$return_value" == "1" ] || [ "$result" == "b" ]; then
+            BACK=1
+        elif [ "$return_value" == "255" ]; then
+            EXIT=1
+        else
+            usermod -e "$year-$month-$day" $user
+            Dmes "usermod -e $year-$month-$day $user"
+        fi
+    done
+    unset BACK
+}
+
+function UaGChangePassword {
+    CheckRoot
+    while [ -z "$BACK" ] && [ -z "$EXIT" ] && [ -z "$NOROOT" ]; do
+        ###################### take user
+        SelectUser
+        if [ -z "$SELECTED" ]; then
+            dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" --msgbox "No se se leccionó usuario"
+            continue
+        fi
+        user=$SELECTED
+        clear
+        passwd $user
+        echo "Listo, presione cualquier tecla para continuar..."
+        read r
+        unset r
+    done
+    unset BACK
+}
+
 function RunUsersAndGroupsMenu {
     while [ -z "$BACK" ] && [ -z "$EXIT" ]; do
         exec 3>&1
@@ -423,11 +515,10 @@ function RunUsersAndGroupsMenu {
                 "1" "Ver ficheros relevantes" \
                 "2" "Cambiar el dueño de un fichero" \
                 "3" "Bloquear/Desbloquear un usuario" \
-                "4" "Limitar una cuenta de usuario" \
+                "4" "Configurar fecha de caducación de una contraseña" \
                 "5" "Crear y eliminar usuarios y grupos" \
                 "6" "Agregar usuario a un grupo" \
                 "7" "cambiar contraseña de un usuario" \
-                "8" "Averiguar una clave" \
                 $SHOW_BACK_OPTION \
                 "0" "Salir" \
                 2>&1 1>&3)
@@ -455,6 +546,10 @@ function RunUsersAndGroupsMenu {
                     UaGLockUnlockUser
                 ;;
 
+                4)
+                    UaGExpirePassword
+                ;;
+
                 5)
                     UaGDCUsersAndGroups
                 ;;
@@ -462,6 +557,54 @@ function RunUsersAndGroupsMenu {
                 6)
                     UaGAddUserToGroup
                 ;;
+
+                7)
+                    UaGChangePassword
+                ;;
+
+            esac
+        fi
+
+    done
+    unset BACK
+    clear
+}
+
+function RunNetworkManagingMenu {
+    while [ -z "$BACK" ] && [ -z "$EXIT" ]; do
+        exec 3>&1
+        result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear  \
+        --menu "Seleccione una opción" 0 0 0 \
+                "1" "Ver la tabla de configuración del firewall" \
+                "2" "Editar scripts de configuralción de red" \
+                "3" "Editar script de preferencia DNS" \
+                "4" "Verificar conectividad con un HOST" \
+                "5" "Verificar gestiíon de red local" \
+                "6" "Comprobar resolución DNS y server" \
+                "7" "Ver y modificar el ruteo" \
+                "8" "Ver la tabla ARP y agregar entrada estática" \
+                "9" "Verificar la instalación de los adaptadores de red" \
+                "10" "Ver los host por usuarios conectados en la red" \
+                "11" "ver los protocolos que maneja nuestra conexión" \
+                "12" "Liberar el adaptador de red y renovar los parámetros (refrescar dhcp)" \
+                "13" "cambiar contraseña de un usuario" \
+                $SHOW_BACK_OPTION \
+                "0" "Salir" \
+                2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+
+        
+
+        if [ "$return_value" == "1" ] || [ "$result" == "b" ]; then
+            BACK=1
+        elif [ "$return_value" == "255" ] || [ "$result" == "0" ]; then
+            EXIT=1
+        else
+            case $result in
+
+
 
             esac
         fi
@@ -498,6 +641,10 @@ function RunGUI {
             1)
                 RunUsersAndGroupsMenu
             ;;
+
+            2)
+                RunNetworkManagingMenu
+            ;;
             
             *)
                 echo "WTF! o.O"
@@ -524,6 +671,11 @@ while [ "$1" != "" ]; do
 
         -uyg|--users)
             RunUsersAndGroupsMenu
+            exit 0
+        ;;
+
+        -red|--red)
+            RunNetworkManagingMenu
             exit 0
         ;;
 
