@@ -5,13 +5,33 @@ void Menu::refresh(){
   p->clearDisplay();
   for(int i = 0; i < itemCount; i++){
     if(i == cursor && editing){
-      
-    }else
-    if(i == cursor && !editing)  p->sendChar("_>"){
-      p->sendString(itemNames[i]);
-      p->sendChar(" ");
+      p->sendChar(itemNames[i]);
+      p->lineJump();
+      p->sendChar("<= ");
       p->sendString(String(items[i]));
-      p->sendChar(" ");
+      p->sendChar(" =>");
+    }else
+    if(i == cursor && !editing){
+      p->sendChar("_>");
+    }else if(!editing && i != cursor){
+      p->sendChar("  ");
+    }
+
+    if(!editing){
+      bool go = 1;
+      String out;
+      for(int j = 0; j < strlen(itemNames[i]); j++){
+        if(go){
+          out += String(itemNames[i][j]) + String(".");
+          go=0;
+        }
+        if(go == 0 && itemNames[i][j] == ' '){
+          go = 1;
+        }
+      }
+      out += String(": ") + String(items[i]);
+      p->sendString(out);
+      p->lineJump();
     }
   }
 }
@@ -55,4 +75,8 @@ void Menu::handle(){
     refresh();
     last_press = millis();
   }
+}
+
+float Menu::get(int idx){
+  return items[idx];
 }

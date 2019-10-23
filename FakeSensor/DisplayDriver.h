@@ -1,7 +1,7 @@
-#ifndef DisplayDriver_h
-#define DisplayDriver_h
-
 #include <Arduino.h>
+
+
+#pragma once
 
 class DisplayDriver
 {
@@ -57,5 +57,3 @@ class DisplayDriver
   const byte reducedInstructionSet8Bit = 48;
   const byte extendedInstructionSet8Bit = 52;
 };
-
-#endif

@@ -5,12 +5,16 @@
 #include "LedManager.h"
 
 #include <WiFi.h>
+#include <Wire.h>
 
 #include "SensorWrapper.h"
 #include "CHT.h"
 #include "DHTReader.h"
 #include "HumiditySoilReader.h"
 #include "TemperatureSoilReader.h"
+
+#include "SHT.h"
+#include "SHTR.h"
 
 static const byte MAX_CONNECTION_ATTEMPTS = 50;
 static const word CONNECTION_ATTEMPT_ESTIMATED_INTERVAL = 700;
@@ -34,20 +38,20 @@ IPAddress primaryDNS(192, 168, 50, 1);   //optional
 //dhts ------------
 #define DHT01PIN              4
   #define DHT01TYPE           DHT11
-#define DHT02PIN              15
+#define DHT02PIN              32
   #define DHT02TYPE           DHT11
-#define DHT03PIN              27
-  #define DHT03TYPE           DHT11
+//#define DHT03PIN              27
+//  #define DHT03TYPE           DHT11
 
 #define HUMIDITYSOIL01PIN     35
 #define HUMIDITYSOIL02PIN     34
-#define HUMIDITYSOIL03PIN     33
+//#define HUMIDITYSOIL03PIN     33
 
 #define TEMPERATURESOIL01PIN  18
 #define TEMPERATURESOIL02PIN  19
-#define TEMPERATURESOIL03PIN  12
+//#define TEMPERATURESOIL03PIN  12
 
-#define ZONE01_WATER          22
+#define ZONE01_WATER          25
 #define ZONE02_WATER          23
 #define ZONE03_WATER          13
 
@@ -55,12 +59,14 @@ word PUMP_PIN = 5;
 
 const int SENSOR_COUNT = 3;
 
+SHT* s;
 SensorWrapper* sr;
 Zone*      zones[SENSOR_COUNT];
 HTTPSender* http;
 
 void setup() {
       Serial.begin(230400);
+      Wire.begin();
   /*
    * -------------------------------------------------------------------------------------------------------------------------------------------------
    */
@@ -115,15 +121,17 @@ void setup() {
   zones[i] = new Zone(cht, dht, ZONE02_WATER, http);
 
   i++;
-  cht = new CHT(new TemperatureSoilReader(TEMPERATURESOIL03PIN), String("ARD01 TEMPERATURESOIL03"), new HumiditySoilReader(HUMIDITYSOIL03PIN), String("ARD01 HUMIDITYSOIL03"));
-  dht = new DHTReader(DHT02PIN, DHT02TYPE, String("ARD01 TEMPERATUREAIR03"), String("ARD01 HUMIDITYAIR03"));
-  zones[i] = new Zone(cht, dht, ZONE03_WATER, http);
+  s = new SHT();
+  SHTR* soil = new SHTR(s, true, String("ARD01 TEMPERATURESOIL03"), String("ARD01 HUMIDITYSOIL03"));
+  SHTR* air = new SHTR(s, false, String("ARD01 TEMPERATUREAIR03"), String("ARD01 HUMIDITYAIR03"));
+  zones[i] = new Zone(soil, air, ZONE03_WATER, http);
   
   sr =  new SensorWrapper(SENSOR_COUNT, zones, PUMP_PIN, http);
 }
 
-unsigned long lu_takemeasurment;
-const unsigned long t_takemeasurment = 50000;
+
+const unsigned long t_takemeasurment = 120000;
+unsigned long lu_takemeasurment = millis() + (t_takemeasurment * 2);
 
 void loop() {
   if(millis() - lu_takemeasurment > t_takemeasurment){
