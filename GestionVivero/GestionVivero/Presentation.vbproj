@@ -56,6 +56,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -76,22 +77,76 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAddPerson.Designer.vb">
+    <Compile Include="Alta\frmAddPerson.Designer.vb">
       <DependentUpon>frmAddPerson.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAddPerson.vb">
+    <Compile Include="Alta\frmAddPerson.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddPlants.Designer.vb">
+    <Compile Include="Alta\frmAddPlants.Designer.vb">
       <DependentUpon>frmAddPlants.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAddPlants.vb">
+    <Compile Include="Alta\frmAddPlants.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBrowsePlants.Designer.vb">
+    <Compile Include="Alta\frmaddAditivo.Designer.vb">
+      <DependentUpon>frmaddAditivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta\frmaddAditivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alta\frmAddHerramienta.Designer.vb">
+      <DependentUpon>frmAddHerramienta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta\frmAddHerramienta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alta\frmAddZona.Designer.vb">
+      <DependentUpon>frmAddZona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta\frmAddZona.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listado\frmListadoherramienta.Designer.vb">
+      <DependentUpon>frmListadoherramienta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listado\frmListadoherramienta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sensor\frmGraphic.Designer.vb">
+      <DependentUpon>frmGraphic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sensor\frmGraphic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sensor\frmsensor.Designer.vb">
+      <DependentUpon>frmsensor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sensor\frmsensor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sensor\frmtemp.Designer.vb">
+      <DependentUpon>frmtemp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sensor\frmtemp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sensor\frmListadorSensor.Designer.vb">
+      <DependentUpon>frmListadorSensor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sensor\frmListadorSensor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listado\frmListadoZona.Designer.vb">
+      <DependentUpon>frmListadoZona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listado\frmListadoZona.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listado\frmBrowsePlants.Designer.vb">
       <DependentUpon>frmBrowsePlants.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmBrowsePlants.vb">
+    <Compile Include="Listado\frmBrowsePlants.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.vb">
@@ -113,10 +168,10 @@
     <Compile Include="frmPlant.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="listPerson.Designer.vb">
+    <Compile Include="Listado\listPerson.Designer.vb">
       <DependentUpon>listPerson.vb</DependentUpon>
     </Compile>
-    <Compile Include="listPerson.vb">
+    <Compile Include="Listado\listPerson.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -136,13 +191,40 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmAddPerson.resx">
+    <EmbeddedResource Include="Alta\frmAddPerson.resx">
       <DependentUpon>frmAddPerson.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddPlants.resx">
+    <EmbeddedResource Include="Alta\frmAddPlants.resx">
       <DependentUpon>frmAddPlants.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBrowsePlants.resx">
+    <EmbeddedResource Include="Alta\frmaddAditivo.resx">
+      <DependentUpon>frmaddAditivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alta\frmAddHerramienta.resx">
+      <DependentUpon>frmAddHerramienta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alta\frmAddZona.resx">
+      <DependentUpon>frmAddZona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listado\frmListadoherramienta.resx">
+      <DependentUpon>frmListadoherramienta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sensor\frmGraphic.resx">
+      <DependentUpon>frmGraphic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sensor\frmListadorSensor.resx">
+      <DependentUpon>frmListadorSensor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sensor\frmsensor.resx">
+      <DependentUpon>frmsensor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sensor\frmtemp.resx">
+      <DependentUpon>frmtemp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listado\frmListadoZona.resx">
+      <DependentUpon>frmListadoZona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listado\frmBrowsePlants.resx">
       <DependentUpon>frmBrowsePlants.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
@@ -154,7 +236,7 @@
     <EmbeddedResource Include="frmPlant.resx">
       <DependentUpon>frmPlant.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="listPerson.resx">
+    <EmbeddedResource Include="Listado\listPerson.resx">
       <DependentUpon>listPerson.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -186,6 +268,7 @@
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

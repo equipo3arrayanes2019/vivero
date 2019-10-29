@@ -64,8 +64,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsPAditivo.vb" />
     <Compile Include="clsPersistencia.vb" />
-    <Compile Include="clsPEmploye.vb" />
     <Compile Include="clsPPerson.vb" />
     <Compile Include="clsPPlant.vb" />
     <Compile Include="clsPUser.vb" />

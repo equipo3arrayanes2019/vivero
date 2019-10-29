@@ -149,3 +149,4 @@ C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\o
 C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.listPerson.resources
 C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.Resources.resources
 C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\Presentation.vbproj.GenerateResource.Cache
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.frmaddAditivo.resources

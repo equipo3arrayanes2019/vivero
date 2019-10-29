@@ -149,3 +149,12 @@ C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\o
 C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.listPerson.resources
 C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.Resources.resources
 C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\Presentation.vbproj.GenerateResource.Cache
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.frmaddAditivo.resources
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.frmListadoZona.resources
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.frmGraphic.resources
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.frmsensor.resources
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.frmtemp.resources
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.frmListadorSensor.resources
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.frmAddHerramienta.resources
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.frmAddZona.resources
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\GestionVivero\obj\Debug\GestionVivero.frmListadoherramienta.resources

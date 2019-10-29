@@ -1,10 +1,10 @@
 ﻿Imports Entidades
 Imports Dominio
 Public Class frmLogin
-    Dim unEUser As New clsEUser
-    Dim unDUser As New clsDUser
+    Dim unEUser As New clsPersona
+    Dim unCUser As New clsControlador
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        unEUser = unDUser.loginUsuario(txtUser.Text, txtPass.Text)
+        unEUser = unCUser.loginUsuario(txtUser.Text, txtPass.Text)
         If (unEUser Is Nothing) Then
             MessageBox.Show("Usuario o contraseña incorrectos")
         Else

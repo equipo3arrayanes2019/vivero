@@ -64,10 +64,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsPAditivo.vb" />
     <Compile Include="clsPersistencia.vb" />
-    <Compile Include="clsPEmploye.vb" />
+    <Compile Include="clsPHerramienta.vb" />
+    <Compile Include="clsPMedicion.vb" />
     <Compile Include="clsPPerson.vb" />
+    <Compile Include="clsPPlant.vb" />
+    <Compile Include="clsPProducto.vb" />
+    <Compile Include="clsPSensor.vb" />
     <Compile Include="clsPUser.vb" />
+    <Compile Include="clsPZona.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

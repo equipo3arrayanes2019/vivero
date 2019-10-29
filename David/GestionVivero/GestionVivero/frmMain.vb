@@ -42,7 +42,7 @@
         Dim addPerson = New frmAddPerson()
         addPerson.MdiParent = Me
         addPerson.Show()
-
+        frmAddPerson.mskCedula.ReadOnly = False
     End Sub
 
     Private Sub ListarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem.Click
@@ -51,4 +51,13 @@
         listperson.Show()
     End Sub
 
+    Private Sub tsmiStockMaterialsAdd_Click(sender As Object, e As EventArgs) Handles tsmiStockMaterialsAdd.Click
+        FrmaddAditivo.Show()
+    End Sub
+
+    Private Sub tsmiStockMaterialsList_Click(sender As Object, e As EventArgs) Handles tsmiStockMaterialsList.Click
+        Dim addAditivo = New FrmaddAditivo()
+        addAditivo.MdiParent = Me
+        addAditivo.Show()
+    End Sub
 End Class

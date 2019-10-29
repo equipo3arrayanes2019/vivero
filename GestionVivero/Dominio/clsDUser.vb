@@ -1,11 +1,8 @@
 ﻿Imports Persistencia
 Imports Entidades
-
 Public Class clsDUser
-    Public Function loginUsuario(user As user) As Boolean
-        Dim ret As Boolean
-        Dim puser As New clsPUser()
-        ret = puser.loginUsuario(user)
-        Return ret
+    Dim unPUser As New clsPUser
+    Public Function loginUsuario(user As String, contra As String) As clsPersona
+        Return unPUser.loginUsuario(user, contra)
     End Function
 End Class

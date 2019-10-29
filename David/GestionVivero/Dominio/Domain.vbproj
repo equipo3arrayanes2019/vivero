@@ -63,7 +63,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsDEmploye.vb" />
+    <Compile Include="clsControlador.vb" />
+    <Compile Include="clsDAditivo.vb" />
     <Compile Include="clsDPerson.vb" />
     <Compile Include="clsDPlant.vb" />
     <Compile Include="clsDUser.vb" />

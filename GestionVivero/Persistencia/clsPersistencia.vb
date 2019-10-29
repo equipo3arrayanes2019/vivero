@@ -5,7 +5,7 @@ Public Class clsPersistencia
     Private Function conectar() As MySqlConnection
         If Not con Is Nothing Then con.Close()
         Dim miConexion As String
-        miConexion = "server=localhost; uid=" & "root" & "; password=" & "" & " ; database=" & "viverobd" & ";"
+        miConexion = "server=localhost; uid=" & "root" & "; password=" & "" & " ; database=" & "megusta" & ";"
         Try
             con = New MySqlConnection(miConexion)
             con.Open()
@@ -34,6 +34,7 @@ Public Class clsPersistencia
     Protected Function ejecutarYdevolver(ByVal sql As String) As MySqlDataReader
         Dim comando As New MySqlCommand
         Dim resultados As MySqlDataReader
+        resultados = Nothing
         comando.CommandText = sql
         comando.CommandType = CommandType.Text
         comando.Connection = conectar()

@@ -27,11 +27,13 @@ Partial Class frmBrowsePlants
         Me.chkSpecies = New System.Windows.Forms.CheckBox()
         Me.chkScintificName = New System.Windows.Forms.CheckBox()
         Me.chkCommonName = New System.Windows.Forms.CheckBox()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.dgvPlanta = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lchCommonName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.lchScientificName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.lchSpecies = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.especie = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.dgvPlanta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -71,9 +73,9 @@ Partial Class frmBrowsePlants
         Me.chkScintificName.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkScintificName.Location = New System.Drawing.Point(598, 305)
         Me.chkScintificName.Name = "chkScintificName"
-        Me.chkScintificName.Size = New System.Drawing.Size(155, 17)
+        Me.chkScintificName.Size = New System.Drawing.Size(83, 17)
         Me.chkScintificName.TabIndex = 3
-        Me.chkScintificName.Text = "Coincidir: Nombre Cientifico"
+        Me.chkScintificName.Text = "Coincidir: ID"
         Me.chkScintificName.UseVisualStyleBackColor = True
         '
         'chkCommonName
@@ -83,20 +85,20 @@ Partial Class frmBrowsePlants
         Me.chkCommonName.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkCommonName.Location = New System.Drawing.Point(598, 328)
         Me.chkCommonName.Name = "chkCommonName"
-        Me.chkCommonName.Size = New System.Drawing.Size(145, 17)
+        Me.chkCommonName.Size = New System.Drawing.Size(102, 17)
         Me.chkCommonName.TabIndex = 4
-        Me.chkCommonName.Text = "Coincidir: Nombre Común"
+        Me.chkCommonName.Text = "Coincidir: Fecha"
         Me.chkCommonName.UseVisualStyleBackColor = True
         '
-        'ListView1
+        'dgvPlanta
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.lchCommonName, Me.lchScientificName, Me.lchSpecies})
-        Me.ListView1.Location = New System.Drawing.Point(12, 12)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(580, 412)
-        Me.ListView1.TabIndex = 5
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.dgvPlanta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvPlanta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPlanta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.fecha, Me.cantidad, Me.especie})
+        Me.dgvPlanta.Location = New System.Drawing.Point(12, 12)
+        Me.dgvPlanta.Name = "dgvPlanta"
+        Me.dgvPlanta.Size = New System.Drawing.Size(568, 368)
+        Me.dgvPlanta.TabIndex = 7
         '
         'PictureBox1
         '
@@ -106,20 +108,29 @@ Partial Class frmBrowsePlants
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
         '
-        'lchCommonName
+        'id
         '
-        Me.lchCommonName.Text = "Nombre Común"
-        Me.lchCommonName.Width = 156
+        Me.id.DataPropertyName = "id"
+        Me.id.HeaderText = "ID"
+        Me.id.Name = "id"
         '
-        'lchScientificName
+        'fecha
         '
-        Me.lchScientificName.Text = "Nombre Cientifico"
-        Me.lchScientificName.Width = 186
+        Me.fecha.DataPropertyName = "fecha"
+        Me.fecha.HeaderText = "Fecha"
+        Me.fecha.Name = "fecha"
         '
-        'lchSpecies
+        'cantidad
         '
-        Me.lchSpecies.Text = "Especie"
-        Me.lchSpecies.Width = 233
+        Me.cantidad.DataPropertyName = "cantidad"
+        Me.cantidad.HeaderText = "Cantidad"
+        Me.cantidad.Name = "cantidad"
+        '
+        'especie
+        '
+        Me.especie.DataPropertyName = "especie"
+        Me.especie.HeaderText = "Especie"
+        Me.especie.Name = "especie"
         '
         'frmBrowsePlants
         '
@@ -127,8 +138,8 @@ Partial Class frmBrowsePlants
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkSeaGreen
         Me.ClientSize = New System.Drawing.Size(884, 462)
+        Me.Controls.Add(Me.dgvPlanta)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.chkCommonName)
         Me.Controls.Add(Me.chkScintificName)
         Me.Controls.Add(Me.chkSpecies)
@@ -138,6 +149,7 @@ Partial Class frmBrowsePlants
         Me.Name = "frmBrowsePlants"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Buscar Plantas"
+        CType(Me.dgvPlanta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -149,9 +161,10 @@ Partial Class frmBrowsePlants
     Friend WithEvents chkSpecies As CheckBox
     Friend WithEvents chkScintificName As CheckBox
     Friend WithEvents chkCommonName As CheckBox
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents dgvPlanta As DataGridView
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents lchCommonName As ColumnHeader
-    Friend WithEvents lchScientificName As ColumnHeader
-    Friend WithEvents lchSpecies As ColumnHeader
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents fecha As DataGridViewTextBoxColumn
+    Friend WithEvents cantidad As DataGridViewTextBoxColumn
+    Friend WithEvents especie As DataGridViewTextBoxColumn
 End Class

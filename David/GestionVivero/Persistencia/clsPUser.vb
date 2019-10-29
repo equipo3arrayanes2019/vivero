@@ -3,11 +3,11 @@ Imports MySql
 Imports MySql.Data.MySqlClient
 Public Class clsPUser
     Inherits clsPersistencia
-    Public Function loginUsuario(user As String, pass As String) As clsEUser
+    Public Function loginUsuario(user As String, contra As String) As clsPersona
         Dim sql As String
         Dim devolucion As MySqlDataReader
-        Dim elUsuario As clsEUser
-        sql = "SELECT * FROM registeruser WHERE userid='" & user & "' AND clave='" & pass & "'"
+        Dim elUsuario As clsPersona
+        sql = "SELECT * FROM empleado WHERE usuario='" & user & "' AND contraseña='" & contra & "';"
         devolucion = ejecutarYdevolver(sql)
         If devolucion.HasRows Then
             While devolucion.Read
@@ -16,10 +16,10 @@ Public Class clsPUser
         End If
         Return elUsuario
     End Function
-    Private Function recrearusuario(fila As MySqlDataReader) As clsEUser
-        Dim unUsuario As New clsEUser
-        unUsuario.user = fila.GetString("userid")
-        unUsuario.contra = fila.GetString("clave")
+    Private Function recrearusuario(fila As MySqlDataReader) As clsPersona
+        Dim unUsuario As New clsPersona
+        unUsuario.user = fila.GetString("usuario")
+        'unUsuario.contra = fila.GetString("contraseña")
         Return unUsuario
     End Function
 End Class

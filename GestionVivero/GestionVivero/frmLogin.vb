@@ -1,24 +1,22 @@
 ﻿Imports Entidades
 Imports Dominio
-
 Public Class frmLogin
+    Dim unEUser As New clsPersona
+    Dim unCUser As New clsControlador
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim user As user = New user(txtUser.Text, txtPass.Text)
-        Dim clsDUsuario As New clsDUser
-        Dim log As Boolean = clsDUsuario.loginUsuario(user)
-        If (log = True) Then
-            MessageBox.Show("Logueo exitoso")
-        Else
+        unEUser = unCUser.loginUsuario(txtUser.Text, txtPass.Text)
+        If (unEUser Is Nothing) Then
             MessageBox.Show("Usuario o contraseña incorrectos")
-        End If
-
-        Dim mainForm = New frmMain
-        Me.Hide()
-        mainForm.ShowDialog()
-        If mainForm.CloseProgram Then
-            Me.Close()
         Else
-            Me.Show()
+            MessageBox.Show("Logueo exitoso")
+            Dim mainForm = New frmMain
+            Me.Hide()
+            mainForm.ShowDialog()
+            If mainForm.CloseProgram Then
+                Me.Close()
+            Else
+                Me.Show()
+            End If
         End If
     End Sub
 

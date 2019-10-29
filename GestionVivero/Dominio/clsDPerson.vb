@@ -1,20 +1,18 @@
 ﻿Imports Persistencia
 Imports Entidades
 Public Class clsDPerson
-
-    'Public Function addemploye(emp As clsemploye) As Boolean
-    '    Dim ret As Boolean
-    '    Dim pemp As New clsPEmploye()
-    '    pemp = Nothing
-    '    ret = pemp.altaEmpleado(emp)
-    '    Return ret
-    'End Function
+    Dim consulta As New clsPPerson
     Dim unPE As New clsPPerson
     Public Sub altaPersona(unE As clsPersona)
         unPE.altaPersona(unE)
-
     End Sub
-    Public Sub bajaPersona(ci As String)
-        'unPE.bajaPersona(ci)
+    Public Function listarPer() As List(Of clsPersona)
+        Return (consulta.listarPer)
+    End Function
+    Public Sub bajaPersona(cedula As String)
+        unPE.bajaPersona(cedula)
+    End Sub
+    Public Sub modificarPersona(unE As clsPersona)
+        unPE.modificarPersona(unE)
     End Sub
 End Class

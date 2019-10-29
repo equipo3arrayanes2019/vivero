@@ -2,7 +2,7 @@
 Imports Entidades
 Public Class clsDUser
     Dim unPUser As New clsPUser
-    Public Function loginUsuario(user As String, pass As String) As clsEUser
-        Return unPUser.loginUsuario(user, pass)
+    Public Function loginUsuario(user As String, contra As String) As clsPersona
+        Return unPUser.loginUsuario(user, contra)
     End Function
 End Class

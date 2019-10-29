@@ -1,9 +1,13 @@
 ﻿Public Class clsPersona
     Private mNombre As String
-    Private mApellido As String
-    Private mCedula As String
+    Private mCedula As Integer
     Private mTelefono As String
     Private mDireccion As String
+    Private mCargo As String
+    Private mUser As String
+    Private mContra As String
+    Private mFecha As String
+
     Public Property nombre() As String
         Get
             Return mNombre
@@ -12,21 +16,12 @@
             mNombre = value
         End Set
     End Property
-    Public Property apellido() As String
-
-        Get
-            Return mApellido
-        End Get
-        Set(ByVal value As String)
-            mApellido = value
-        End Set
-    End Property
-    Public Property cedula() As String
+    Public Property cedula() As Integer
         Get
             Return mCedula
 
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             mCedula = value
         End Set
     End Property
@@ -47,17 +42,52 @@
         End Set
     End Property
 
+    Public Property cargo As String
+        Get
+            Return mCargo
+        End Get
+        Set(value As String)
+            mCargo = value
+        End Set
+    End Property
+
+    Public Property user As String
+        Get
+            Return mUser
+        End Get
+        Set(value As String)
+            mUser = value
+        End Set
+    End Property
+    Public Property contra As String
+        Get
+            Return mContra
+        End Get
+        Set(value As String)
+            mContra = value
+        End Set
+    End Property
+    Public Property fecha As String
+        Get
+            Return mFecha
+        End Get
+        Set(value As String)
+            mFecha = value
+        End Set
+    End Property
     Public Sub New()
 
     End Sub
-    Public Sub New(nom As String, ape As String, ci As String, tel As String, dir As String)
+    Public Sub New(nom As String, ci As Integer, tel As String, dir As String, user As String, contra As String, cargo As String, fecha As String)
 
         nombre = nom
-        apellido = ape
         cedula = ci
         tele = tel
         direccion = dir
-
+        contra = contra
+        user = user
+        cargo = cargo
+        fecha = fecha
     End Sub
 
 

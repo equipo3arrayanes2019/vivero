@@ -63,8 +63,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsEmploye.vb" />
+    <Compile Include="clsAditivo.vb" />
+    <Compile Include="clsEspacios.vb" />
+    <Compile Include="clsEspecie.vb" />
+    <Compile Include="clsHerramienta.vb" />
+    <Compile Include="clsLote.vb" />
+    <Compile Include="clsMedicion.vb" />
     <Compile Include="clsPersona.vb" />
+    <Compile Include="clsPlanta.vb" />
+    <Compile Include="clsProducto.vb" />
+    <Compile Include="clsSemilla.vb" />
+    <Compile Include="clsSensor.vb" />
+    <Compile Include="clsZona.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -80,7 +90,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="user.vb" />
+    <Compile Include="clsEUser.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

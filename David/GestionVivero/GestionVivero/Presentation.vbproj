@@ -56,6 +56,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -86,6 +87,12 @@
       <DependentUpon>frmAddPlants.vb</DependentUpon>
     </Compile>
     <Compile Include="Alta\frmAddPlants.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alta\frmaddAditivo.Designer.vb">
+      <DependentUpon>frmaddAditivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta\frmaddAditivo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Listado\frmBrowsePlants.Designer.vb">
@@ -142,6 +149,9 @@
     <EmbeddedResource Include="Alta\frmAddPlants.resx">
       <DependentUpon>frmAddPlants.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Alta\frmaddAditivo.resx">
+      <DependentUpon>frmaddAditivo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listado\frmBrowsePlants.resx">
       <DependentUpon>frmBrowsePlants.vb</DependentUpon>
     </EmbeddedResource>
@@ -186,9 +196,7 @@
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modificacion\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

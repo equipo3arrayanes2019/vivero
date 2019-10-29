@@ -71,7 +71,7 @@ Partial Class frmLogin
         Me.btnLogin.Location = New System.Drawing.Point(391, 215)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(232, 49)
-        Me.btnLogin.TabIndex = 5
+        Me.btnLogin.TabIndex = 6
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = True
         '
@@ -81,7 +81,7 @@ Partial Class frmLogin
         Me.chkShowPass.Location = New System.Drawing.Point(300, 183)
         Me.chkShowPass.Name = "chkShowPass"
         Me.chkShowPass.Size = New System.Drawing.Size(61, 17)
-        Me.chkShowPass.TabIndex = 6
+        Me.chkShowPass.TabIndex = 5
         Me.chkShowPass.Text = "Mostrar"
         Me.chkShowPass.UseVisualStyleBackColor = True
         '
@@ -99,6 +99,7 @@ Partial Class frmLogin
         '
         'frmLogin
         '
+        Me.AcceptButton = Me.btnLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(52, Byte), Integer))
