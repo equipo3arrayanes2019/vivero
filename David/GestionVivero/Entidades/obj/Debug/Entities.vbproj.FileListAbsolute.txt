@@ -1,0 +1,18 @@
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Entidades\bin\Debug\Entidades.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Entidades\bin\Debug\Entidades.pdb
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Entidades\bin\Debug\Entidades.xml
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Entidades\obj\Debug\Entities.vbprojResolveAssemblyReference.cache
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Entidades\obj\Debug\Entidades.Resources.resources
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Entidades\obj\Debug\Entities.vbproj.GenerateResource.Cache
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Entidades\obj\Debug\Entidades.dll
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Entidades\obj\Debug\Entidades.xml
+C:\Users\David\Documents\De todo un poco\De todo un poco\Visual Studio 2015\Projects\Heore sin capa\GestionVivero\Entidades\obj\Debug\Entidades.pdb
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\Entidades\bin\Debug\Entidades.dll
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\Entidades\bin\Debug\Entidades.pdb
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\Entidades\bin\Debug\Entidades.xml
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\Entidades\obj\Debug\Entities.vbprojResolveAssemblyReference.cache
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\Entidades\obj\Debug\Entidades.Resources.resources
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\Entidades\obj\Debug\Entities.vbproj.GenerateResource.Cache
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\Entidades\obj\Debug\Entidades.dll
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\Entidades\obj\Debug\Entidades.xml
+C:\Users\David\Documents\Preguntas Equipo 3\Visual\GestionVivero\Entidades\obj\Debug\Entidades.pdb
