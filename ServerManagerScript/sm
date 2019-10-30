@@ -570,6 +570,63 @@ function RunUsersAndGroupsMenu {
     clear
 }
 
+function NetWorekSettingsScripts {
+    while [ -z "$BACK" ] && [ -z "$EXIT" ]; do
+        exec 3>&1
+        result=$(dialog --backtitle "sm (Server Manager) - Usuarios y Grupos" \
+        --clear  \
+        --menu "Seleccione una opción" 0 0 0 \
+                "1" "/etc/interfaces (configuración de interfaces de red)" \
+                "2" "/etc/dhcp/dhclient.conf (Configuración del cliente dhcp)" \
+                "3" "/etc/dhcp/dhcpd.conf (Configuración del servicio dhcp)" \
+                "4" "/etc/bind/" \
+                "5" "Verificar gestiíon de red local" \
+                "6" "Comprobar resolución DNS y server" \
+                "7" "Ver y modificar el ruteo" \
+                "8" "Ver la tabla ARP y agregar entrada estática" \
+                "9" "Verificar la instalación de los adaptadores de red" \
+                "10" "Ver los host por usuarios conectados en la red" \
+                "11" "ver los protocolos que maneja nuestra conexión" \
+                "12" "Liberar el adaptador de red y renovar los parámetros (refrescar dhcp)" \
+                "13" "cambiar contraseña de un usuario" \
+                $SHOW_BACK_OPTION \
+                "0" "Salir" \
+                2>&1 1>&3)
+        return_value=$?
+        exec 3>&-
+
+        if [ "$return_value" == "1" ] || [ "$result" == "b" ]; then
+            BACK=1
+        elif [ "$return_value" == "255" ] || [ "$result" == "0" ]; then
+            EXIT=1
+        else
+            case $result in
+
+                1)
+                    CheckRoot
+                    if [ -z "$NOROOT" ]; then
+                        clear
+                        ufw status verbose
+                        echo "Presione cualquier tecla para continuar"
+                        read d
+                        unset d
+                    else
+                        continue
+                    fi
+                ;;
+
+                2)
+                    NetWorekSettingsScripts
+                ;;
+
+            esac
+        fi
+
+    done
+    unset BACK
+    clear
+}
+
 function RunNetworkManagingMenu {
     while [ -z "$BACK" ] && [ -z "$EXIT" ]; do
         exec 3>&1
@@ -604,7 +661,22 @@ function RunNetworkManagingMenu {
         else
             case $result in
 
+                1)
+                    CheckRoot
+                    if [ -z "$NOROOT" ]; then
+                        clear
+                        ufw status verbose
+                        echo "Presione cualquier tecla para continuar"
+                        read d
+                        unset d
+                    else
+                        continue
+                    fi
+                ;;
 
+                2)
+                    NetWorekSettingsScripts
+                ;;
 
             esac
         fi
