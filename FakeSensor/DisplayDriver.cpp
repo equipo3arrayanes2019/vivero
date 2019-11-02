@@ -8,6 +8,7 @@ void DisplayDriver::clearDisplay()
     sendChar(' ');
   }
   cursorToHome();
+  charQuantity=0;
 }
 
 void DisplayDriver::sendPixel(byte vertical, byte horizontal)
@@ -57,9 +58,11 @@ void DisplayDriver::sendString(String s)
 }
 
 void DisplayDriver::sendChar(char* c){
-  for(int i = 0; i < sizeof(c); i++){
+  int i = 0;
+  while(c[i] != '\0'){
     sendChar(c[i]);
-    Serial.print(c);
+    Serial.print(c[i]);
+    i++;
   }
   Serial.println("");
 }
@@ -133,28 +136,24 @@ void DisplayDriver::sendData(bool isData, byte data)
     digitalWrite(dataPins[i], toSend);
   }
   digitalWrite(EN, HIGH);
-  delayMicroseconds(100);
+  delayMicroseconds(200);
   digitalWrite(EN, LOW);
   digitalWrite(RS, LOW);
 }
 
 void DisplayDriver::enBlink(){
   bitSet(initializeByte, 0);
-  sendData(false, initializeByte);
 }
 
 void DisplayDriver::disBlink(){
   bitClear(initializeByte, 0);
-  sendData(false, initializeByte);
 }
 
 
 void DisplayDriver::disCursor(){
   bitClear(initializeByte, 1);
-  sendData(false, initializeByte);
 }
 
 void DisplayDriver::enCursor(){
   bitSet(initializeByte, 1);
-  sendData(false, initializeByte);
 }

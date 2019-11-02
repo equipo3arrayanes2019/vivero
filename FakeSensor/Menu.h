@@ -7,10 +7,10 @@
 
 class Menu{
 
-  #define BUTTON_UP    40
-  #define BUTTON_DOWN  136
-  #define BUTTON_LEFT  33
-  #define BUTTON_RIGHT 17
+  #define BUTTON_DOWN    40
+  #define BUTTON_UP  136
+  #define BUTTON_RIGHT  33
+  #define BUTTON_LEFT 17
   #define BUTTON_ENTER 18
   #define BUTTON_RESET 130
   #define BUTTON_INTERVAL 200
