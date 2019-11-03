@@ -1,6 +1,6 @@
 ﻿Imports Entities
 Imports Domain
-Public Class frmAddPlants
+Public Class frmAddSeed
 
     Public Sub New(p As EPerson)
 

@@ -36,6 +36,8 @@ Public Class frmMain
             tsmiZoneAdd.Enabled = False
             tsmiSensorsAddnew.Visible = False
             tsmiSensorsAddnew.Enabled = False
+            tsmiSpeciesBookAdd.Enabled = False
+            tsmiSpeciesBookAdd.Visible = False
         End If
     End Sub
 
@@ -50,7 +52,7 @@ Public Class frmMain
     End Sub
 
     Private Sub TsmiSpeciesBookAdd_Click(sender As Object, e As EventArgs) Handles tsmiSpeciesBookAdd.Click
-        Dim addPlants As New frmAddPlants(Person)
+        Dim addPlants As New frmAddSpecies(Person)
         addPlants.MdiParent = Me
         addPlants.Show()
     End Sub
@@ -97,13 +99,13 @@ Public Class frmMain
         addZona.Show()
     End Sub
 
-    Private Sub ListarToolStripMenuItem4_Click(sender As Object, e As EventArgs) 
+    Private Sub ListarToolStripMenuItem4_Click(sender As Object, e As EventArgs)
         Dim addMedicion = New frmsensor(Person)
         addMedicion.MdiParent = Me
         addMedicion.Show()
     End Sub
 
-    Private Sub ListarToolStripMenuItem2_Click(sender As Object, e As EventArgs) 
+    Private Sub ListarToolStripMenuItem2_Click(sender As Object, e As EventArgs)
         Dim addSensor = New frmListadorSensor(Person)
         addSensor.MdiParent = Me
         addSensor.Show()

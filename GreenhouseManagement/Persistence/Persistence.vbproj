@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PAdditive.vb" />
+    <Compile Include="PSpecies.vb" />
     <Compile Include="PTool.vb" />
     <Compile Include="PMeasurement.vb" />
     <Compile Include="PPerson.vb" />

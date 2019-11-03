@@ -89,10 +89,10 @@
     <Compile Include="Add\frmAddPerson.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add\frmAddPlants.Designer.vb">
-      <DependentUpon>frmAddPlants.vb</DependentUpon>
+    <Compile Include="Add\frmAddSeed.Designer.vb">
+      <DependentUpon>frmAddSeed.vb</DependentUpon>
     </Compile>
-    <Compile Include="Add\frmAddPlants.vb">
+    <Compile Include="Add\frmAddSeed.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Add\frmaddAditivo.Designer.vb">
@@ -105,6 +105,12 @@
       <DependentUpon>frmAddHerramienta.vb</DependentUpon>
     </Compile>
     <Compile Include="Add\frmAddHerramienta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add\frmAddSpecies.Designer.vb">
+      <DependentUpon>frmAddSpecies.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add\frmAddSpecies.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Add\frmAddZone.Designer.vb">
@@ -222,14 +228,17 @@
     <EmbeddedResource Include="Add\frmAddPerson.resx">
       <DependentUpon>frmAddPerson.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Add\frmAddPlants.resx">
-      <DependentUpon>frmAddPlants.vb</DependentUpon>
+    <EmbeddedResource Include="Add\frmAddSeed.resx">
+      <DependentUpon>frmAddSeed.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add\frmaddAditivo.resx">
       <DependentUpon>frmaddAditivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add\frmAddHerramienta.resx">
       <DependentUpon>frmAddHerramienta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add\frmAddSpecies.resx">
+      <DependentUpon>frmAddSpecies.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add\frmAddZone.resx">
       <DependentUpon>frmAddZone.vb</DependentUpon>

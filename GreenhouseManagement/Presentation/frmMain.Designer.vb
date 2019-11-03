@@ -87,19 +87,19 @@ Partial Class frmMain
         Me.tsmiSpeciesBook.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSpeciesBookBrowse, Me.tsmiSpeciesBookAdd})
         Me.tsmiSpeciesBook.Name = "tsmiSpeciesBook"
         Me.tsmiSpeciesBook.Size = New System.Drawing.Size(180, 22)
-        Me.tsmiSpeciesBook.Text = "Libro de especies"
+        Me.tsmiSpeciesBook.Text = "Especies"
         '
         'tsmiSpeciesBookBrowse
         '
         Me.tsmiSpeciesBookBrowse.Name = "tsmiSpeciesBookBrowse"
-        Me.tsmiSpeciesBookBrowse.Size = New System.Drawing.Size(116, 22)
+        Me.tsmiSpeciesBookBrowse.Size = New System.Drawing.Size(186, 22)
         Me.tsmiSpeciesBookBrowse.Text = "Buscar"
         '
         'tsmiSpeciesBookAdd
         '
         Me.tsmiSpeciesBookAdd.Name = "tsmiSpeciesBookAdd"
-        Me.tsmiSpeciesBookAdd.Size = New System.Drawing.Size(116, 22)
-        Me.tsmiSpeciesBookAdd.Text = "Agregar"
+        Me.tsmiSpeciesBookAdd.Size = New System.Drawing.Size(186, 22)
+        Me.tsmiSpeciesBookAdd.Text = "Añadir nueva especie"
         '
         'tsmiPlant
         '
@@ -117,13 +117,13 @@ Partial Class frmMain
         'tsmiZoneAdd
         '
         Me.tsmiZoneAdd.Name = "tsmiZoneAdd"
-        Me.tsmiZoneAdd.Size = New System.Drawing.Size(121, 22)
+        Me.tsmiZoneAdd.Size = New System.Drawing.Size(180, 22)
         Me.tsmiZoneAdd.Text = "Agregar"
         '
         'tsmiZoneViewZone
         '
         Me.tsmiZoneViewZone.Name = "tsmiZoneViewZone"
-        Me.tsmiZoneViewZone.Size = New System.Drawing.Size(121, 22)
+        Me.tsmiZoneViewZone.Size = New System.Drawing.Size(180, 22)
         Me.tsmiZoneViewZone.Text = "Ver Zona"
         '
         'tsmiStock

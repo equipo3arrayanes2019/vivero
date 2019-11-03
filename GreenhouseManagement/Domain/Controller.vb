@@ -5,6 +5,7 @@ Public Class Controller
     Private dperson As New PPerson
     Private dzone As New DZone
     Private dsensor As New DSensor
+    Private dspecies As New DSpecies
 
     '----------------------------------------PLANT-------------------------------------------
     Public Sub AddPlant(unE As EPlant)
@@ -66,5 +67,23 @@ Public Class Controller
     Public Sub UpdateSensor(sensor As ESensor)
         dsensor.Update(sensor)
     End Sub
+
+    '----------------------------------------Sensor-------------------------------------------
+
+    Public Sub RemoveSpecies(name As String)
+        dspecies.Remove(name)
+    End Sub
+
+    Public Sub AddSpecies(s As ESpecies)
+        dspecies.Add(s)
+    End Sub
+
+    Public Sub UpdateSpecies(s As ESpecies)
+        dspecies.Update(s)
+    End Sub
+
+    Public Function ByNameSpecies(name As String) As List(Of ESpecies)
+        Return dspecies.ByName(name)
+    End Function
 
 End Class
