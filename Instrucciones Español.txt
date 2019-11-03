@@ -1,0 +1,4 @@
+Use este software con no otro que mysql 8.0.18 descargado de aquí -> https://www.mysql.com/downloads/
+si no lo hace seguramente algo no ande, tiene que cambiar el string de conexión en la configuración del proyecto persistance
+
+genere la base de datos con el script dado llamado GenDatabase.sql
