@@ -77,10 +77,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add\AddSensor.Designer.vb">
-      <DependentUpon>AddSensor.vb</DependentUpon>
+    <Compile Include="Add\frmAddSensor.Designer.vb">
+      <DependentUpon>frmAddSensor.vb</DependentUpon>
     </Compile>
-    <Compile Include="Add\AddSensor.vb">
+    <Compile Include="Add\frmAddSensor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Add\frmAddPerson.Designer.vb">
@@ -216,8 +216,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Add\AddSensor.resx">
-      <DependentUpon>AddSensor.vb</DependentUpon>
+    <EmbeddedResource Include="Add\frmAddSensor.resx">
+      <DependentUpon>frmAddSensor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add\frmAddPerson.resx">
       <DependentUpon>frmAddPerson.vb</DependentUpon>

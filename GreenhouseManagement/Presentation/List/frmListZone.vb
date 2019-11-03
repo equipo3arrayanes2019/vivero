@@ -10,12 +10,14 @@ Public Class frmListZone
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         Person = p
+        CheckPermissions()
     End Sub
 
     Private mSearchTerm As String
     Private mSearchType As String
     Private Sub CheckPermissions()
-        If Person.Charge IsNot "Administrador" Then
+        If Not (Person.Charge = "Administrador") Then
+            tsmiDeleteZones.Visible = False
             tsmiDeleteZones.Enabled = False
         End If
     End Sub
@@ -93,5 +95,28 @@ Public Class frmListZone
         If e.Button = MouseButtons.Right Then
             cmsInteract.Show(dgvZones, e.Location)
         End If
+    End Sub
+
+    Private Sub DgvZones_SelectionChanged(sender As Object, e As EventArgs) Handles dgvZones.SelectionChanged
+        Dim c As Integer = 0
+        If dgvZones.SelectedRows.Count = 0 Then
+            Exit Sub
+        End If
+        While Not (dgvZones.SelectedRows(0).GetHashCode() = dgvZones.Rows(c).GetHashCode())
+            c += 1
+            If c > dgvZones.Rows.Count Then
+                Exit While
+                c = -1
+            End If
+        End While
+        If c = -1 Then
+            Zone = Nothing
+        Else
+            Zone = zones(c)
+        End If
+    End Sub
+
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
     End Sub
 End Class

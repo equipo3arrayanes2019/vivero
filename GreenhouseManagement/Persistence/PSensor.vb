@@ -12,18 +12,31 @@ Public Class PSensor
         Return (unSensor)
     End Function
     Public Function ById(idS As String) As ESensor
-        Dim consulta As String
-        Dim datos As MySqlDataReader
-        Dim unSensor As New ESensor
+        Dim query1 As String
+        Dim data As MySqlDataReader
+        Dim sensor As New ESensor
         Dim conn As New SqlHandle()
 
-        consulta = "SELECT * FROM sensor where id =( '" & idS & "' );"
-        datos = conn.SendQuery(consulta)
-        While datos.Read
-            unSensor = CreatSensor(datos)
+        query1 = "SELECT * FROM sensor where id =( '" & idS & "' );"
+        data = conn.SendQuery(query1)
+        While data.Read
+            sensor = CreatSensor(data)
         End While
-        Return unSensor
+        Return sensor
     End Function
+
+    Public Function ByZone(zone As EZone) As List(Of ESensor)
+        Dim query As String = "SELECT * FROM Sensor WHERE Sensor.Zona_nombre = '" + zone.ZoneName + "';"
+        Dim conn As New SqlHandle()
+        Dim result = conn.SendQuery(query)
+        Dim out As New List(Of ESensor)
+        While result.Read
+            out.Add(New ESensor(result.GetString("id"), result.GetString("tipo"), zone))
+        End While
+        conn.Close()
+        Return out
+    End Function
+
     Public Function List() As List(Of ESensor)
         Dim consulta As String
         Dim lo_que_devuelve As MySqlDataReader
@@ -48,6 +61,11 @@ Public Class PSensor
 
     Public Sub Remove(id As String)
         Dim query As String = "DELETE FROM Sensor WHERE id = '" + SqlHandle.Escape(id) + "';"
+        SqlHandle.StaticSendCommand(query)
+    End Sub
+
+    Public Sub Update(sensor As ESensor)
+        Dim query As String = "UPDATE Sensor SET id = '" + SqlHandle.Escape(sensor.SensorId) + "', tipo = '" + sensor.Type + "', Zona_nombre = '" + sensor.Zone.ZoneName + "' WHERE id = '" + SqlHandle.Escape(sensor.SensorId) + "';"
         SqlHandle.StaticSendCommand(query)
     End Sub
 End Class

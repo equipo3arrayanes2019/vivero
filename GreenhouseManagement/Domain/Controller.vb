@@ -59,4 +59,12 @@ Public Class Controller
         dsensor.Remove(id)
     End Sub
 
+    Public Function ListSensorByZone(zone As EZone) As List(Of ESensor)
+        Return dsensor.ByZone(zone)
+    End Function
+
+    Public Sub UpdateSensor(sensor As ESensor)
+        dsensor.Update(sensor)
+    End Sub
+
 End Class

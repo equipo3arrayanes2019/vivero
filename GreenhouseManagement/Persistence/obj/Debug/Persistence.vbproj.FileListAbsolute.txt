@@ -63,6 +63,7 @@ C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\bin\Debug\BouncyCa
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\bin\Debug\Renci.SshNet.dll
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\bin\Debug\Entities.pdb
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\bin\Debug\Entities.xml
+C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\bin\Debug\Entities.dll.config
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\bin\Debug\MySql.Data.xml
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\obj\Debug\Persistence.vbprojAssemblyReference.cache
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\obj\Debug\Persistence.Resources.resources
@@ -72,4 +73,3 @@ C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\obj\Debug\Persiste
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\obj\Debug\Persistence.dll
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\obj\Debug\Persistence.xml
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\obj\Debug\Persistence.pdb
-C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Persistence\bin\Debug\Entities.dll.config

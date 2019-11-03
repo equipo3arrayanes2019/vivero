@@ -31,6 +31,7 @@ Partial Class frmListZone
         Me.btnByType = New System.Windows.Forms.Button()
         Me.cmsInteract = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.tsmiDeleteZones = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnClose = New System.Windows.Forms.Button()
         CType(Me.dgvZones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsInteract.SuspendLayout()
         Me.SuspendLayout()
@@ -68,7 +69,7 @@ Partial Class frmListZone
         'btnByType
         '
         Me.btnByType.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnByType.Location = New System.Drawing.Point(593, 332)
+        Me.btnByType.Location = New System.Drawing.Point(506, 332)
         Me.btnByType.Name = "btnByType"
         Me.btnByType.Size = New System.Drawing.Size(75, 23)
         Me.btnByType.TabIndex = 2
@@ -87,11 +88,22 @@ Partial Class frmListZone
         Me.tsmiDeleteZones.Size = New System.Drawing.Size(226, 22)
         Me.tsmiDeleteZones.Text = "Eliminar zonas seleccionadas"
         '
+        'btnClose
+        '
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClose.Location = New System.Drawing.Point(593, 332)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(75, 23)
+        Me.btnClose.TabIndex = 3
+        Me.btnClose.Text = "Cerrar"
+        Me.btnClose.UseVisualStyleBackColor = True
+        '
         'frmListZone
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(680, 367)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnByType)
         Me.Controls.Add(Me.dgvZones)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -111,4 +123,5 @@ Partial Class frmListZone
     Friend WithEvents btnByType As Button
     Friend WithEvents cmsInteract As ContextMenuStrip
     Friend WithEvents tsmiDeleteZones As ToolStripMenuItem
+    Friend WithEvents btnClose As Button
 End Class

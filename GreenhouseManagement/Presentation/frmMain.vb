@@ -32,7 +32,9 @@ Public Class frmMain
 
     Private Sub PermissionCheck()
         If Not Person.Charge = "Administrador" Then
+            tsmiZoneAdd.Visible = False
             tsmiZoneAdd.Enabled = False
+            tsmiSensorsAddnew.Visible = False
             tsmiSensorsAddnew.Enabled = False
         End If
     End Sub
@@ -95,13 +97,13 @@ Public Class frmMain
         addZona.Show()
     End Sub
 
-    Private Sub ListarToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem4.Click
+    Private Sub ListarToolStripMenuItem4_Click(sender As Object, e As EventArgs) 
         Dim addMedicion = New frmsensor(Person)
         addMedicion.MdiParent = Me
         addMedicion.Show()
     End Sub
 
-    Private Sub ListarToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem2.Click
+    Private Sub ListarToolStripMenuItem2_Click(sender As Object, e As EventArgs) 
         Dim addSensor = New frmListadorSensor(Person)
         addSensor.MdiParent = Me
         addSensor.Show()
