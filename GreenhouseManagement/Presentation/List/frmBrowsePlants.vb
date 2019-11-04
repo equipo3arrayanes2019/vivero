@@ -27,7 +27,7 @@ Public Class frmBrowsePlants
 
     Private Sub frmBrowsePlants_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim listaPlanta As List(Of EPlant)
-        listaPlanta = com.ListPlants()
+        'listaPlanta = com.ListPlants()
         dgvPlanta.DataSource = listaPlanta
     End Sub
 

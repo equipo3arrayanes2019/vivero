@@ -38,6 +38,8 @@ Public Class frmMain
             tsmiSensorsAddnew.Enabled = False
             tsmiSpeciesBookAdd.Enabled = False
             tsmiSpeciesBookAdd.Visible = False
+            tsmiPlantPotAdd.Visible = False
+            tsmiPlantPotAdd.Enabled = False
         End If
     End Sub
 
@@ -150,6 +152,18 @@ Public Class frmMain
 
     Private Sub ContactoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContactoToolStripMenuItem.Click
         Dim f As New frmContact()
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub TsmiPlantPotAdd_Click(sender As Object, e As EventArgs) Handles tsmiPlantPotAdd.Click
+        Dim f As New frmAddPlantPot(Person)
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub TsmiPlantPotList_Click(sender As Object, e As EventArgs) Handles tsmiPlantPotList.Click
+        Dim f As New frmListaDOUPLantPot(Person)
         f.MdiParent = Me
         f.Show()
     End Sub

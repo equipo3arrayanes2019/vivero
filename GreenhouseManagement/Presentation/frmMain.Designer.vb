@@ -53,6 +53,9 @@ Partial Class frmMain
         Me.tsmiPersons = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiRegister = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiPlantPots = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiPlantPotAdd = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiPlantPotList = New System.Windows.Forms.ToolStripMenuItem()
         Me.msMain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -194,18 +197,18 @@ Partial Class frmMain
         'KAPPALEEELMANUALPIBEToolStripMenuItem
         '
         Me.KAPPALEEELMANUALPIBEToolStripMenuItem.Name = "KAPPALEEELMANUALPIBEToolStripMenuItem"
-        Me.KAPPALEEELMANUALPIBEToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.KAPPALEEELMANUALPIBEToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.KAPPALEEELMANUALPIBEToolStripMenuItem.Text = "Manual Usuario"
         '
         'ContactoToolStripMenuItem
         '
         Me.ContactoToolStripMenuItem.Name = "ContactoToolStripMenuItem"
-        Me.ContactoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ContactoToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.ContactoToolStripMenuItem.Text = "Contacto"
         '
         'msMain
         '
-        Me.msMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSession, Me.tsmiZones, Me.SensoresToolStripMenuItem, Me.tsmiPlants, Me.tsmiStock, Me.tsmiPersons, Me.AyudaToolStripMenuItem})
+        Me.msMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSession, Me.tsmiZones, Me.SensoresToolStripMenuItem, Me.tsmiPlants, Me.tsmiStock, Me.tsmiPersons, Me.tsmiPlantPots, Me.AyudaToolStripMenuItem})
         Me.msMain.Location = New System.Drawing.Point(0, 0)
         Me.msMain.Name = "msMain"
         Me.msMain.Size = New System.Drawing.Size(666, 24)
@@ -222,13 +225,13 @@ Partial Class frmMain
         'tsmiSensorsAddnew
         '
         Me.tsmiSensorsAddnew.Name = "tsmiSensorsAddnew"
-        Me.tsmiSensorsAddnew.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiSensorsAddnew.Size = New System.Drawing.Size(154, 22)
         Me.tsmiSensorsAddnew.Text = "Agregar Nuevo"
         '
         'tsmiViewSensor
         '
         Me.tsmiViewSensor.Name = "tsmiViewSensor"
-        Me.tsmiViewSensor.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiViewSensor.Size = New System.Drawing.Size(154, 22)
         Me.tsmiViewSensor.Text = "Ver Sensor"
         '
         'tsmiPersons
@@ -249,6 +252,25 @@ Partial Class frmMain
         Me.ListarToolStripMenuItem.Name = "ListarToolStripMenuItem"
         Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
         Me.ListarToolStripMenuItem.Text = "Listar"
+        '
+        'tsmiPlantPots
+        '
+        Me.tsmiPlantPots.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiPlantPotAdd, Me.tsmiPlantPotList})
+        Me.tsmiPlantPots.Name = "tsmiPlantPots"
+        Me.tsmiPlantPots.Size = New System.Drawing.Size(63, 20)
+        Me.tsmiPlantPots.Text = "Macetas"
+        '
+        'tsmiPlantPotAdd
+        '
+        Me.tsmiPlantPotAdd.Name = "tsmiPlantPotAdd"
+        Me.tsmiPlantPotAdd.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiPlantPotAdd.Text = "Añadir"
+        '
+        'tsmiPlantPotList
+        '
+        Me.tsmiPlantPotList.Name = "tsmiPlantPotList"
+        Me.tsmiPlantPotList.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiPlantPotList.Text = "Listar"
         '
         'frmMain
         '
@@ -301,4 +323,7 @@ Partial Class frmMain
     Friend WithEvents tsmiZoneViewZone As ToolStripMenuItem
     Friend WithEvents tsmiSensorsAddnew As ToolStripMenuItem
     Friend WithEvents tsmiViewSensor As ToolStripMenuItem
+    Friend WithEvents tsmiPlantPots As ToolStripMenuItem
+    Friend WithEvents tsmiPlantPotAdd As ToolStripMenuItem
+    Friend WithEvents tsmiPlantPotList As ToolStripMenuItem
 End Class

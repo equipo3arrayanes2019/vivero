@@ -6,18 +6,19 @@ Public Class Controller
     Private dzone As New DZone
     Private dsensor As New DSensor
     Private dspecies As New DSpecies
+    Private dplantpot As New DPlantPot
 
     '----------------------------------------PLANT-------------------------------------------
-    Public Sub AddPlant(unE As EPlant)
-        dplant.Add(unE)
-    End Sub
+    'Public Sub AddPlant(unE As EPlant)
+    '    dplant.Add(unE)
+    'End Sub
 
-    Public Function ListPlants() As List(Of EPlant)
-        Return (dplant.List)
-    End Function
-    Public Sub RemovePalnt(CI As String)
-        dplant.Remove(CI)
-    End Sub
+    'Public Function ListPlants() As List(Of EPlant)
+    '    Return (dplant.List)
+    'End Function
+    'Public Sub RemovePalnt(CI As String)
+    '    dplant.Remove(CI)
+    'End Sub
 
     '----------------------------------------PERSON-------------------------------------------
 
@@ -88,6 +89,23 @@ Public Class Controller
 
     Public Function SpeciesByType(type As String) As List(Of ESpecies)
         Return dspecies.ByType(type)
+    End Function
+
+    '----------------------------------------PlantPot-------------------------------------------
+    Public Sub AddPlantPot(p As EPlantPot)
+        dplantpot.Add(p)
+    End Sub
+
+    Public Sub RemovePlantPot(p As EPlantPot)
+        dplantpot.Remove(p)
+    End Sub
+
+    Public Sub UpdatePlantPot(p As EPlantPot)
+        dplantpot.Update(p)
+    End Sub
+
+    Public Function ListPlantPotByMaterial(m As String) As List(Of EPlantPot)
+        Return dplantpot.ByMaterial(m)
     End Function
 
 End Class

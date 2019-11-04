@@ -77,6 +77,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add\frmAddPlantPot.Designer.vb">
+      <DependentUpon>frmAddPlantPot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add\frmAddPlantPot.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Add\frmAddSensor.Designer.vb">
       <DependentUpon>frmAddSensor.vb</DependentUpon>
     </Compile>
@@ -136,6 +142,12 @@
       <DependentUpon>frmListadoherramienta.vb</DependentUpon>
     </Compile>
     <Compile Include="List\frmListadoherramienta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List\frmListaDOUPLantPot.Designer.vb">
+      <DependentUpon>frmListaDOUPLantPot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List\frmListaDOUPLantPot.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="List\frmListSensor.Designer.vb">
@@ -228,6 +240,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Add\frmAddPlantPot.resx">
+      <DependentUpon>frmAddPlantPot.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add\frmAddSensor.resx">
       <DependentUpon>frmAddSensor.vb</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="List\frmListadoherramienta.resx">
       <DependentUpon>frmListadoherramienta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List\frmListaDOUPLantPot.resx">
+      <DependentUpon>frmListaDOUPLantPot.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="List\frmListSensor.resx">
       <DependentUpon>frmListSensor.vb</DependentUpon>
