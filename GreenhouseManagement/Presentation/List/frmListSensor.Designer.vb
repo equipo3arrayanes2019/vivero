@@ -30,10 +30,10 @@ Partial Class frmListSensor
         Me.dgvcZone = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmsInteract = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.tsmiDelete = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiModify = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnSelectZone = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblZone = New System.Windows.Forms.Label()
-        Me.tsmiModify = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvSensorList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsInteract.SuspendLayout()
         Me.SuspendLayout()
@@ -44,6 +44,7 @@ Partial Class frmListSensor
         Me.dgvSensorList.AllowUserToDeleteRows = False
         Me.dgvSensorList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSensorList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvcId, Me.dgvcType, Me.dgvcZone})
+        Me.dgvSensorList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvSensorList.Location = New System.Drawing.Point(12, 12)
         Me.dgvSensorList.Name = "dgvSensorList"
         Me.dgvSensorList.Size = New System.Drawing.Size(776, 329)
@@ -68,13 +69,19 @@ Partial Class frmListSensor
         '
         Me.cmsInteract.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiDelete, Me.tsmiModify})
         Me.cmsInteract.Name = "cmsInteract"
-        Me.cmsInteract.Size = New System.Drawing.Size(181, 70)
+        Me.cmsInteract.Size = New System.Drawing.Size(126, 48)
         '
         'tsmiDelete
         '
         Me.tsmiDelete.Name = "tsmiDelete"
-        Me.tsmiDelete.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiDelete.Size = New System.Drawing.Size(125, 22)
         Me.tsmiDelete.Text = "Eliminar"
+        '
+        'tsmiModify
+        '
+        Me.tsmiModify.Name = "tsmiModify"
+        Me.tsmiModify.Size = New System.Drawing.Size(125, 22)
+        Me.tsmiModify.Text = "Modificar"
         '
         'btnSelectZone
         '
@@ -103,12 +110,6 @@ Partial Class frmListSensor
         Me.lblZone.Size = New System.Drawing.Size(99, 13)
         Me.lblZone.TabIndex = 3
         Me.lblZone.Text = "Nada seleccionado"
-        '
-        'tsmiModify
-        '
-        Me.tsmiModify.Name = "tsmiModify"
-        Me.tsmiModify.Size = New System.Drawing.Size(180, 22)
-        Me.tsmiModify.Text = "Modificar"
         '
         'frmListSensor
         '

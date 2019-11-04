@@ -20,5 +20,8 @@ Public Class DSpecies
     Public Function ByName(name As String) As List(Of ESpecies)
         Return pspecies.ByName(name)
     End Function
+    Public Function ByType(type As String) As List(Of ESpecies)
+        Return pspecies.ByType(type)
+    End Function
 
 End Class

@@ -45,6 +45,7 @@ Public Class frmAddSpecies
         Next
         cbxZoneType.SelectedIndex = c
         Me.Text = "Editar Especie"
+        btnSave.Text = "Guardar cambios"
     End Sub
 
     Public Sub New(p As EPerson)
@@ -58,10 +59,31 @@ Public Class frmAddSpecies
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Try
-            con.AddSpecies(New ESpecies(txtName.Text, txtType.Text, txtFamily.Text, cbxZoneType.SelectedItem.ToString(), CInt(nudGrowTime.Value), cbxMoonType.SelectedItem.ToString(), Convert.ToDouble(nudHumidity.Value)))
-        Catch ex As Exception
-            CommonError.ErrorSaving(ex)
-        End Try
+        Dim err As Boolean = False
+        If mUpdate Then
+            Try
+                con.UpdateSpecies(New ESpecies(txtName.Text, txtType.Text, txtFamily.Text, cbxZoneType.SelectedItem.ToString(), CInt(nudGrowTime.Value), cbxMoonType.SelectedItem.ToString(), Convert.ToDouble(nudHumidity.Value)))
+            Catch ex As Exception
+                CommonError.ErrorSaving(ex)
+                err = True
+            End Try
+            If Not err Then
+                Me.Close()
+            End If
+        Else
+            Try
+                con.AddSpecies(New ESpecies(txtName.Text, txtType.Text, txtFamily.Text, cbxZoneType.SelectedItem.ToString(), CInt(nudGrowTime.Value), cbxMoonType.SelectedItem.ToString(), Convert.ToDouble(nudHumidity.Value)))
+            Catch ex As Exception
+                CommonError.ErrorSaving(ex)
+                err = True
+            End Try
+            If Not err Then
+                txtFamily.Text = ""
+                txtName.Text = ""
+                txtType.Text = ""
+                nudGrowTime.Value = 0
+                nudHumidity.Value = 0
+            End If
+        End If
     End Sub
 End Class

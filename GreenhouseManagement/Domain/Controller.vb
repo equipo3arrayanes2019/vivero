@@ -68,7 +68,7 @@ Public Class Controller
         dsensor.Update(sensor)
     End Sub
 
-    '----------------------------------------Sensor-------------------------------------------
+    '----------------------------------------Species-------------------------------------------
 
     Public Sub RemoveSpecies(name As String)
         dspecies.Remove(name)
@@ -82,8 +82,12 @@ Public Class Controller
         dspecies.Update(s)
     End Sub
 
-    Public Function ByNameSpecies(name As String) As List(Of ESpecies)
+    Public Function SpeciesByName(name As String) As List(Of ESpecies)
         Return dspecies.ByName(name)
+    End Function
+
+    Public Function SpeciesByType(type As String) As List(Of ESpecies)
+        Return dspecies.ByType(type)
     End Function
 
 End Class

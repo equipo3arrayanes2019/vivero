@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EAdditive.vb" />
+    <Compile Include="EPlantPot.vb" />
     <Compile Include="ESpecies.vb" />
     <Compile Include="ETool.vb" />
     <Compile Include="ELot.vb" />

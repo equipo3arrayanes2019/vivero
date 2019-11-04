@@ -110,7 +110,7 @@ Partial Class frmAddSpecies
         Me.txtName.Location = New System.Drawing.Point(117, 20)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(263, 20)
-        Me.txtName.TabIndex = 7
+        Me.txtName.TabIndex = 10
         '
         'cbxZoneType
         '
@@ -121,21 +121,21 @@ Partial Class frmAddSpecies
         Me.cbxZoneType.Location = New System.Drawing.Point(117, 98)
         Me.cbxZoneType.Name = "cbxZoneType"
         Me.cbxZoneType.Size = New System.Drawing.Size(174, 21)
-        Me.cbxZoneType.TabIndex = 10
+        Me.cbxZoneType.TabIndex = 40
         '
         'txtFamily
         '
         Me.txtFamily.Location = New System.Drawing.Point(117, 72)
         Me.txtFamily.Name = "txtFamily"
         Me.txtFamily.Size = New System.Drawing.Size(263, 20)
-        Me.txtFamily.TabIndex = 11
+        Me.txtFamily.TabIndex = 30
         '
         'txtType
         '
         Me.txtType.Location = New System.Drawing.Point(117, 46)
         Me.txtType.Name = "txtType"
         Me.txtType.Size = New System.Drawing.Size(263, 20)
-        Me.txtType.TabIndex = 12
+        Me.txtType.TabIndex = 20
         '
         'nudGrowTime
         '
@@ -143,7 +143,7 @@ Partial Class frmAddSpecies
         Me.nudGrowTime.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.nudGrowTime.Name = "nudGrowTime"
         Me.nudGrowTime.Size = New System.Drawing.Size(120, 20)
-        Me.nudGrowTime.TabIndex = 13
+        Me.nudGrowTime.TabIndex = 50
         '
         'cbxMoonType
         '
@@ -154,7 +154,7 @@ Partial Class frmAddSpecies
         Me.cbxMoonType.Location = New System.Drawing.Point(117, 161)
         Me.cbxMoonType.Name = "cbxMoonType"
         Me.cbxMoonType.Size = New System.Drawing.Size(174, 21)
-        Me.cbxMoonType.TabIndex = 14
+        Me.cbxMoonType.TabIndex = 60
         '
         'nudHumidity
         '
@@ -163,15 +163,15 @@ Partial Class frmAddSpecies
         Me.nudHumidity.Location = New System.Drawing.Point(117, 188)
         Me.nudHumidity.Name = "nudHumidity"
         Me.nudHumidity.Size = New System.Drawing.Size(120, 20)
-        Me.nudHumidity.TabIndex = 15
+        Me.nudHumidity.TabIndex = 70
         '
         'btnSave
         '
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnSave.Location = New System.Drawing.Point(323, 216)
+        Me.btnSave.Location = New System.Drawing.Point(255, 216)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
-        Me.btnSave.TabIndex = 16
+        Me.btnSave.Size = New System.Drawing.Size(143, 23)
+        Me.btnSave.TabIndex = 80
         Me.btnSave.Text = "Guardar"
         Me.btnSave.UseVisualStyleBackColor = True
         '

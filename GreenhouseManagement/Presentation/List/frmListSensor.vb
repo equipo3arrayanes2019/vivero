@@ -106,8 +106,8 @@ Public Class frmListSensor
         While Not (dgvSensorList.SelectedRows(0).GetHashCode() = dgvSensorList.Rows(c).GetHashCode())
             c += 1
             If c > dgvSensorList.Rows.Count Then
-                Exit While
                 c = -1
+                Exit While
             End If
         End While
         If c = -1 Then

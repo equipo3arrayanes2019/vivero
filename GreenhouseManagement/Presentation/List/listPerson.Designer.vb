@@ -47,8 +47,11 @@ Partial Class listPerson
         '
         'dgvPerson
         '
+        Me.dgvPerson.AllowUserToAddRows = False
+        Me.dgvPerson.AllowUserToDeleteRows = False
         Me.dgvPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPerson.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cedula, Me.usuario, Me.contraseña, Me.nombre, Me.telefono, Me.direccion, Me.cargo})
+        Me.dgvPerson.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvPerson.Location = New System.Drawing.Point(5, 12)
         Me.dgvPerson.Name = "dgvPerson"
         Me.dgvPerson.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect

@@ -89,12 +89,6 @@
     <Compile Include="Add\frmAddPerson.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add\frmAddSeed.Designer.vb">
-      <DependentUpon>frmAddSeed.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Add\frmAddSeed.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Add\frmaddAditivo.Designer.vb">
       <DependentUpon>frmaddAditivo.vb</DependentUpon>
     </Compile>
@@ -126,6 +120,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Common\CommonError.vb" />
+    <Compile Include="Common\frmContact.Designer.vb">
+      <DependentUpon>frmContact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\frmContact.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Common\frmError.Designer.vb">
       <DependentUpon>frmError.vb</DependentUpon>
     </Compile>
@@ -142,6 +142,12 @@
       <DependentUpon>frmListSensor.vb</DependentUpon>
     </Compile>
     <Compile Include="List\frmListSensor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List\frmListSpecies.Designer.vb">
+      <DependentUpon>frmListSpecies.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List\frmListSpecies.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sensor\frmGraphic.Designer.vb">
@@ -193,10 +199,10 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPlant.Designer.vb">
-      <DependentUpon>frmPlant.vb</DependentUpon>
+    <Compile Include="Add\frmAddPlant.Designer.vb">
+      <DependentUpon>frmAddPlant.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPlant.vb">
+    <Compile Include="Add\frmAddPlant.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="List\listPerson.Designer.vb">
@@ -228,9 +234,6 @@
     <EmbeddedResource Include="Add\frmAddPerson.resx">
       <DependentUpon>frmAddPerson.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Add\frmAddSeed.resx">
-      <DependentUpon>frmAddSeed.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Add\frmaddAditivo.resx">
       <DependentUpon>frmaddAditivo.vb</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +249,9 @@
     <EmbeddedResource Include="Askers\frmAskZoneType.resx">
       <DependentUpon>frmAskZoneType.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmContact.resx">
+      <DependentUpon>frmContact.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Common\frmError.resx">
       <DependentUpon>frmError.vb</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="List\frmListSensor.resx">
       <DependentUpon>frmListSensor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List\frmListSpecies.resx">
+      <DependentUpon>frmListSpecies.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sensor\frmGraphic.resx">
       <DependentUpon>frmGraphic.vb</DependentUpon>
@@ -279,8 +288,8 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPlant.resx">
-      <DependentUpon>frmPlant.vb</DependentUpon>
+    <EmbeddedResource Include="Add\frmAddPlant.resx">
+      <DependentUpon>frmAddPlant.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="List\listPerson.resx">
       <DependentUpon>listPerson.vb</DependentUpon>

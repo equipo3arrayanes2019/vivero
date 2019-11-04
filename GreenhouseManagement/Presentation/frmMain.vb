@@ -25,7 +25,7 @@ Public Class frmMain
         Me.Person = Person
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        Me.Text = "Vivero Me Gusta " + Person.User + " (" + Person.Name + ")"
+        Me.Text = "Vivero Me Gusta " + Person.User + " (" + Person.Name + ")" + " : " + Person.Charge
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         PermissionCheck()
     End Sub
@@ -58,13 +58,13 @@ Public Class frmMain
     End Sub
 
     Private Sub TsmiSpeciesBookBrowse_Click(sender As Object, e As EventArgs) Handles tsmiSpeciesBookBrowse.Click
-        Dim browsePlants As New frmBrowsePlants(Person)
+        Dim browsePlants As New frmListSpecies(Person)
         browsePlants.MdiParent = Me
         browsePlants.Show()
     End Sub
 
     Private Sub TsmiPlant_Click(sender As Object, e As EventArgs) Handles tsmiPlant.Click
-        Dim plant = New frmPlant(Person)
+        Dim plant = New frmAddPlant(Person)
         plant.MdiParent = Me
         plant.Show()
     End Sub
@@ -144,6 +144,12 @@ Public Class frmMain
 
     Private Sub TsmiViewSensor_Click(sender As Object, e As EventArgs) Handles tsmiViewSensor.Click
         Dim f As New frmListSensor(Person)
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub ContactoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContactoToolStripMenuItem.Click
+        Dim f As New frmContact()
         f.MdiParent = Me
         f.Show()
     End Sub
