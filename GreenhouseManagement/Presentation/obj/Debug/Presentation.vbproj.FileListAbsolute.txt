@@ -234,7 +234,6 @@ C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Present
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmContact.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmError.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmListadoherramienta.resources
-C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmListaDOUPLantPot.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmListSensor.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmListSpecies.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmGraphic.resources
@@ -242,7 +241,6 @@ C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Present
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmsensor.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmtemp.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmListZone.resources
-C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmBrowsePlants.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmLogin.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmMain.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmAddPlant.resources
@@ -254,3 +252,5 @@ C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Present
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.exe
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.xml
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.pdb
+C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmListPlantPot.resources
+C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.frmListPlants.resources

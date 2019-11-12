@@ -1,7 +1,7 @@
 ﻿Imports Domain
 Imports Entities
 
-Public Class frmListaDOUPLantPot
+Public Class frmListPlantPot
 
     Public Sub New(p As EPerson)
 

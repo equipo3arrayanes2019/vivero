@@ -41,6 +41,7 @@ Partial Class frmListadoherramienta
         Me.dgvTools.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvTools.Location = New System.Drawing.Point(12, 12)
         Me.dgvTools.Name = "dgvTools"
+        Me.dgvTools.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvTools.Size = New System.Drawing.Size(571, 196)
         Me.dgvTools.TabIndex = 0
         '

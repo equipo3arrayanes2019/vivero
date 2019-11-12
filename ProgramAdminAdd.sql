@@ -1,0 +1,2 @@
+INSERT INTO Empleado(ci, usuario, contraseña, nombre, telefono, direccion, fechaNacimiento, cargo) VALUES
+						(12345678, "admin", "admin", "Nombre del administrador", "098666666", "Calle Falsa 123", "2019-01-01", "Administrador");

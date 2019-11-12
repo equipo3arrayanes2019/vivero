@@ -163,7 +163,13 @@ Public Class frmMain
     End Sub
 
     Private Sub TsmiPlantPotList_Click(sender As Object, e As EventArgs) Handles tsmiPlantPotList.Click
-        Dim f As New frmListaDOUPLantPot(Person)
+        Dim f As New frmListPlantPot(Person)
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub TsmiPlantsView_Click(sender As Object, e As EventArgs) Handles tsmiPlantsView.Click
+        Dim f As New frmListPlants(Person)
         f.MdiParent = Me
         f.Show()
     End Sub

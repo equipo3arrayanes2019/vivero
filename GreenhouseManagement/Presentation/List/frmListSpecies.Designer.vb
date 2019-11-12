@@ -53,6 +53,7 @@ Partial Class frmListSpecies
         Me.dgvSpeciesList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvSpeciesList.Location = New System.Drawing.Point(12, 12)
         Me.dgvSpeciesList.Name = "dgvSpeciesList"
+        Me.dgvSpeciesList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSpeciesList.Size = New System.Drawing.Size(776, 379)
         Me.dgvSpeciesList.TabIndex = 0
         '

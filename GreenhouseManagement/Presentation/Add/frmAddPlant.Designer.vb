@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmAddPlant
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmAddPlant
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -35,9 +35,9 @@ Partial Class frmAddPlant
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblPlantpot = New System.Windows.Forms.Label()
         Me.btnPickPlantPot = New System.Windows.Forms.Button()
+        Me.btnPickZone = New System.Windows.Forms.Button()
+        Me.lblZone = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.nudQuantity = New System.Windows.Forms.NumericUpDown()
-        CType(Me.nudQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -112,7 +112,7 @@ Partial Class frmAddPlant
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(82, 23)
         Me.btnSave.TabIndex = 60
-        Me.btnSave.Text = "Guardar"
+        Me.btnSave.Text = "Aceptar"
         Me.btnSave.UseVisualStyleBackColor = True
         '
         'Label3
@@ -143,21 +143,33 @@ Partial Class frmAddPlant
         Me.btnPickPlantPot.Text = "Seleccionar tipo de maceta..."
         Me.btnPickPlantPot.UseVisualStyleBackColor = True
         '
+        'btnPickZone
+        '
+        Me.btnPickZone.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnPickZone.Location = New System.Drawing.Point(250, 138)
+        Me.btnPickZone.Name = "btnPickZone"
+        Me.btnPickZone.Size = New System.Drawing.Size(169, 23)
+        Me.btnPickZone.TabIndex = 63
+        Me.btnPickZone.Text = "Seleccionar Zona..."
+        Me.btnPickZone.UseVisualStyleBackColor = True
+        '
+        'lblZone
+        '
+        Me.lblZone.AutoSize = True
+        Me.lblZone.Location = New System.Drawing.Point(119, 143)
+        Me.lblZone.Name = "lblZone"
+        Me.lblZone.Size = New System.Drawing.Size(113, 13)
+        Me.lblZone.TabIndex = 62
+        Me.lblZone.Text = "Ninguna seleccionada"
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 147)
+        Me.Label5.Location = New System.Drawing.Point(12, 143)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 13)
-        Me.Label5.TabIndex = 35
-        Me.Label5.Text = "Cantidad:"
-        '
-        'nudQuantity
-        '
-        Me.nudQuantity.Location = New System.Drawing.Point(122, 145)
-        Me.nudQuantity.Name = "nudQuantity"
-        Me.nudQuantity.Size = New System.Drawing.Size(120, 20)
-        Me.nudQuantity.TabIndex = 50
+        Me.Label5.Size = New System.Drawing.Size(35, 13)
+        Me.Label5.TabIndex = 61
+        Me.Label5.Text = "Zona:"
         '
         'frmAddPlant
         '
@@ -165,7 +177,8 @@ Partial Class frmAddPlant
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkSeaGreen
         Me.ClientSize = New System.Drawing.Size(444, 211)
-        Me.Controls.Add(Me.nudQuantity)
+        Me.Controls.Add(Me.btnPickZone)
+        Me.Controls.Add(Me.lblZone)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnPickPlantPot)
         Me.Controls.Add(Me.lblPlantpot)
@@ -181,7 +194,6 @@ Partial Class frmAddPlant
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmAddPlant"
         Me.Text = "Plantar"
-        CType(Me.nudQuantity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -198,6 +210,7 @@ Partial Class frmAddPlant
     Friend WithEvents Label3 As Label
     Friend WithEvents lblPlantpot As Label
     Friend WithEvents btnPickPlantPot As Button
+    Friend WithEvents btnPickZone As Button
+    Friend WithEvents lblZone As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents nudQuantity As NumericUpDown
 End Class

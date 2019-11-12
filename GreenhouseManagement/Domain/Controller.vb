@@ -20,6 +20,22 @@ Public Class Controller
     '    dplant.Remove(CI)
     'End Sub
 
+    Public Sub AddPlant(plant As EPlant)
+        dplant.Add(plant)
+    End Sub
+
+    Public Sub ModifyPlant(plant As EPlant)
+        dplant.Modify(plant)
+    End Sub
+
+    Public Sub RemovePlant(id As Integer)
+        dplant.Remove(id)
+    End Sub
+
+    Public Function ListPlantsBySpecies(name As String) As List(Of EPlant)
+        Return dplant.BySpecies(name)
+    End Function
+
     '----------------------------------------PERSON-------------------------------------------
 
     Public Function Login(user As String, contra As String) As EPerson

@@ -30,7 +30,7 @@ Public Class frmAddSpecies
         nudHumidity.Value = Convert.ToDecimal(s.Humidity)
         Dim c As Integer = 0
         For Each item In cbxMoonType.Items
-            If item.ToString() = s.MoonType Then
+            If item.ToString() = s.MoonPhase Then
                 Exit For
             End If
             c += 1

@@ -82,7 +82,7 @@ Public Class frmListSpecies
     Private Sub LoadDGV()
         dgvSpeciesList.Rows.Clear()
         For Each s As ESpecies In mSpecies
-            dgvSpeciesList.Rows.Add(s.Name, s.Type, s.Family, s.ZoneType, s.GrowTime.ToString() + " Días", s.MoonType, s.Humidity.ToString())
+            dgvSpeciesList.Rows.Add(s.Name, s.Type, s.Family, s.ZoneType, s.GrowTime.ToString() + " Días", s.MoonPhase, s.Humidity.ToString())
         Next
         dgvSpeciesList.Refresh()
     End Sub

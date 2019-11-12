@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmListaDOUPLantPot
+Partial Class frmListPlantPot
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,7 +23,7 @@ Partial Class frmListaDOUPLantPot
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListaDOUPLantPot))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListPlantPot))
         Me.dgvPlantPotList = New System.Windows.Forms.DataGridView()
         Me.dgvcName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvcMaterial = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,6 +47,7 @@ Partial Class frmListaDOUPLantPot
         Me.dgvPlantPotList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvPlantPotList.Location = New System.Drawing.Point(12, 12)
         Me.dgvPlantPotList.Name = "dgvPlantPotList"
+        Me.dgvPlantPotList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPlantPotList.Size = New System.Drawing.Size(776, 385)
         Me.dgvPlantPotList.TabIndex = 0
         '
@@ -95,21 +96,21 @@ Partial Class frmListaDOUPLantPot
         '
         Me.cmsInteract.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiDelete, Me.tsmiModify})
         Me.cmsInteract.Name = "cmsInteract"
-        Me.cmsInteract.Size = New System.Drawing.Size(181, 70)
+        Me.cmsInteract.Size = New System.Drawing.Size(126, 48)
         '
         'tsmiDelete
         '
         Me.tsmiDelete.Name = "tsmiDelete"
-        Me.tsmiDelete.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiDelete.Size = New System.Drawing.Size(125, 22)
         Me.tsmiDelete.Text = "Eliminar"
         '
         'tsmiModify
         '
         Me.tsmiModify.Name = "tsmiModify"
-        Me.tsmiModify.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiModify.Size = New System.Drawing.Size(125, 22)
         Me.tsmiModify.Text = "Modificar"
         '
-        'frmListaDOUPLantPot
+        'frmListPlantPot
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -120,7 +121,7 @@ Partial Class frmListaDOUPLantPot
         Me.Controls.Add(Me.dgvPlantPotList)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "frmListaDOUPLantPot"
+        Me.Name = "frmListPlantPot"
         Me.Text = "Lista de Macetas"
         CType(Me.dgvPlantPotList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cmsInteract.ResumeLayout(False)

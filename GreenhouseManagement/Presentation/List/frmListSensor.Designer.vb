@@ -47,6 +47,7 @@ Partial Class frmListSensor
         Me.dgvSensorList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvSensorList.Location = New System.Drawing.Point(12, 12)
         Me.dgvSensorList.Name = "dgvSensorList"
+        Me.dgvSensorList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSensorList.Size = New System.Drawing.Size(776, 329)
         Me.dgvSensorList.TabIndex = 0
         '

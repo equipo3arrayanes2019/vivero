@@ -144,10 +144,10 @@
     <Compile Include="List\frmListadoherramienta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="List\frmListaDOUPLantPot.Designer.vb">
-      <DependentUpon>frmListaDOUPLantPot.vb</DependentUpon>
+    <Compile Include="List\frmListPlantPot.Designer.vb">
+      <DependentUpon>frmListPlantPot.vb</DependentUpon>
     </Compile>
-    <Compile Include="List\frmListaDOUPLantPot.vb">
+    <Compile Include="List\frmListPlantPot.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="List\frmListSensor.Designer.vb">
@@ -192,10 +192,10 @@
     <Compile Include="List\frmListZone.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="List\frmBrowsePlants.Designer.vb">
-      <DependentUpon>frmBrowsePlants.vb</DependentUpon>
+    <Compile Include="List\frmListPlants.Designer.vb">
+      <DependentUpon>frmListPlants.vb</DependentUpon>
     </Compile>
-    <Compile Include="List\frmBrowsePlants.vb">
+    <Compile Include="List\frmListPlants.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.vb">
@@ -273,8 +273,8 @@
     <EmbeddedResource Include="List\frmListadoherramienta.resx">
       <DependentUpon>frmListadoherramienta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="List\frmListaDOUPLantPot.resx">
-      <DependentUpon>frmListaDOUPLantPot.vb</DependentUpon>
+    <EmbeddedResource Include="List\frmListPlantPot.resx">
+      <DependentUpon>frmListPlantPot.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="List\frmListSensor.resx">
       <DependentUpon>frmListSensor.vb</DependentUpon>
@@ -297,8 +297,8 @@
     <EmbeddedResource Include="List\frmListZone.resx">
       <DependentUpon>frmListZone.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="List\frmBrowsePlants.resx">
-      <DependentUpon>frmBrowsePlants.vb</DependentUpon>
+    <EmbeddedResource Include="List\frmListPlants.resx">
+      <DependentUpon>frmListPlants.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>

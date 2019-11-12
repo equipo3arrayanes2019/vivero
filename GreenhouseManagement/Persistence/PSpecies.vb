@@ -8,7 +8,7 @@ Public Class PSpecies
         Dim result = conn.SendQuery(query)
         Dim out = New List(Of ESpecies)
         While result.Read
-            out.Add(New ESpecies(result.GetString("nombre"), result.GetString("tipo"), result.GetString("familia"), result.GetString("tipoZona"), result.GetInt32("tiempoCultivo"), result.GetString("tipoLuna"), result.GetDouble("humedad")))
+            out.Add(New ESpecies(result.GetString("nombre"), result.GetString("tipo"), result.GetString("familia"), result.GetString("tipoZona"), result.GetInt32("tiempoCultivo"), result.GetString("faseLunar"), result.GetDouble("humedad")))
         End While
         conn.Close()
         Return out
@@ -20,14 +20,14 @@ Public Class PSpecies
         Dim result = conn.SendQuery(query)
         Dim out = New List(Of ESpecies)
         While result.Read
-            out.Add(New ESpecies(result.GetString("nombre"), result.GetString("tipo"), result.GetString("familia"), result.GetString("tipoZona"), result.GetInt32("tiempoCultivo"), result.GetString("tipoLuna"), result.GetDouble("humedad")))
+            out.Add(New ESpecies(result.GetString("nombre"), result.GetString("tipo"), result.GetString("familia"), result.GetString("tipoZona"), result.GetInt32("tiempoCultivo"), result.GetString("faseLunar"), result.GetDouble("humedad")))
         End While
         conn.Close()
         Return out
     End Function
 
     Public Sub Add(s As ESpecies)
-        Dim query As String = "INSERT INTO Especie(nombre, tipo, familia, tipoZona, tiempoCultivo, tipoLuna, humedad) VALUES('" + SqlHandle.Escape(s.Name) + "', '" + SqlHandle.Escape(s.Type) + "', '" + SqlHandle.Escape(s.Family) + "', '" + s.ZoneType + "', " + s.GrowTime.ToString() + ", '" + s.MoonType + "', " + s.Humidity.ToString().Replace(",", ".") + ");"
+        Dim query As String = "INSERT INTO Especie(nombre, tipo, familia, tipoZona, tiempoCultivo, faseLunar, humedad) VALUES('" + SqlHandle.Escape(s.Name) + "', '" + SqlHandle.Escape(s.Type) + "', '" + SqlHandle.Escape(s.Family) + "', '" + s.ZoneType + "', " + s.GrowTime.ToString() + ", '" + s.MoonPhase + "', " + s.Humidity.ToString().Replace(",", ".") + ");"
         SqlHandle.StaticSendCommand(query)
     End Sub
 
@@ -37,7 +37,7 @@ Public Class PSpecies
     End Sub
 
     Public Sub Update(s As ESpecies)
-        Dim query As String = "UPDATE Especie SET nombre = '" + SqlHandle.Escape(s.Name) + "', tipo = '" + SqlHandle.Escape(s.Type) + "', familia = '" + SqlHandle.Escape(s.Family) + "',  tipoZona = '" + s.ZoneType + "', tiempoCultivo = " + s.GrowTime.ToString() + ", tipoLuna = '" + s.MoonType + "', humedad = " + s.Humidity.ToString().Replace(",", ".") + " WHERE nombre = '" + SqlHandle.Escape(s.Name) + "';"
+        Dim query As String = "UPDATE Especie SET nombre = '" + SqlHandle.Escape(s.Name) + "', tipo = '" + SqlHandle.Escape(s.Type) + "', familia = '" + SqlHandle.Escape(s.Family) + "',  tipoZona = '" + s.ZoneType + "', tiempoCultivo = " + s.GrowTime.ToString() + ", faseLunar = '" + s.MoonPhase + "', humedad = " + s.Humidity.ToString().Replace(",", ".") + " WHERE nombre = '" + SqlHandle.Escape(s.Name) + "';"
         SqlHandle.StaticSendCommand(query)
     End Sub
 

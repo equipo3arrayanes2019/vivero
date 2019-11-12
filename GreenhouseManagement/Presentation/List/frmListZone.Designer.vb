@@ -63,6 +63,7 @@ Partial Class frmListZone
         Me.dgvZones.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvZones.Location = New System.Drawing.Point(12, 12)
         Me.dgvZones.Name = "dgvZones"
+        Me.dgvZones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvZones.Size = New System.Drawing.Size(656, 314)
         Me.dgvZones.TabIndex = 1
         '

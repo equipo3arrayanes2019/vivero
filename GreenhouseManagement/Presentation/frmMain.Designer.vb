@@ -56,6 +56,7 @@ Partial Class frmMain
         Me.tsmiPlantPots = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiPlantPotAdd = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiPlantPotList = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiPlantsView = New System.Windows.Forms.ToolStripMenuItem()
         Me.msMain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -80,7 +81,7 @@ Partial Class frmMain
         '
         'tsmiPlants
         '
-        Me.tsmiPlants.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSpeciesBook, Me.tsmiPlant})
+        Me.tsmiPlants.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSpeciesBook, Me.tsmiPlant, Me.tsmiPlantsView})
         Me.tsmiPlants.Name = "tsmiPlants"
         Me.tsmiPlants.Size = New System.Drawing.Size(57, 20)
         Me.tsmiPlants.Text = "Plantas"
@@ -89,7 +90,7 @@ Partial Class frmMain
         '
         Me.tsmiSpeciesBook.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSpeciesBookBrowse, Me.tsmiSpeciesBookAdd})
         Me.tsmiSpeciesBook.Name = "tsmiSpeciesBook"
-        Me.tsmiSpeciesBook.Size = New System.Drawing.Size(118, 22)
+        Me.tsmiSpeciesBook.Size = New System.Drawing.Size(180, 22)
         Me.tsmiSpeciesBook.Text = "Especies"
         '
         'tsmiSpeciesBookBrowse
@@ -107,8 +108,8 @@ Partial Class frmMain
         'tsmiPlant
         '
         Me.tsmiPlant.Name = "tsmiPlant"
-        Me.tsmiPlant.Size = New System.Drawing.Size(118, 22)
-        Me.tsmiPlant.Text = "Plantar"
+        Me.tsmiPlant.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiPlant.Text = "Registrar"
         '
         'tsmiZones
         '
@@ -140,7 +141,7 @@ Partial Class frmMain
         '
         Me.tsmiStockMaterials.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiStockMaterialsList, Me.tsmiStockMaterialsAdd})
         Me.tsmiStockMaterials.Name = "tsmiStockMaterials"
-        Me.tsmiStockMaterials.Size = New System.Drawing.Size(145, 22)
+        Me.tsmiStockMaterials.Size = New System.Drawing.Size(180, 22)
         Me.tsmiStockMaterials.Text = "Insumos"
         '
         'tsmiStockMaterialsList
@@ -159,7 +160,7 @@ Partial Class frmMain
         '
         Me.tsmiStockTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiStockToolsList, Me.tsmiStockToolsAdd})
         Me.tsmiStockTools.Name = "tsmiStockTools"
-        Me.tsmiStockTools.Size = New System.Drawing.Size(145, 22)
+        Me.tsmiStockTools.Size = New System.Drawing.Size(180, 22)
         Me.tsmiStockTools.Text = "Herramientas"
         '
         'tsmiStockToolsList
@@ -178,7 +179,7 @@ Partial Class frmMain
         '
         Me.tsmiStockSeeds.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarToolStripMenuItem3})
         Me.tsmiStockSeeds.Name = "tsmiStockSeeds"
-        Me.tsmiStockSeeds.Size = New System.Drawing.Size(145, 22)
+        Me.tsmiStockSeeds.Size = New System.Drawing.Size(180, 22)
         Me.tsmiStockSeeds.Text = "Semillas"
         '
         'ListarToolStripMenuItem3
@@ -244,13 +245,13 @@ Partial Class frmMain
         'tsmiRegister
         '
         Me.tsmiRegister.Name = "tsmiRegister"
-        Me.tsmiRegister.Size = New System.Drawing.Size(116, 22)
+        Me.tsmiRegister.Size = New System.Drawing.Size(180, 22)
         Me.tsmiRegister.Text = "Regisrar"
         '
         'ListarToolStripMenuItem
         '
         Me.ListarToolStripMenuItem.Name = "ListarToolStripMenuItem"
-        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
+        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ListarToolStripMenuItem.Text = "Listar"
         '
         'tsmiPlantPots
@@ -271,6 +272,12 @@ Partial Class frmMain
         Me.tsmiPlantPotList.Name = "tsmiPlantPotList"
         Me.tsmiPlantPotList.Size = New System.Drawing.Size(180, 22)
         Me.tsmiPlantPotList.Text = "Listar"
+        '
+        'tsmiPlantsView
+        '
+        Me.tsmiPlantsView.Name = "tsmiPlantsView"
+        Me.tsmiPlantsView.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiPlantsView.Text = "Ver"
         '
         'frmMain
         '
@@ -326,4 +333,5 @@ Partial Class frmMain
     Friend WithEvents tsmiPlantPots As ToolStripMenuItem
     Friend WithEvents tsmiPlantPotAdd As ToolStripMenuItem
     Friend WithEvents tsmiPlantPotList As ToolStripMenuItem
+    Friend WithEvents tsmiPlantsView As ToolStripMenuItem
 End Class
