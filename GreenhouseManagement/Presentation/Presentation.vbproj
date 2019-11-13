@@ -6,13 +6,29 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CCC28F0A-7CB5-4FB6-9985-2D639C1BDCC9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Presentation.My.MyApplication</StartupObject>
-    <RootNamespace>Presentation</RootNamespace>
-    <AssemblyName>Presentation</AssemblyName>
+    <StartupObject>MeGusta.My.MyApplication</StartupObject>
+    <RootNamespace>MeGusta</RootNamespace>
+    <AssemblyName>MeGusta</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,7 +37,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Presentation.xml</DocumentationFile>
+    <DocumentationFile>MeGusta.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -31,7 +47,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Presentation.xml</DocumentationFile>
+    <DocumentationFile>MeGusta.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -45,6 +61,21 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>965D00B1A06EF81781940D817605F1D186819AA3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Presentation_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
@@ -77,10 +108,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add\AddSensor.Designer.vb">
-      <DependentUpon>AddSensor.vb</DependentUpon>
+    <Compile Include="Add\frmAddPlantPot.Designer.vb">
+      <DependentUpon>frmAddPlantPot.vb</DependentUpon>
     </Compile>
-    <Compile Include="Add\AddSensor.vb">
+    <Compile Include="Add\frmAddPlantPot.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add\frmAddSensor.Designer.vb">
+      <DependentUpon>frmAddSensor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add\frmAddSensor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Add\frmAddPerson.Designer.vb">
@@ -89,22 +126,22 @@
     <Compile Include="Add\frmAddPerson.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add\frmAddPlants.Designer.vb">
-      <DependentUpon>frmAddPlants.vb</DependentUpon>
+    <Compile Include="Add\frmAddAditivo.Designer.vb">
+      <DependentUpon>frmAddAditivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Add\frmAddPlants.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Add\frmaddAditivo.Designer.vb">
-      <DependentUpon>frmaddAditivo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Add\frmaddAditivo.vb">
+    <Compile Include="Add\frmAddAditivo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Add\frmAddHerramienta.Designer.vb">
       <DependentUpon>frmAddHerramienta.vb</DependentUpon>
     </Compile>
     <Compile Include="Add\frmAddHerramienta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add\frmAddSpecies.Designer.vb">
+      <DependentUpon>frmAddSpecies.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add\frmAddSpecies.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Add\frmAddZone.Designer.vb">
@@ -120,6 +157,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Common\CommonError.vb" />
+    <Compile Include="Common\frmContact.Designer.vb">
+      <DependentUpon>frmContact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\frmContact.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Common\frmError.Designer.vb">
       <DependentUpon>frmError.vb</DependentUpon>
     </Compile>
@@ -132,10 +175,22 @@
     <Compile Include="List\frmListadoherramienta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="List\frmListPlantPot.Designer.vb">
+      <DependentUpon>frmListPlantPot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List\frmListPlantPot.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="List\frmListSensor.Designer.vb">
       <DependentUpon>frmListSensor.vb</DependentUpon>
     </Compile>
     <Compile Include="List\frmListSensor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List\frmListSpecies.Designer.vb">
+      <DependentUpon>frmListSpecies.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List\frmListSpecies.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sensor\frmGraphic.Designer.vb">
@@ -168,10 +223,10 @@
     <Compile Include="List\frmListZone.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="List\frmBrowsePlants.Designer.vb">
-      <DependentUpon>frmBrowsePlants.vb</DependentUpon>
+    <Compile Include="List\frmListPlants.Designer.vb">
+      <DependentUpon>frmListPlants.vb</DependentUpon>
     </Compile>
-    <Compile Include="List\frmBrowsePlants.vb">
+    <Compile Include="List\frmListPlants.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.vb">
@@ -187,16 +242,16 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPlant.Designer.vb">
-      <DependentUpon>frmPlant.vb</DependentUpon>
+    <Compile Include="Add\frmAddPlant.Designer.vb">
+      <DependentUpon>frmAddPlant.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPlant.vb">
+    <Compile Include="Add\frmAddPlant.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="List\listPerson.Designer.vb">
-      <DependentUpon>listPerson.vb</DependentUpon>
+    <Compile Include="List\frmListPerson.Designer.vb">
+      <DependentUpon>frmListPerson.vb</DependentUpon>
     </Compile>
-    <Compile Include="List\listPerson.vb">
+    <Compile Include="List\frmListPerson.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -216,20 +271,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Add\AddSensor.resx">
-      <DependentUpon>AddSensor.vb</DependentUpon>
+    <EmbeddedResource Include="Add\frmAddPlantPot.resx">
+      <DependentUpon>frmAddPlantPot.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add\frmAddSensor.resx">
+      <DependentUpon>frmAddSensor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add\frmAddPerson.resx">
       <DependentUpon>frmAddPerson.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Add\frmAddPlants.resx">
-      <DependentUpon>frmAddPlants.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Add\frmaddAditivo.resx">
-      <DependentUpon>frmaddAditivo.vb</DependentUpon>
+    <EmbeddedResource Include="Add\frmAddAditivo.resx">
+      <DependentUpon>frmAddAditivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add\frmAddHerramienta.resx">
       <DependentUpon>frmAddHerramienta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add\frmAddSpecies.resx">
+      <DependentUpon>frmAddSpecies.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add\frmAddZone.resx">
       <DependentUpon>frmAddZone.vb</DependentUpon>
@@ -237,14 +295,23 @@
     <EmbeddedResource Include="Askers\frmAskZoneType.resx">
       <DependentUpon>frmAskZoneType.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmContact.resx">
+      <DependentUpon>frmContact.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Common\frmError.resx">
       <DependentUpon>frmError.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="List\frmListadoherramienta.resx">
       <DependentUpon>frmListadoherramienta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="List\frmListPlantPot.resx">
+      <DependentUpon>frmListPlantPot.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="List\frmListSensor.resx">
       <DependentUpon>frmListSensor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List\frmListSpecies.resx">
+      <DependentUpon>frmListSpecies.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sensor\frmGraphic.resx">
       <DependentUpon>frmGraphic.vb</DependentUpon>
@@ -261,8 +328,8 @@
     <EmbeddedResource Include="List\frmListZone.resx">
       <DependentUpon>frmListZone.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="List\frmBrowsePlants.resx">
-      <DependentUpon>frmBrowsePlants.vb</DependentUpon>
+    <EmbeddedResource Include="List\frmListPlants.resx">
+      <DependentUpon>frmListPlants.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
@@ -270,11 +337,11 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPlant.resx">
-      <DependentUpon>frmPlant.vb</DependentUpon>
+    <EmbeddedResource Include="Add\frmAddPlant.resx">
+      <DependentUpon>frmAddPlant.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="List\listPerson.resx">
-      <DependentUpon>listPerson.vb</DependentUpon>
+    <EmbeddedResource Include="List\frmListPerson.resx">
+      <DependentUpon>frmListPerson.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -294,6 +361,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="Presentation_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.vbproj">
@@ -305,7 +373,21 @@
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

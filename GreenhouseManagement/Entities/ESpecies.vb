@@ -46,7 +46,7 @@
             mGrowTime = value
         End Set
     End Property
-    Public Property MoonType As String
+    Public Property MoonPhase As String
         Get
             Return mMoonType
         End Get
@@ -64,5 +64,15 @@
     End Property
     Public Sub New()
 
+    End Sub
+
+    Public Sub New(Name As String, Type As String, Family As String, ZoneType As String, GrowTime As Integer, MoonType As String, Humidity As Double)
+        Me.Name = Name
+        Me.Type = Type
+        Me.Family = Family
+        Me.ZoneType = ZoneType
+        Me.GrowTime = GrowTime
+        Me.MoonPhase = MoonType
+        Me.Humidity = Humidity
     End Sub
 End Class

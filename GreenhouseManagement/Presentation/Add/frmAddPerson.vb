@@ -2,6 +2,26 @@
 Imports Domain
 Public Class frmAddPerson
 
+    Public Sub New(p As EPerson, pp As EPerson)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+        mskCedula.Text = pp.CI.ToString()
+        txtName.Text = pp.Name
+        txtAddress.Text = pp.Address
+        txtPhone.Text = pp.Phone
+        txtUser.Text = pp.User
+        txtClave.Text = pp.Password
+        cbxType.SelectedItem = pp.Charge
+        dtpBirthDate.Value = pp.BirthDate
+
+        Person = p
+        mUpdate = False
+    End Sub
+
     Public Sub New(p As EPerson)
 
         ' Esta llamada es exigida por el diseñador.
@@ -9,8 +29,10 @@ Public Class frmAddPerson
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         Person = p
+        mUpdate = False
     End Sub
 
+    Private mUpdate As Boolean
     Private mPerson As EPerson
     Public Property Person() As EPerson
         Get
@@ -29,28 +51,26 @@ Public Class frmAddPerson
         unEE.Phone = txtPhone.Text
         unEE.User = txtUser.Text
         unEE.Password = txtClave.Text
-        unEE.Charge = cxType.Text
-        unEE.BirthDate = CDate(dtpFecha.Text)
-        unDE.AddPerson(unEE)
-    End Sub
+        unEE.Charge = cbxType.Text
+        unEE.BirthDate = dtpBirthDate.Value
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        unDE.RemovePerson(mskCedula.Text)
-    End Sub
-
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        MsgBox("Está Seguro Que Quiere Realizar lo cambios", MsgBoxStyle.OkCancel)
-        If MsgBoxResult.Ok = 1 Then
-            unEE.CI = CInt(Int(mskCedula.Text))
-            unEE.Name = txtName.Text
-            unEE.Address = txtAddress.Text
-            unEE.Phone = txtPhone.Text
-            unEE.User = txtUser.Text
-            unEE.Password = txtClave.Text
-            unEE.Charge = cxType.Text
-            unEE.BirthDate = CDate(dtpFecha.Text)
-            unDE.ModifyPerson(unEE)
+        If mUpdate Then
+            Dim err As Boolean = False
+            Try
+                unDE.ModifyPerson(unEE)
+            Catch ex As Exception
+                CommonError.ErrorSaving(ex)
+                err = True
+            End Try
+            If Not err Then
+                Me.Close()
+            End If
+        Else
+            Try
+                unDE.AddPerson(unEE)
+            Catch ex As Exception
+                CommonError.ErrorSaving(ex)
+            End Try
         End If
 
     End Sub

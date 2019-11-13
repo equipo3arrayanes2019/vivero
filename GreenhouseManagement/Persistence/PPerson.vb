@@ -1,22 +1,22 @@
 ﻿Imports Entities
 Imports MySql.Data.MySqlClient
 Public Class PPerson
-    Public Sub AddPerson(unP As EPerson) 'Se declara el alta persona la cual nos ineterviene entre VB.net y MySQL.
-        Dim consulta1 As String
-        consulta1 = "insert INTO empleado values (" & unP.CI & ",'" & unP.User & "','" & unP.Password & "','" & unP.Name & "','" & unP.Address & "','" & unP.Phone & "','" & unP.BirthDate.ToString("yyyy-MM-dd") & "','" & unP.Charge & "');"
-        SqlHandle.StaticSendCommand(consulta1)
+    Public Sub AddPerson(p As EPerson) 'Se declara el alta persona la cual nos ineterviene entre VB.net y MySQL.
+        Dim query As String
+        query = "INSERT INTO Empleado(ci, usuario, contraseña, nombre, telefono, direccion, fechaNacimiento, cargo) VALUES (" + p.CI.ToString() + ", '" + SqlHandle.Escape(p.User) + "', '" + SqlHandle.Escape(p.Password) + "', '" + SqlHandle.Escape(p.Name) + "', '" + SqlHandle.Escape(p.Phone) + "', '" + SqlHandle.Escape(p.Address) + "', '" + SqlHandle.GetMySqlDateFormat(p.BirthDate) + "', '" + p.Charge + "');"
+        SqlHandle.StaticSendCommand(query)
     End Sub
     '---------------------------------------------------------------------------------------------
     Public Sub AddUser(unU As EPerson)
-        Dim consulta1 As String
-        consulta1 = "insert into empleado values ('" & unU.User & "', '" & unU.Password & "');"
-        SqlHandle.StaticSendCommand(consulta1)
+        Dim query As String
+        query = "insert into Empleado values ('" & unU.User & "', '" & unU.Password & "');"
+        SqlHandle.StaticSendCommand(query)
     End Sub
     '---------------------------------------------------------------------------------------------
-    Public Sub RemovePerson(cedula As String)
-        Dim consulta As String
-        consulta = "DELETE FROM empleado WHERE cedula='" & cedula & "';"
-        SqlHandle.StaticSendCommand(consulta)
+    Public Sub RemovePerson(CI As String)
+        Dim query As String
+        query = "DELETE FROM Empleado WHERE cedula='" & CI & "';"
+        SqlHandle.StaticSendCommand(query)
     End Sub
     '---------------------------------------------------------------------------------------------
     Private Function CreatePerson(fila As MySqlDataReader) As EPerson
@@ -37,7 +37,7 @@ Public Class PPerson
         Dim lPerson As New List(Of EPerson)
         Dim conn As New SqlHandle
 
-        query = "SELECT * FROM empleado"
+        query = "SELECT * FROM Empleado"
         returned = conn.SendQuery(query)
         If returned.HasRows Then
             While (returned.Read)
@@ -48,7 +48,7 @@ Public Class PPerson
         Return (lPerson)
     End Function
     Public Sub ModifyPerson(unE As EPerson)
-        Dim consulta1 = "UPDATE empleado set cedula='" & unE.CI & "', usuario='" & unE.User & "', contraseña='" & unE.Password & "', nombre='" & unE.Name & "', direccion='" & unE.Address & "', telefono='" & unE.Phone & "', fechanac='" & unE.BirthDate & "', cargo='" & unE.Charge & "' WHERE cedula='" & unE.CI & "';"
+        Dim consulta1 = "UPDATE Empleado set cedula='" & unE.CI & "', usuario='" & unE.User & "', contraseña='" & unE.Password & "', nombre='" & unE.Name & "', direccion='" & unE.Address & "', telefono='" & unE.Phone & "', fechanac='" & unE.BirthDate & "', cargo='" & unE.Charge & "' WHERE cedula='" & unE.CI & "';"
         SqlHandle.StaticSendCommand(consulta1)
     End Sub
 
@@ -69,6 +69,7 @@ Public Class PPerson
         conn.Close()
         Return elUsuario
     End Function
+
     'Private Function CreateUser(fila As MySqlDataReader) As EPerson
     '    Dim unUsuario As New EPerson
     '    unUsuario.User = fila.GetString("usuario")

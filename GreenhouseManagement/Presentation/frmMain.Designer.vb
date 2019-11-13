@@ -31,36 +31,23 @@ Partial Class frmMain
         Me.tsmiSpeciesBookBrowse = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiSpeciesBookAdd = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiPlant = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiPlantsView = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiZones = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiZoneAdd = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiZoneViewZone = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiStock = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiStockMaterials = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiStockMaterialsList = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiStockMaterialsAdd = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiStockTools = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiStockToolsList = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiStockToolsAdd = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiStockSeeds = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListarToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KAPPALEEELMANUALPIBEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContactoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.msMain = New System.Windows.Forms.MenuStrip()
         Me.SensoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TemperaturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GraficaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HumedadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GraficaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MedicionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListarToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiSensorsAddnew = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiViewSensor = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiPersons = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiRegister = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiSensorsAddnew = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiViewSensor = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiPlantPots = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiPlantPotAdd = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiPlantPotList = New System.Windows.Forms.ToolStripMenuItem()
         Me.msMain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -85,7 +72,7 @@ Partial Class frmMain
         '
         'tsmiPlants
         '
-        Me.tsmiPlants.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSpeciesBook, Me.tsmiPlant})
+        Me.tsmiPlants.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSpeciesBook, Me.tsmiPlant, Me.tsmiPlantsView})
         Me.tsmiPlants.Name = "tsmiPlants"
         Me.tsmiPlants.Size = New System.Drawing.Size(57, 20)
         Me.tsmiPlants.Text = "Plantas"
@@ -94,26 +81,32 @@ Partial Class frmMain
         '
         Me.tsmiSpeciesBook.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSpeciesBookBrowse, Me.tsmiSpeciesBookAdd})
         Me.tsmiSpeciesBook.Name = "tsmiSpeciesBook"
-        Me.tsmiSpeciesBook.Size = New System.Drawing.Size(180, 22)
-        Me.tsmiSpeciesBook.Text = "Libro de especies"
+        Me.tsmiSpeciesBook.Size = New System.Drawing.Size(120, 22)
+        Me.tsmiSpeciesBook.Text = "Especies"
         '
         'tsmiSpeciesBookBrowse
         '
         Me.tsmiSpeciesBookBrowse.Name = "tsmiSpeciesBookBrowse"
-        Me.tsmiSpeciesBookBrowse.Size = New System.Drawing.Size(116, 22)
+        Me.tsmiSpeciesBookBrowse.Size = New System.Drawing.Size(186, 22)
         Me.tsmiSpeciesBookBrowse.Text = "Buscar"
         '
         'tsmiSpeciesBookAdd
         '
         Me.tsmiSpeciesBookAdd.Name = "tsmiSpeciesBookAdd"
-        Me.tsmiSpeciesBookAdd.Size = New System.Drawing.Size(116, 22)
-        Me.tsmiSpeciesBookAdd.Text = "Agregar"
+        Me.tsmiSpeciesBookAdd.Size = New System.Drawing.Size(186, 22)
+        Me.tsmiSpeciesBookAdd.Text = "Añadir nueva especie"
         '
         'tsmiPlant
         '
         Me.tsmiPlant.Name = "tsmiPlant"
-        Me.tsmiPlant.Size = New System.Drawing.Size(180, 22)
-        Me.tsmiPlant.Text = "Plantar"
+        Me.tsmiPlant.Size = New System.Drawing.Size(120, 22)
+        Me.tsmiPlant.Text = "Registrar"
+        '
+        'tsmiPlantsView
+        '
+        Me.tsmiPlantsView.Name = "tsmiPlantsView"
+        Me.tsmiPlantsView.Size = New System.Drawing.Size(120, 22)
+        Me.tsmiPlantsView.Text = "Ver"
         '
         'tsmiZones
         '
@@ -125,72 +118,14 @@ Partial Class frmMain
         'tsmiZoneAdd
         '
         Me.tsmiZoneAdd.Name = "tsmiZoneAdd"
-        Me.tsmiZoneAdd.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiZoneAdd.Size = New System.Drawing.Size(121, 22)
         Me.tsmiZoneAdd.Text = "Agregar"
         '
         'tsmiZoneViewZone
         '
         Me.tsmiZoneViewZone.Name = "tsmiZoneViewZone"
-        Me.tsmiZoneViewZone.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiZoneViewZone.Size = New System.Drawing.Size(121, 22)
         Me.tsmiZoneViewZone.Text = "Ver Zona"
-        '
-        'tsmiStock
-        '
-        Me.tsmiStock.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiStockMaterials, Me.tsmiStockTools, Me.tsmiStockSeeds})
-        Me.tsmiStock.Name = "tsmiStock"
-        Me.tsmiStock.Size = New System.Drawing.Size(48, 20)
-        Me.tsmiStock.Text = "Stock"
-        '
-        'tsmiStockMaterials
-        '
-        Me.tsmiStockMaterials.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiStockMaterialsList, Me.tsmiStockMaterialsAdd})
-        Me.tsmiStockMaterials.Name = "tsmiStockMaterials"
-        Me.tsmiStockMaterials.Size = New System.Drawing.Size(145, 22)
-        Me.tsmiStockMaterials.Text = "Insumos"
-        '
-        'tsmiStockMaterialsList
-        '
-        Me.tsmiStockMaterialsList.Name = "tsmiStockMaterialsList"
-        Me.tsmiStockMaterialsList.Size = New System.Drawing.Size(116, 22)
-        Me.tsmiStockMaterialsList.Text = "Listar"
-        '
-        'tsmiStockMaterialsAdd
-        '
-        Me.tsmiStockMaterialsAdd.Name = "tsmiStockMaterialsAdd"
-        Me.tsmiStockMaterialsAdd.Size = New System.Drawing.Size(116, 22)
-        Me.tsmiStockMaterialsAdd.Text = "Agregar"
-        '
-        'tsmiStockTools
-        '
-        Me.tsmiStockTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiStockToolsList, Me.tsmiStockToolsAdd})
-        Me.tsmiStockTools.Name = "tsmiStockTools"
-        Me.tsmiStockTools.Size = New System.Drawing.Size(145, 22)
-        Me.tsmiStockTools.Text = "Herramientas"
-        '
-        'tsmiStockToolsList
-        '
-        Me.tsmiStockToolsList.Name = "tsmiStockToolsList"
-        Me.tsmiStockToolsList.Size = New System.Drawing.Size(116, 22)
-        Me.tsmiStockToolsList.Text = "Listar"
-        '
-        'tsmiStockToolsAdd
-        '
-        Me.tsmiStockToolsAdd.Name = "tsmiStockToolsAdd"
-        Me.tsmiStockToolsAdd.Size = New System.Drawing.Size(116, 22)
-        Me.tsmiStockToolsAdd.Text = "Agregar"
-        '
-        'tsmiStockSeeds
-        '
-        Me.tsmiStockSeeds.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarToolStripMenuItem3})
-        Me.tsmiStockSeeds.Name = "tsmiStockSeeds"
-        Me.tsmiStockSeeds.Size = New System.Drawing.Size(145, 22)
-        Me.tsmiStockSeeds.Text = "Semillas"
-        '
-        'ListarToolStripMenuItem3
-        '
-        Me.ListarToolStripMenuItem3.Name = "ListarToolStripMenuItem3"
-        Me.ListarToolStripMenuItem3.Size = New System.Drawing.Size(102, 22)
-        Me.ListarToolStripMenuItem3.Text = "Listar"
         '
         'AyudaToolStripMenuItem
         '
@@ -202,18 +137,18 @@ Partial Class frmMain
         'KAPPALEEELMANUALPIBEToolStripMenuItem
         '
         Me.KAPPALEEELMANUALPIBEToolStripMenuItem.Name = "KAPPALEEELMANUALPIBEToolStripMenuItem"
-        Me.KAPPALEEELMANUALPIBEToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.KAPPALEEELMANUALPIBEToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.KAPPALEEELMANUALPIBEToolStripMenuItem.Text = "Manual Usuario"
         '
         'ContactoToolStripMenuItem
         '
         Me.ContactoToolStripMenuItem.Name = "ContactoToolStripMenuItem"
-        Me.ContactoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ContactoToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.ContactoToolStripMenuItem.Text = "Contacto"
         '
         'msMain
         '
-        Me.msMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSession, Me.tsmiZones, Me.SensoresToolStripMenuItem, Me.tsmiPlants, Me.tsmiStock, Me.tsmiPersons, Me.AyudaToolStripMenuItem})
+        Me.msMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSession, Me.tsmiZones, Me.SensoresToolStripMenuItem, Me.tsmiPlants, Me.tsmiPersons, Me.tsmiPlantPots, Me.AyudaToolStripMenuItem})
         Me.msMain.Location = New System.Drawing.Point(0, 0)
         Me.msMain.Name = "msMain"
         Me.msMain.Size = New System.Drawing.Size(666, 24)
@@ -222,80 +157,10 @@ Partial Class frmMain
         '
         'SensoresToolStripMenuItem
         '
-        Me.SensoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TemperaturaToolStripMenuItem, Me.HumedadToolStripMenuItem, Me.MedicionToolStripMenuItem, Me.tsmiSensorsAddnew, Me.tsmiViewSensor})
+        Me.SensoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSensorsAddnew, Me.tsmiViewSensor})
         Me.SensoresToolStripMenuItem.Name = "SensoresToolStripMenuItem"
         Me.SensoresToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.SensoresToolStripMenuItem.Text = "Sensores"
-        '
-        'TemperaturaToolStripMenuItem
-        '
-        Me.TemperaturaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarToolStripMenuItem1, Me.GraficaToolStripMenuItem})
-        Me.TemperaturaToolStripMenuItem.Name = "TemperaturaToolStripMenuItem"
-        Me.TemperaturaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.TemperaturaToolStripMenuItem.Text = "Temperatura"
-        '
-        'ListarToolStripMenuItem1
-        '
-        Me.ListarToolStripMenuItem1.Name = "ListarToolStripMenuItem1"
-        Me.ListarToolStripMenuItem1.Size = New System.Drawing.Size(111, 22)
-        Me.ListarToolStripMenuItem1.Text = "Listar"
-        '
-        'GraficaToolStripMenuItem
-        '
-        Me.GraficaToolStripMenuItem.Name = "GraficaToolStripMenuItem"
-        Me.GraficaToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
-        Me.GraficaToolStripMenuItem.Text = "Grafica"
-        '
-        'HumedadToolStripMenuItem
-        '
-        Me.HumedadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarToolStripMenuItem2, Me.GraficaToolStripMenuItem1})
-        Me.HumedadToolStripMenuItem.Name = "HumedadToolStripMenuItem"
-        Me.HumedadToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.HumedadToolStripMenuItem.Text = "Humedad"
-        '
-        'ListarToolStripMenuItem2
-        '
-        Me.ListarToolStripMenuItem2.Name = "ListarToolStripMenuItem2"
-        Me.ListarToolStripMenuItem2.Size = New System.Drawing.Size(111, 22)
-        Me.ListarToolStripMenuItem2.Text = "Listar"
-        '
-        'GraficaToolStripMenuItem1
-        '
-        Me.GraficaToolStripMenuItem1.Name = "GraficaToolStripMenuItem1"
-        Me.GraficaToolStripMenuItem1.Size = New System.Drawing.Size(111, 22)
-        Me.GraficaToolStripMenuItem1.Text = "Grafica"
-        '
-        'MedicionToolStripMenuItem
-        '
-        Me.MedicionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarToolStripMenuItem4})
-        Me.MedicionToolStripMenuItem.Name = "MedicionToolStripMenuItem"
-        Me.MedicionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.MedicionToolStripMenuItem.Text = "Medicion"
-        '
-        'ListarToolStripMenuItem4
-        '
-        Me.ListarToolStripMenuItem4.Name = "ListarToolStripMenuItem4"
-        Me.ListarToolStripMenuItem4.Size = New System.Drawing.Size(102, 22)
-        Me.ListarToolStripMenuItem4.Text = "Listar"
-        '
-        'tsmiPersons
-        '
-        Me.tsmiPersons.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiRegister, Me.ListarToolStripMenuItem})
-        Me.tsmiPersons.Name = "tsmiPersons"
-        Me.tsmiPersons.Size = New System.Drawing.Size(77, 20)
-        Me.tsmiPersons.Text = "Empleados"
-        '
-        'tsmiRegister
-        '
-        Me.tsmiRegister.Name = "tsmiRegister"
-        Me.tsmiRegister.Size = New System.Drawing.Size(116, 22)
-        Me.tsmiRegister.Text = "Regisrar"
-        '
-        'ListarToolStripMenuItem
-        '
-        Me.ListarToolStripMenuItem.Name = "ListarToolStripMenuItem"
-        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
-        Me.ListarToolStripMenuItem.Text = "Listar"
         '
         'tsmiSensorsAddnew
         '
@@ -308,6 +173,44 @@ Partial Class frmMain
         Me.tsmiViewSensor.Name = "tsmiViewSensor"
         Me.tsmiViewSensor.Size = New System.Drawing.Size(180, 22)
         Me.tsmiViewSensor.Text = "Ver Sensor"
+        '
+        'tsmiPersons
+        '
+        Me.tsmiPersons.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiRegister, Me.ListarToolStripMenuItem})
+        Me.tsmiPersons.Name = "tsmiPersons"
+        Me.tsmiPersons.Size = New System.Drawing.Size(77, 20)
+        Me.tsmiPersons.Text = "Empleados"
+        '
+        'tsmiRegister
+        '
+        Me.tsmiRegister.Name = "tsmiRegister"
+        Me.tsmiRegister.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiRegister.Text = "Regisrar"
+        '
+        'ListarToolStripMenuItem
+        '
+        Me.ListarToolStripMenuItem.Name = "ListarToolStripMenuItem"
+        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListarToolStripMenuItem.Text = "Listar"
+        '
+        'tsmiPlantPots
+        '
+        Me.tsmiPlantPots.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiPlantPotAdd, Me.tsmiPlantPotList})
+        Me.tsmiPlantPots.Name = "tsmiPlantPots"
+        Me.tsmiPlantPots.Size = New System.Drawing.Size(63, 20)
+        Me.tsmiPlantPots.Text = "Macetas"
+        '
+        'tsmiPlantPotAdd
+        '
+        Me.tsmiPlantPotAdd.Name = "tsmiPlantPotAdd"
+        Me.tsmiPlantPotAdd.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiPlantPotAdd.Text = "Añadir"
+        '
+        'tsmiPlantPotList
+        '
+        Me.tsmiPlantPotList.Name = "tsmiPlantPotList"
+        Me.tsmiPlantPotList.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiPlantPotList.Text = "Listar"
         '
         'frmMain
         '
@@ -340,14 +243,6 @@ Partial Class frmMain
     Friend WithEvents tsmiPlant As ToolStripMenuItem
     Friend WithEvents tsmiZones As ToolStripMenuItem
     Friend WithEvents tsmiZoneAdd As ToolStripMenuItem
-    Friend WithEvents tsmiStock As ToolStripMenuItem
-    Friend WithEvents tsmiStockTools As ToolStripMenuItem
-    Friend WithEvents tsmiStockToolsList As ToolStripMenuItem
-    Friend WithEvents tsmiStockToolsAdd As ToolStripMenuItem
-    Friend WithEvents tsmiStockMaterials As ToolStripMenuItem
-    Friend WithEvents tsmiStockMaterialsList As ToolStripMenuItem
-    Friend WithEvents tsmiStockMaterialsAdd As ToolStripMenuItem
-    Friend WithEvents tsmiStockSeeds As ToolStripMenuItem
     Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents KAPPALEEELMANUALPIBEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents msMain As MenuStrip
@@ -356,16 +251,11 @@ Partial Class frmMain
     Friend WithEvents ListarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContactoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SensoresToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TemperaturaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListarToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents GraficaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents HumedadToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListarToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents GraficaToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ListarToolStripMenuItem3 As ToolStripMenuItem
-    Friend WithEvents MedicionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListarToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents tsmiZoneViewZone As ToolStripMenuItem
     Friend WithEvents tsmiSensorsAddnew As ToolStripMenuItem
     Friend WithEvents tsmiViewSensor As ToolStripMenuItem
+    Friend WithEvents tsmiPlantPots As ToolStripMenuItem
+    Friend WithEvents tsmiPlantPotAdd As ToolStripMenuItem
+    Friend WithEvents tsmiPlantPotList As ToolStripMenuItem
+    Friend WithEvents tsmiPlantsView As ToolStripMenuItem
 End Class

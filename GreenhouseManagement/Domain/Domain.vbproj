@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Controller.vb" />
     <Compile Include="DAdditive.vb" />
+    <Compile Include="DPlantPot.vb" />
+    <Compile Include="DSpecies.vb" />
     <Compile Include="DTool.vb" />
     <Compile Include="DMeasurment.vb" />
     <Compile Include="DPerson.vb" />

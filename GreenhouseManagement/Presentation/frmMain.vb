@@ -25,15 +25,21 @@ Public Class frmMain
         Me.Person = Person
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        Me.Text = "Vivero Me Gusta " + Person.User + " (" + Person.Name + ")"
+        Me.Text = "Vivero Me Gusta " + Person.User + " (" + Person.Name + ")" + " : " + Person.Charge
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         PermissionCheck()
     End Sub
 
     Private Sub PermissionCheck()
         If Not Person.Charge = "Administrador" Then
+            tsmiZoneAdd.Visible = False
             tsmiZoneAdd.Enabled = False
+            tsmiSensorsAddnew.Visible = False
             tsmiSensorsAddnew.Enabled = False
+            tsmiSpeciesBookAdd.Enabled = False
+            tsmiSpeciesBookAdd.Visible = False
+            tsmiPlantPotAdd.Visible = False
+            tsmiPlantPotAdd.Enabled = False
         End If
     End Sub
 
@@ -48,19 +54,19 @@ Public Class frmMain
     End Sub
 
     Private Sub TsmiSpeciesBookAdd_Click(sender As Object, e As EventArgs) Handles tsmiSpeciesBookAdd.Click
-        Dim addPlants As New frmAddPlants(Person)
+        Dim addPlants As New frmAddSpecies(Person)
         addPlants.MdiParent = Me
         addPlants.Show()
     End Sub
 
     Private Sub TsmiSpeciesBookBrowse_Click(sender As Object, e As EventArgs) Handles tsmiSpeciesBookBrowse.Click
-        Dim browsePlants As New frmBrowsePlants(Person)
+        Dim browsePlants As New frmListSpecies(Person)
         browsePlants.MdiParent = Me
         browsePlants.Show()
     End Sub
 
     Private Sub TsmiPlant_Click(sender As Object, e As EventArgs) Handles tsmiPlant.Click
-        Dim plant = New frmPlant(Person)
+        Dim plant = New frmAddPlant(Person)
         plant.MdiParent = Me
         plant.Show()
     End Sub
@@ -72,18 +78,18 @@ Public Class frmMain
     End Sub
 
     Private Sub ListarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem.Click
-        Dim listperson = New listPerson(Person)
+        Dim listperson = New frmListPerson(Person)
         listperson.MdiParent = Me
         listperson.Show()
     End Sub
 
-    Private Sub tsmiStockMaterialsAdd_Click(sender As Object, e As EventArgs) Handles tsmiStockMaterialsAdd.Click
+    Private Sub tsmiStockMaterialsAdd_Click(sender As Object, e As EventArgs)
         Dim addAditivo = New frmaddAditivo(Person)
         addAditivo.MdiParent = Me
         addAditivo.Show()
     End Sub
 
-    Private Sub tsmiStockMaterialsList_Click(sender As Object, e As EventArgs) Handles tsmiStockMaterialsList.Click
+    Private Sub tsmiStockMaterialsList_Click(sender As Object, e As EventArgs)
         Dim addAditivo = New frmaddAditivo(Person)
         addAditivo.MdiParent = Me
         addAditivo.Show()
@@ -95,26 +101,26 @@ Public Class frmMain
         addZona.Show()
     End Sub
 
-    Private Sub ListarToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem4.Click
+    Private Sub ListarToolStripMenuItem4_Click(sender As Object, e As EventArgs)
         Dim addMedicion = New frmsensor(Person)
         addMedicion.MdiParent = Me
         addMedicion.Show()
     End Sub
 
-    Private Sub ListarToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem2.Click
+    Private Sub ListarToolStripMenuItem2_Click(sender As Object, e As EventArgs)
         Dim addSensor = New frmListadorSensor(Person)
         addSensor.MdiParent = Me
         addSensor.Show()
     End Sub
 
-    Private Sub tsmiStockToolsAdd_Click(sender As Object, e As EventArgs) Handles tsmiStockToolsAdd.Click
+    Private Sub tsmiStockToolsAdd_Click(sender As Object, e As EventArgs)
         Dim addHerramienta = New frmAddHerramienta(Person)
         addHerramienta.MdiParent = Me
         addHerramienta.Show()
 
     End Sub
 
-    Private Sub tsmiStockToolsList_Click(sender As Object, e As EventArgs) Handles tsmiStockToolsList.Click
+    Private Sub tsmiStockToolsList_Click(sender As Object, e As EventArgs)
         Dim listHerramienta = New frmListadoherramienta(Person)
         listHerramienta.MdiParent = Me
         listHerramienta.Show()
@@ -140,6 +146,30 @@ Public Class frmMain
 
     Private Sub TsmiViewSensor_Click(sender As Object, e As EventArgs) Handles tsmiViewSensor.Click
         Dim f As New frmListSensor(Person)
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub ContactoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContactoToolStripMenuItem.Click
+        Dim f As New frmContact()
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub TsmiPlantPotAdd_Click(sender As Object, e As EventArgs) Handles tsmiPlantPotAdd.Click
+        Dim f As New frmAddPlantPot(Person)
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub TsmiPlantPotList_Click(sender As Object, e As EventArgs) Handles tsmiPlantPotList.Click
+        Dim f As New frmListPlantPot(Person)
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub TsmiPlantsView_Click(sender As Object, e As EventArgs) Handles tsmiPlantsView.Click
+        Dim f As New frmListPlants(Person)
         f.MdiParent = Me
         f.Show()
     End Sub

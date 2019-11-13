@@ -23,41 +23,27 @@ Partial Class frmListadoherramienta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.dgvTools = New System.Windows.Forms.DataGridView()
-        Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Zona_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
         CType(Me.dgvTools, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvTools
         '
+        Me.dgvTools.AllowUserToAddRows = False
+        Me.dgvTools.AllowUserToDeleteRows = False
         Me.dgvTools.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTools.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.tipo, Me.Zona_nombre, Me.id_Producto})
+        Me.dgvTools.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvTools.Location = New System.Drawing.Point(12, 12)
         Me.dgvTools.Name = "dgvTools"
+        Me.dgvTools.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvTools.Size = New System.Drawing.Size(571, 196)
         Me.dgvTools.TabIndex = 0
-        '
-        'btnUpdate
-        '
-        Me.btnUpdate.Location = New System.Drawing.Point(12, 235)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
-        Me.btnUpdate.TabIndex = 1
-        Me.btnUpdate.Text = "Actualizar"
-        Me.btnUpdate.UseVisualStyleBackColor = True
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Location = New System.Drawing.Point(110, 235)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar.TabIndex = 2
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
         '
         'id
         '
@@ -82,6 +68,24 @@ Partial Class frmListadoherramienta
         Me.id_Producto.DataPropertyName = "id_Producto"
         Me.id_Producto.HeaderText = "Producto_ID"
         Me.id_Producto.Name = "id_Producto"
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.Location = New System.Drawing.Point(12, 235)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
+        Me.btnUpdate.TabIndex = 1
+        Me.btnUpdate.Text = "Actualizar"
+        Me.btnUpdate.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Location = New System.Drawing.Point(110, 235)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 2
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
         'frmListadoherramienta
         '

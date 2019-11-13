@@ -14,6 +14,7 @@ Public Class PZone
         unZona.Type = fila.GetString("tipo")
         Return (unZona)
     End Function
+
     Public Function ById(idZ As String) As EZone
         Dim consulta As String
         Dim datos As MySqlDataReader
