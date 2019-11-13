@@ -24,16 +24,18 @@ Partial Class frmListPlants
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.dgvPlantList = New System.Windows.Forms.DataGridView()
-        Me.dgvcSpecies = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvcId = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvcZone = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvcDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSpecies = New System.Windows.Forms.TextBox()
         Me.btnBrowse = New System.Windows.Forms.Button()
         Me.cmsInteract = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.tsmiDelete = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiModify = New System.Windows.Forms.ToolStripMenuItem()
+        Me.dgvcSpecies = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvcId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvcZone = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvcDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvcPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvcPlantPot = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvPlantList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsInteract.SuspendLayout()
         Me.SuspendLayout()
@@ -44,33 +46,13 @@ Partial Class frmListPlants
         Me.dgvPlantList.AllowUserToDeleteRows = False
         Me.dgvPlantList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvPlantList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPlantList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvcSpecies, Me.dgvcId, Me.dgvcZone, Me.dgvcDate})
+        Me.dgvPlantList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvcSpecies, Me.dgvcId, Me.dgvcZone, Me.dgvcDate, Me.dgvcPrice, Me.dgvcPlantPot})
         Me.dgvPlantList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvPlantList.Location = New System.Drawing.Point(12, 12)
         Me.dgvPlantList.Name = "dgvPlantList"
         Me.dgvPlantList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPlantList.Size = New System.Drawing.Size(860, 402)
         Me.dgvPlantList.TabIndex = 7
-        '
-        'dgvcSpecies
-        '
-        Me.dgvcSpecies.HeaderText = "Especie"
-        Me.dgvcSpecies.Name = "dgvcSpecies"
-        '
-        'dgvcId
-        '
-        Me.dgvcId.HeaderText = "ID"
-        Me.dgvcId.Name = "dgvcId"
-        '
-        'dgvcZone
-        '
-        Me.dgvcZone.HeaderText = "Zona"
-        Me.dgvcZone.Name = "dgvcZone"
-        '
-        'dgvcDate
-        '
-        Me.dgvcDate.HeaderText = "Fecha"
-        Me.dgvcDate.Name = "dgvcDate"
         '
         'Label1
         '
@@ -102,19 +84,49 @@ Partial Class frmListPlants
         '
         Me.cmsInteract.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiDelete, Me.tsmiModify})
         Me.cmsInteract.Name = "cmsInteract"
-        Me.cmsInteract.Size = New System.Drawing.Size(181, 70)
+        Me.cmsInteract.Size = New System.Drawing.Size(126, 48)
         '
         'tsmiDelete
         '
         Me.tsmiDelete.Name = "tsmiDelete"
-        Me.tsmiDelete.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiDelete.Size = New System.Drawing.Size(125, 22)
         Me.tsmiDelete.Text = "Eliminar"
         '
         'tsmiModify
         '
         Me.tsmiModify.Name = "tsmiModify"
-        Me.tsmiModify.Size = New System.Drawing.Size(125, 22)
+        Me.tsmiModify.Size = New System.Drawing.Size(180, 22)
         Me.tsmiModify.Text = "Modificar"
+        '
+        'dgvcSpecies
+        '
+        Me.dgvcSpecies.HeaderText = "Especie"
+        Me.dgvcSpecies.Name = "dgvcSpecies"
+        '
+        'dgvcId
+        '
+        Me.dgvcId.HeaderText = "ID"
+        Me.dgvcId.Name = "dgvcId"
+        '
+        'dgvcZone
+        '
+        Me.dgvcZone.HeaderText = "Zona"
+        Me.dgvcZone.Name = "dgvcZone"
+        '
+        'dgvcDate
+        '
+        Me.dgvcDate.HeaderText = "Fecha"
+        Me.dgvcDate.Name = "dgvcDate"
+        '
+        'dgvcPrice
+        '
+        Me.dgvcPrice.HeaderText = "Precio"
+        Me.dgvcPrice.Name = "dgvcPrice"
+        '
+        'dgvcPlantPot
+        '
+        Me.dgvcPlantPot.HeaderText = "Maceta"
+        Me.dgvcPlantPot.Name = "dgvcPlantPot"
         '
         'frmListPlants
         '
@@ -137,14 +149,16 @@ Partial Class frmListPlants
 
     End Sub
     Friend WithEvents dgvPlantList As DataGridView
-    Friend WithEvents dgvcSpecies As DataGridViewTextBoxColumn
-    Friend WithEvents dgvcId As DataGridViewTextBoxColumn
-    Friend WithEvents dgvcZone As DataGridViewTextBoxColumn
-    Friend WithEvents dgvcDate As DataGridViewTextBoxColumn
     Friend WithEvents Label1 As Label
     Friend WithEvents txtSpecies As TextBox
     Friend WithEvents btnBrowse As Button
     Friend WithEvents cmsInteract As ContextMenuStrip
     Friend WithEvents tsmiDelete As ToolStripMenuItem
     Friend WithEvents tsmiModify As ToolStripMenuItem
+    Friend WithEvents dgvcSpecies As DataGridViewTextBoxColumn
+    Friend WithEvents dgvcId As DataGridViewTextBoxColumn
+    Friend WithEvents dgvcZone As DataGridViewTextBoxColumn
+    Friend WithEvents dgvcDate As DataGridViewTextBoxColumn
+    Friend WithEvents dgvcPrice As DataGridViewTextBoxColumn
+    Friend WithEvents dgvcPlantPot As DataGridViewTextBoxColumn
 End Class

@@ -1,6 +1,6 @@
 ﻿Imports Entities
 Imports Domain
-Public Class listPerson
+Public Class frmListPerson
 
     Public Sub New(p As EPerson)
 

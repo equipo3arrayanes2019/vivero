@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="MeGusta.exe" version="1.0.0.5" publicKeyToken="3e5775d01c81665c" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="MeGusta" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="MeGusta.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de UAC
+          Si desea cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el
+          nodo requestedExecutionLevel por uno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar Virtualización de archivos y Registro para compatibilidad con
+         versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BouncyCastle.Crypto.dll" size="2453504">
+      <assemblyIdentity name="BouncyCastle.Crypto" version="1.8.3.0" publicKeyToken="0E99375E54769942" language="neutral" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>SikSNsUBe/37MPrUw9tNBhTDYsS1NAnGELEtSD17JuY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Domain.dll" size="13312">
+      <assemblyIdentity name="Domain" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>SKrZRjn8pkx8qakZHNkyPo0QV9+L2UgrcB9hIiUU5Ts=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Entities.dll" size="15360">
+      <assemblyIdentity name="Entities" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>mtL+seKne9Wn+pC7i9pMe3uozYKqaj9rSj4zCDIolEk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Google.Protobuf.dll" size="298496">
+      <assemblyIdentity name="Google.Protobuf" version="3.6.1.0" publicKeyToken="A7D26565BAC4D604" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>tmCHIa/sZfxfbRML4V98ONw3aJn73tQolsd5EaiejRM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MeGusta.exe" size="163272">
+      <assemblyIdentity name="MeGusta" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>GLgzq/oyYqEmS4ZYdnDvrJx/lGOUonzSMMDdm8A7Az8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.dll" size="770048">
+      <assemblyIdentity name="MySql.Data" version="8.0.18.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>p2W1N/jvKtfTtkCJwl7oqYenqusuYafmei73Wtm/3lg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Persistence.dll" size="26112">
+      <assemblyIdentity name="Persistence" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>WSAE8FnDrfj8lPOZxR6nF3X+jahzADZ8SYreaUAr6uI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Renci.SshNet.dll" size="422912">
+      <assemblyIdentity name="Renci.SshNet" version="2016.1.0.0" publicKeyToken="1CEE9F8BDE3DB106" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>9jFe0UZDj3cCAzaBBD+P6WkO05oqvJoZIkZCSUSjono=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="icon.ico" size="1327">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>93Lb7VU4W5evMh+PqoEKKD0yfksAy83JtFHfkybxuGs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MeGusta.exe.config" size="233">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>RMmBpmmtGhA34wOVxgxSE6Cb9fWw8U+uA9ci4jatA0w=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Rafa-VM\Rafa" issuerKeyHash="24950c55748d41cb63e359d1c48c5b62849f4f4d" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>sygte4zGbftuS8W8Vwy6OpDcINIb8kIu9t58oGzgSGg=</DigestValue></Reference></SignedInfo><SignatureValue>A5dyt1bhg99WPY0bi1G35IolNAozLXNnLiKtZq36W6OselEetETJ0e39ZoHgvwQ1Gyqq8y1v9k194zIt7K9pDeHLGFtQ9U2lQIQ0TrBAg7mKWOLUrM90SKpiG2mc4kDAJ6pGkkJ2XF3KmV7SVE0eB5LdLoIEDYMVslxmaXxs2Qg=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>mv6N9EvECRVld5Uqin3+mXclAEaU+u5LD63XEHP/AU5y1VSbL9Xn9kfR3opBoldgN4vos6yBtHdM7aodUNpse3jv+y0lsd3Z+a8OXWm0UNBkbsZk2UqsT5ezNcfxWCXePTLzPRkXbR6SO7xl0sCaprHMoHZ3dP33XEIYeMEr1nE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="6848e06ca07cdef62e42f21bd220dc903aba0c57bcc54b6efb6dc68c7b2d28b3" Description="" Url=""><as:assemblyIdentity name="MeGusta.exe" version="1.0.0.5" publicKeyToken="3e5775d01c81665c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Rafa-VM\Rafa</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>sv71Bb3rhgKVh07aW+YzBTpmbgGi6BNU1zMtB2s+Um8=</DigestValue></Reference></SignedInfo><SignatureValue>k2fIWVQBw7XXoCs0h2jEy48vfclrvf+jL2HH/xuqpPp6LLfxyayqrRdclRJTSbGvQZ7hrbQkcXYrR0MmjXlcjo3tuxQuCgZ/qkQ0j0Zxm+UDjlpsHcWZVj6MUwU+vniYoZ1GA00VP2aBTHt+k4MOdMX7VBxPGgIhpO6HiEOXJjo=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>mv6N9EvECRVld5Uqin3+mXclAEaU+u5LD63XEHP/AU5y1VSbL9Xn9kfR3opBoldgN4vos6yBtHdM7aodUNpse3jv+y0lsd3Z+a8OXWm0UNBkbsZk2UqsT5ezNcfxWCXePTLzPRkXbR6SO7xl0sCaprHMoHZ3dP33XEIYeMEr1nE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQdM/j3z89vLRKCxPMxNF0UDANBgkqhkiG9w0BAQsFADAjMSEwHwYDVQQDHhgAUgBhAGYAYQAtAFYATQBcAFIAYQBmAGEwHhcNMTkxMTEzMDM0ODE5WhcNMjAxMTEyMDk0ODE5WjAjMSEwHwYDVQQDHhgAUgBhAGYAYQAtAFYATQBcAFIAYQBmAGEwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAJr+jfRLxAkVZXeVKop9/pl3JQBGlPruSw+t1xBz/wFOctVUmy/V5/ZH0d6KQaJXYDeL6LOsgbR3TO2qHVDabHt47/stJbHd2fmvDl1ptFDQZG7GZNlKrE+XszXH8Vgl3j0y8z0ZF20ekju8ZdLAmqaxzKB2d3T991xCGHjBK9ZxAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAUG2M2CF6A2+tliBgmFOTZ+UVI/Y2wti/NxKhQF5pkZm8Ag0WeG6DebBlMQIcI/+XOZmNn84PEJMZFObQNhwEES46zR5d3qmAShOBGhUNtCLVmrWowZwto5irdFmTDjY7eJPjgyKYKO2tjWpwuR+7NJDvoAI3dCnKUy9M0g3E+d8=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

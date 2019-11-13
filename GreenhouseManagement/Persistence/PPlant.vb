@@ -57,7 +57,7 @@ Public Class PPlant
     End Sub
 
     Public Sub Modify(plant As EPlant)
-        Dim querys As String() = {"UPDATE Planta SET precio = " + plant.Price.ToString().Replace(",", ".") + ", Especie_nombre = '" + plant.Species.Name + ", fecha ='" + SqlHandle.GetMySqlDateFormat(plant.DatePlanted) + ";", "UPDATE PlantaMaceta SET Maceta_id = " + plant.PlantPot.Id.ToString() + ", Zona_nombre = '" + plant.Zone.ZoneName + "';"}
+        Dim querys As String() = {"UPDATE Planta SET precio = " + plant.Price.ToString().Replace(",", ".") + ", Especie_nombre = '" + plant.Species.Name + "', fecha ='" + SqlHandle.GetMySqlDateFormat(plant.DatePlanted) + "' WHERE id = " + plant.Id.ToString() + ";", "UPDATE PlantaMaceta SET Maceta_id = " + plant.PlantPot.Id.ToString() + ", Zona_nombre = '" + plant.Zone.ZoneName + "' WHERE Planta_id = " + plant.Id.ToString() + ";"}
         SqlHandle.StaticSendCommand(querys)
     End Sub
 

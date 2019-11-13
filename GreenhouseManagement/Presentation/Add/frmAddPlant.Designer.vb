@@ -23,6 +23,7 @@ Partial Class frmAddPlant
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAddPlant))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblSpecies = New System.Windows.Forms.Label()
         Me.btnPickSpecies = New System.Windows.Forms.Button()
@@ -192,6 +193,7 @@ Partial Class frmAddPlant
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblPrice)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmAddPlant"
         Me.Text = "Plantar"
         Me.ResumeLayout(False)

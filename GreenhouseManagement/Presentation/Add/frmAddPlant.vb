@@ -13,7 +13,10 @@ Public Class frmAddPlant
         Person = p
 
         mSpecies = pl.Species
-        mUpdate = False
+        mPlantPot = pl.PlantPot
+        mZone = pl.Zone
+        mPlant = pl
+        mUpdate = True
 
         txtPrice.Text = pl.Price.ToString()
         lblSpecies.Text = pl.Species.Name
@@ -21,7 +24,6 @@ Public Class frmAddPlant
         lblSpecies.Text = pl.Species.Name
         lblZone.Text = pl.Zone.ZoneName
         dtpDate.Value = pl.DatePlanted
-        mPlant = pl
     End Sub
 
     Public Sub New(p As EPerson)
@@ -77,11 +79,16 @@ Public Class frmAddPlant
         mPlant.Zone = mZone
         mPlant.PlantPot = mPlantPot
         If mUpdate Then
+            Dim err As Boolean = False
             Try
                 con.ModifyPlant(mPlant)
             Catch ex As Exception
+                err = True
                 CommonError.ErrorUpdating(ex)
             End Try
+            If Not err Then
+                Me.Close()
+            End If
         Else
             Try
                 con.AddPlant(mPlant)

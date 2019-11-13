@@ -9,6 +9,7 @@ Public Class frmListPlants
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         Person = p
+        CheckPermissions()
     End Sub
 
     Private mPerson As EPerson
@@ -34,6 +35,13 @@ Public Class frmListPlants
 
     Private mPlants As List(Of EPlant)
     Private mLast As String
+
+    Private Sub CheckPermissions()
+        If Not (Person.Charge = "Administrador") Then
+            tsmiModify.Visible = False
+            tsmiDelete.Visible = False
+        End If
+    End Sub
 
     Private Sub BtnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
         If Not (txtSpecies.Text = "") Then
@@ -62,7 +70,7 @@ Public Class frmListPlants
     Private Sub LoadDGV()
         dgvPlantList.Rows.Clear()
         For Each plant As EPlant In mPlants
-            dgvPlantList.Rows.Add(plant.Species.Name, plant.Id, plant.Zone.ZoneName, plant.DatePlanted.ToString("yyyy/M/d"))
+            dgvPlantList.Rows.Add(plant.Species.Name, plant.Id, plant.Zone.ZoneName, plant.DatePlanted.ToString("yyyy/M/d"), plant.Price, plant.PlantPot.ProductName)
         Next
         dgvPlantList.Refresh()
     End Sub
@@ -87,8 +95,43 @@ Public Class frmListPlants
     End Sub
 
     Private Sub TsmiDelete_Click(sender As Object, e As EventArgs) Handles tsmiDelete.Click
-
+        Dim s As New List(Of EPlant)
+        Dim plants As String = ""
+        Dim n As Integer = 0
+        For Each dgrow As DataGridViewRow In dgvPlantList.SelectedRows
+            n = 0
+            For Each grow As DataGridViewRow In dgvPlantList.Rows
+                If grow.GetHashCode() = dgrow.GetHashCode() Then
+                    s.Add(mPlants(n))
+                    plants += mPlants(n).Species.Name + " (" + mPlants(n).Id.ToString() + "),"
+                    Exit For
+                End If
+                n += 1
+            Next
+        Next
+        plants = plants.Remove(plants.LastIndexOf(","), 1)
+        If DialogResult.Yes = MessageBox.Show("Esta seguro que desea eliminar las plantas: " + plants + "?", "Eliminar plantas", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
+            For Each plant As EPlant In s
+                Try
+                    con.RemovePlant(plant.Id)
+                Catch ex As Exception
+                    CommonError.ErrorSaving(ex)
+                End Try
+            Next
+        End If
+        Repeat()
     End Sub
 
+    Private Sub DgvPlantList_CellMouseUp(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvPlantList.CellMouseUp
+        If e.Button = MouseButtons.Right Then
+            cmsInteract.Show(dgvPlantList, e.Location)
+        End If
+    End Sub
 
+    Private Sub TsmiModify_Click(sender As Object, e As EventArgs) Handles tsmiModify.Click
+        Dim f As New frmAddPlant(Person, Plant)
+        f.ShowDialog()
+        f.Dispose()
+        Repeat()
+    End Sub
 End Class

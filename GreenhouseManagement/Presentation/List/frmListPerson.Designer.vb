@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class listPerson
+Partial Class frmListPerson
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,6 +22,7 @@ Partial Class listPerson
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListPerson))
         Me.BtnUpdate = New System.Windows.Forms.Button()
         Me.dgvPerson = New System.Windows.Forms.DataGridView()
         Me.cedula = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -119,7 +120,7 @@ Partial Class listPerson
         Me.BtnModify.Text = "Modificar"
         Me.BtnModify.UseVisualStyleBackColor = True
         '
-        'listPerson
+        'frmListPerson
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -128,7 +129,9 @@ Partial Class listPerson
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.dgvPerson)
         Me.Controls.Add(Me.BtnUpdate)
-        Me.Name = "listPerson"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "frmListPerson"
         Me.Text = "listPerson"
         CType(Me.dgvPerson, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

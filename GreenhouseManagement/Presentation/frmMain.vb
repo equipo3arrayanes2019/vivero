@@ -78,18 +78,18 @@ Public Class frmMain
     End Sub
 
     Private Sub ListarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem.Click
-        Dim listperson = New listPerson(Person)
+        Dim listperson = New frmListPerson(Person)
         listperson.MdiParent = Me
         listperson.Show()
     End Sub
 
-    Private Sub tsmiStockMaterialsAdd_Click(sender As Object, e As EventArgs) Handles tsmiStockMaterialsAdd.Click
+    Private Sub tsmiStockMaterialsAdd_Click(sender As Object, e As EventArgs)
         Dim addAditivo = New frmaddAditivo(Person)
         addAditivo.MdiParent = Me
         addAditivo.Show()
     End Sub
 
-    Private Sub tsmiStockMaterialsList_Click(sender As Object, e As EventArgs) Handles tsmiStockMaterialsList.Click
+    Private Sub tsmiStockMaterialsList_Click(sender As Object, e As EventArgs)
         Dim addAditivo = New frmaddAditivo(Person)
         addAditivo.MdiParent = Me
         addAditivo.Show()
@@ -113,14 +113,14 @@ Public Class frmMain
         addSensor.Show()
     End Sub
 
-    Private Sub tsmiStockToolsAdd_Click(sender As Object, e As EventArgs) Handles tsmiStockToolsAdd.Click
+    Private Sub tsmiStockToolsAdd_Click(sender As Object, e As EventArgs)
         Dim addHerramienta = New frmAddHerramienta(Person)
         addHerramienta.MdiParent = Me
         addHerramienta.Show()
 
     End Sub
 
-    Private Sub tsmiStockToolsList_Click(sender As Object, e As EventArgs) Handles tsmiStockToolsList.Click
+    Private Sub tsmiStockToolsList_Click(sender As Object, e As EventArgs)
         Dim listHerramienta = New frmListadoherramienta(Person)
         listHerramienta.MdiParent = Me
         listHerramienta.Show()
