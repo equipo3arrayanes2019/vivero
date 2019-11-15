@@ -25,22 +25,22 @@ setTimeout(function() { location.reload(); }, 5000);
         font-family: console;
     }
 
-    .TEMPERATUREAIR{
+    .TemperaturaSuelo{
         color: white;
         background-color: #c94a00;
     }
 
-    .TEMPERATURESOIL{
+    .TemperaturaAire{
         color: white;
         background-color: #fc392b;
     }
 
-    .HUMIDITYSOIL{
+    .HumedadSuelo{
         color: white;
         background-color: #02007a;
     }
 
-    .HUMIDITYAIR{
+    .HumedadAire{
         color: white;
         background-color: #3bb9db;
     }
@@ -87,7 +87,7 @@ setTimeout(function() { location.reload(); }, 5000);
                 }
             }
             if(!$isthere){
-            echo "<tr class ='" . $row["tipo"] . "'>";
+            echo "<tr class ='" . str_replace(" ", "", $row["tipo"]) . "'>";
             echo "<td>";
             echo date("H:i:s", strtotime($row["fecha"]));
             echo "</td>";
@@ -95,25 +95,14 @@ setTimeout(function() { location.reload(); }, 5000);
             echo $row["Sensor_id"];
             echo "</td>";
             echo "<td>";
-            if(strpos($row["tipo"], 'TEMPERATUREAIR') !== false){
-                echo "Temperatura aire";
-            }
-            if(strpos($row["tipo"], 'TEMPERATURESOIL') !== false){
-                echo "Temperatura suelo";
-            }
-            if(strpos($row["tipo"], 'HUMIDITYAIR') !== false){
-                echo "Humedad aire";
-            }
-            if(strpos($row["tipo"], 'HUMIDITYSOIL') !== false){
-                echo "Humedad suelo";
-            }
+            echo $row["tipo"];
             echo "</td>";
             echo "<td style='font-weight: bold;'>";
             echo $row["valor"];
-            if(strpos($row["tipo"], 'HUMIDITY') !== false){
+            if(strpos($row["tipo"], 'Humedad') !== false){
                 echo "%";
             }
-            if(strpos($row["tipo"], 'TEMPERATURE') !== false){
+            if(strpos($row["tipo"], 'Temperatura') !== false){
                 echo "°C";
             }
             echo "</td>";
