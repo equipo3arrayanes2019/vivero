@@ -33,7 +33,7 @@ void HTTPSender::addQueue(String url){
 }
 
 String HTTPSender::send(String url) {
-  url = String("http://") + String(host) + String("/") + folder + String("/") + url;
+  url = String("http://") + String(serverName) + String("/") + folder + String("/") + url;
   url.replace(" ", "%20");
   String message = String("GET ") + url + String(" HTTP/1.1\r\nHost: ") + String(host) + String("\r\n") + String("Connection: close\r\n\r\n");
   return NetworkCommunication::send(host, HTTPSender::PORT, message);

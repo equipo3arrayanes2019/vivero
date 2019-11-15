@@ -34,6 +34,7 @@ IPAddress primaryDNS(192, 168, 50, 1);   //optional
 
 #define SERVER "192.168.50.1"
 #define FOLDER "sensors"
+#define V_HOST "sn.vivero"
 
 //dhts ------------
 #define DHT01PIN              4
@@ -108,7 +109,7 @@ void setup() {
   /*
    * -------------------------------------------------------------------------------------------------------------------------------------------------
    */
-  http = new HTTPSender(SERVER, FOLDER);
+  http = new HTTPSender(SERVER, FOLDER,V_HOST);
    //sensors setup
   int i = 0;
   CHT* cht = new CHT(new TemperatureSoilReader(TEMPERATURESOIL01PIN), String("ARD01 TEMPERATURESOIL01"), new HumiditySoilReader(HUMIDITYSOIL01PIN), String("ARD01 HUMIDITYSOIL01"));
