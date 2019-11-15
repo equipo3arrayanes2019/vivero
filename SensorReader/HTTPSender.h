@@ -12,8 +12,8 @@ class HTTPSender{
     static const unsigned long MAX_RETAIN_ON_FLUSH = 4500
     ;
   
-    HTTPSender(char* host, char* folder):
-      host(host), folder(folder), sendCount(-1)
+    HTTPSender(char* host, char* folder, char* serverName):
+      host(host), folder(folder), sendCount(-1), serverName(serverName)
     {
       
     }
@@ -28,5 +28,5 @@ class HTTPSender{
     int sendCount;
     String queue[HTTPSENDER_H_BUFFERSIEZE];
     unsigned long retainingFrom;
-  
+    char* serverName;
 };

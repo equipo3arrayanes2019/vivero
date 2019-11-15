@@ -2,8 +2,8 @@
 
 //humiditycheck.php?sensor=ARD01 HUMIDITYAIR01&value=30&state=1
 
-$UPPER_LIMIT=3;
-$LOWER_LIMIT=6;
+$UPPER_LIMIT=1;
+$LOWER_LIMIT=2;
 
 include "MySQL.php";
 
@@ -20,7 +20,7 @@ if(isset($_GET["sensor"])){
         $sensorLocation=$result->fetch_array(MYSQLI_NUM)[0];
     }
     //Get all the plants for a given zone
-    $query="SELECT Especie.humedad, Especie.nombre FROM Especie RIGHT JOIN Planta on Planta.Especie_nombre = Especie.nombre WHERE Planta.Zona_nombre= '$sensorLocation';";
+    $query="SELECT Especie.humedad, Especie.nombre FROM Especie RIGHT JOIN Planta on Planta.Especie_nombre = Especie.nombre INNER JOIN PlantaMaceta ON PlantaMaceta.Planta_id = Planta.id WHERE PlantaMaceta.Zona_nombre= '$sensorLocation';";
     //echo $query;
     $result = $conn->query($query);
     $num_plants=$result->num_rows;
@@ -32,29 +32,21 @@ if(isset($_GET["sensor"])){
         }
         $plants=true;
     }
-    $query="SELECT Especie.humedad, Especie.nombre FROM Especie RIGHT JOIN Semilla on Semilla.Especie_nombre = Especie.nombre INNER JOIN Zona_has_Semilla ON Zona_has_Semilla.Semilla_id = Semilla.id WHERE Zona_has_Semilla.Zona_nombre = '$sensorLocation';";
-    //echo $query;
-    $result = $conn->query($query);
-    $num_plants+=$result->num_rows;
-    if(! $num_plants > 0){
-        $seeds=false;
-    }else{
-        while($row = $result->fetch_array(MYSQLI_NUM)){
-            $totalHumidity+=$row[0];
-        }
-        $seeds=true;
-    }
-    if(!$seeds && !$plants) die("No hay plantas en zona: $sensorLocation, Sensor: $sensorId");
+
+    if(!$plants) die("No hay plantas en zona: $sensorLocation, Sensor: $sensorId");
+    
     $AveregeRequiredHumidity=$totalHumidity/$num_plants;
     echo "AVRG: $AveregeRequiredHumidity<br/>\n";
     //echo "La humedad promedio es: $AveregeRequiredHumidity";
     if($state){
+        //36
         if($AveregeRequiredHumidity + $UPPER_LIMIT < $value){
             $out="WATER=0";
         }else{
             $out="WATER=1";
         }
     }else{
+        //27
         if($AveregeRequiredHumidity - $LOWER_LIMIT > $value){
             $out="WATER=1";
         }else{
