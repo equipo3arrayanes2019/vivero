@@ -62,7 +62,7 @@ Partial Class frmAddSensor
         Me.cbxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxType.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cbxType.FormattingEnabled = True
-        Me.cbxType.Items.AddRange(New Object() {"Humedad Aire", "Humedad Suelo", "Temperaturea Aire", "Temperaturea Suelo"})
+        Me.cbxType.Items.AddRange(New Object() {"Humedad Aire", "Humedad Suelo", "Temperatura Aire", "Temperatura Suelo"})
         Me.cbxType.Location = New System.Drawing.Point(86, 52)
         Me.cbxType.Name = "cbxType"
         Me.cbxType.Size = New System.Drawing.Size(260, 21)

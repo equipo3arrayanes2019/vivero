@@ -202,8 +202,6 @@ C:\Users\Rafa\Desktop\vivero\GestionVivero\GestionVivero\obj\Debug\Presentation.
 C:\Users\Rafa\Desktop\vivero\GestionVivero\GestionVivero\obj\Debug\Presentation.exe
 C:\Users\Rafa\Desktop\vivero\GestionVivero\GestionVivero\obj\Debug\Presentation.xml
 C:\Users\Rafa\Desktop\vivero\GestionVivero\GestionVivero\obj\Debug\Presentation.pdb
-C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\Entities.xml
-C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\Persistence.pdb
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\MeGusta.exe.config
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\MeGusta.exe.manifest
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\MeGusta.application
@@ -220,8 +218,10 @@ C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\Renci.S
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\Domain.pdb
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\Domain.xml
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\Entities.pdb
+C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\Entities.xml
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\Entities.dll.config
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\MySql.Data.xml
+C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\Persistence.pdb
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\Persistence.xml
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\bin\Debug\Persistence.dll.config
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.vbprojAssemblyReference.cache
@@ -248,7 +248,7 @@ C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\MeGusta
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\MeGusta.frmLogin.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\MeGusta.frmMain.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\MeGusta.frmAddPlant.resources
-C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\MeGusta.listPerson.resources
+C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\MeGusta.frmListPerson.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\MeGusta.Resources.resources
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.vbproj.GenerateResource.cache
 C:\Users\Rafa\Desktop\vivero\GreenhouseManagement\Presentation\obj\Debug\Presentation.vbproj.CoreCompileInputs.cache
